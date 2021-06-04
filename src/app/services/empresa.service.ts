@@ -1,21 +1,26 @@
 import { Injectable } from '@angular/core';
+import { Empresa } from '../modelos/empresaModel';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class EmpresaService {
 
-  constructor() { }
-
-
- getEmpresas(){
- 
-  let empresas: string[]=["Parada Certa", "Pit Stop" , "Fica Aqui" , "Vaga Legal" , "Sua Vaga"];
-  
-    return empresas;
- }
+  constructor(){
+   
+  }
 
 
 
+  empresas: any[]=["Parada Certa", "Sua Vaga", "Pit Stop", "Estacionamento", "Edificio Edgar Motta" ]; 
 
+
+
+getEmpresas(){
+  return this.empresas;
+}
+    
 }

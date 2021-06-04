@@ -1,5 +1,21 @@
-<ul >
-    <li *ngFor="let empresa of empresas">
-        {{empresas}}
-    </li>
-</ul>
+<section id="meio">
+    <H5 style="color: white; text-align: center;">Lista de Empresas</H5>
+    <section>
+        <table class="responsive-table">
+            <thead>
+              <tr>
+                  <th>Name</th>
+                  <th></th>
+              </tr>
+            </thead>
+    
+            <tbody>
+              <tr *ngFor="let empresa of empresasService">
+                <td>{{ empresa  }}</td>
+                <td><a class="waves-effect waves-light btn"><i class="material-icons right">description</i>Detalhes</a>
+              </tr>
+            </tbody>
+          </table>
+    </section>
+
+</section>

@@ -1,22 +1,14 @@
-<section>
-
-<input type="checkbox" id="checkboxmenu">
-    <label for="checkboxmenu">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKvnCQCWscKdAAqW0ItoDGvoob_SU0REqn_R_bcqrcwBdxN0H8m8p3bxkVfA5TLf5UPao&usqp=CAU">
-    </label>
-
-<nav>
-    <ul>
-      <li><a href="">Empresas</a></li>
-      <li><a href="">Estacionamentos</a></li>
-      <li><a href="">Funcionarios</a></li>
-      <li><a href="">Clientes</a></li>
+<nav style="background-color: rgb(32,178,170);">
+  <div class="nav-wrapper">
+    <a routerLink="" class="brand-logo right">HOME</a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li routerLinkActive="active"><a routerLink="cadastros">Cadastros</a></li>
+      <li routerLinkActive="active"><a routerLink="ticket">Ticket</a></li>
     </ul>
-  </nav>
+  </div>
+</nav>
 
-</section>
 
-<section >
 
-</section>
+
 <router-outlet></router-outlet>

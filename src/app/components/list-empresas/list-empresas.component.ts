@@ -1,28 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-
-import { EmpresaService } from './../../services/empresa.service';
+import { EmpresaService } from 'src/app/services/empresa.service';
 
 
 @Component({
-  selector: 'app-list-empresas',
+  selector: 'list-empresas',
   templateUrl: './list-empresas.component.html',
   styleUrls: ['./list-empresas.component.css']
 })
 export class ListEmpresasComponent implements OnInit {
   
-    empresas: string[] =[];//vetor de strings
 
-  constructor(private Empresaservice: EmpresaService) { 
+  constructor(public empService: EmpresaService) { 
     
-    //variaveis utilizadas
-    
-    
-    this.empresas = this.Empresaservice.getEmpresas();
-
-
-
   }
   
+   empresasTeste:any[]=["teste","copola","mastruz"];
+
+   empresasService: any[] = this.empService.getEmpresas();
+
+
   ngOnInit(): void {}
  
   
