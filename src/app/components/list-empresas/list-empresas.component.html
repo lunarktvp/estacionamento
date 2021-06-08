@@ -1,21 +1,28 @@
+
 <section id="meio">
-    <H5 style="color: white; text-align: center;">Lista de Empresas</H5>
+  
+    <H4 style="color: white; text-align: left;">Lista de Empresas</H4>
+    <button [routerLink]="'/cadastros'" class="btn waves-effect waves-light" type="submit" name="action">Voltar<i class="material-icons left">arrow_back</i></button>
+    <br><br>
     <section>
-        <table class="responsive-table">
+        <table>
             <thead>
               <tr>
-                  <th>Name</th>
+                  <th>CNPJ</th>
+                  <th>NOME</th>
                   <th></th>
               </tr>
             </thead>
-    
             <tbody>
-              <tr *ngFor="let empresa of empresasService">
-                <td>{{ empresa  }}</td>
-                <td><a class="waves-effect waves-light btn"><i class="material-icons right">description</i>Detalhes</a>
-              </tr>
+              <tr  *ngFor="let empresa of empresas">
+                <td>{{ empresa.cnpj }}</td>
+                <td>{{ empresa.nome }}</td>
+                <td><a style="margin-right: 5px;" [routerLink]="['/detalhesempresa',empresa.id]" class="waves-effect waves-light btn"><i class="material-icons center">edit</i></a>
+                </td>
+              </tr> 
             </tbody>
           </table>
+          
     </section>
 
 </section>

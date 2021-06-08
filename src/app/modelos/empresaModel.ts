@@ -1,8 +1,9 @@
 
    export class Empresa{
-     nome: any ="";
-     cnpj: any="";
-     endereco: any="";
-     email: any="";
-     telefone: any="";
+     public id: any;
+     public nome: any;
+     public cnpj: any;
+     public endereco: any;
+     public email: any;
+     public telefone: any;
   }

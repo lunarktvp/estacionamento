@@ -1,48 +1,49 @@
 <section id="meio" >
-    <H5 style="color: white; text-align: center;">Cadastrar Empresa</H5>
-
-    <div id="form" class="row">
-        <div class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <input  id="Empresa" type="text" class="validate">
-              <label for="Empresa" >Empresa</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="cnpj" type="text" class="validate">
-                <label for="cnpj">CNPJ</label>
+    <H3 style="color: white ; text-align: left;">Cadastrar Empresa</H3>
+  <div id="myform">
+    <form id="form" method="post" (ngSubmit)="onSubmit()" [formGroup]="formulario">
+        
+          <div class="form-group">
+            <div class="row">
+              <div class="col s6 m5">
+               <label  for="nome" >Empresa</label>
+                <input  formControlName="nome" class="form-control" type="text"  name="nome"  >
               </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s10">
-              <input id="endereco" type="text" class="validate">
-              <label for="endereco">Endereco</label>
+              <div class="col s6 m3">
+                <label for="cnpj">CNPJ</label>
+                <input formControlName="cnpj" class="form-control" id="cnpj" type="text" name="cnpj" >
+              </div>
             </div>
           </div>
-          <div class="row">
-            <div class="input-field col s5">
-              <input id="email" type="email" class="validate">
-              <label for="email">Email</label>
+          <div class="form-group">
+            <div class="row">
+              <div class="col s6 m8">
+                <label for="endereco">Endereco</label>
+                <input formControlName="endereco" class="form-control"  id="endereco" type="text"  name="endereco" >
+            </div>
             </div>
           </div>
-          <div class="row">
-            <div class="input-field col s3">
-              <input id="telefone" type="text" class="validate">
-              <label for="telefone">Telefone</label>
+          <div class="form-group">
+            <div class="row">
+              <div class="col s6 m5">
+                <label for="email">Email</label> 
+                <input formControlName="email" class="form-control"  id="email" type="email"   name="email">  
+              </div>
+              <div class="col s2 m3">
+                <label for="telefone">Telefone</label>
+                <input formControlName="telefone" class="form-control"  id="telefone" type="text"  name="telefone" >
+              </div>
             </div>
           </div>
-          <div class="row">
-            <div class="input-field col s4">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Gravar
-                  <i class="material-icons right">check</i>
-                </button>
-            </div>
-            <div class="input-field col s4">
-                <button [routerLink]="''" style="background-color: red;" class="btn waves-effect waves-light" type="submit" name="action">Cancelar
-                    <i class="material-icons right">backspace</i>
-                  </button>
-            </div>
-          </div>
-        </div>
+
+        <button [disabled]="formulario.invalid" class="btn btn-primary" type="submit">Gravar
+          <i class="material-icons right">check</i>
+        </button>
+
+        <button [routerLink]="'/cadastros'" style="background-color: rgb(224, 59, 59); margin-left: 5px;" class="btn waves-effect waves-light">Cancelar
+          <i class="material-icons right">cancel</i>
+        </button>
+
+      </form>
     </div>
 </section>

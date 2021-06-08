@@ -1,6 +1,10 @@
 
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { Empresa } from '../../modelos/empresaModel'
+import { EmpresaService } from 'src/app/services/empresa.service';
+
 
 
 @Component({
@@ -10,14 +14,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastrarEmpresaComponent implements OnInit {
 
+  empresa: Empresa;
+
+  formulario: FormGroup;
+
   constructor(
-    private router: Router
+    private empService: EmpresaService,
+    private formBuilder: FormBuilder
     ) { }
 
 
 
 
   ngOnInit(): void {
+    this.formulario = this.formBuilder.group({
+      nome:[null,Validators.required],
+      cnpj:[null,Validators.required],
+      endereco:[null,Validators.required],
+      telefone:[null,Validators.required],
+      email:[null,[Validators.required, Validators.email]]
+    });
+  
   }
 
+  onSubmit(){
+
+      this.empService.cadastrarEmpresa(this.formulario.value).subscribe(resposta=>{
+        this.formulario.reset();
+      });
+      
+  }  
+
+  
 }

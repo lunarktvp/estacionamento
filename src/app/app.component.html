@@ -1,14 +1,12 @@
-<nav style="background-color: rgb(32,178,170);">
+<nav id="navbar" style="background-color: rgb(32,178,170);">
   <div class="nav-wrapper">
-    <a routerLink="" class="brand-logo right">HOME</a>
-    <ul id="nav-mobile" class="left hide-on-med-and-down">
-      <li routerLinkActive="active"><a routerLink="cadastros">Cadastros</a></li>
-      <li routerLinkActive="active"><a routerLink="ticket">Ticket</a></li>
+    <a routerLink="" class="brand-logo center">Home<i id="home" class="material-icons">home</i></a>
+    <ul id="nav-mobile" class="left  hide-on-med-and-down">
+      <li routerLinkActive="active"><a routerLink="cadastros">MENU</a></li>
+      <li routerLinkActive="active"><a routerLink="tickets" >TICKETs</a></li>
     </ul>
   </div>
 </nav>
-
-
 
 
 <router-outlet></router-outlet>

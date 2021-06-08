@@ -1,3 +1,5 @@
+import { Empresa } from './../../modelos/empresaModel';
+
 import { Component, OnInit } from '@angular/core';
 import { EmpresaService } from 'src/app/services/empresa.service';
 
@@ -9,18 +11,27 @@ import { EmpresaService } from 'src/app/services/empresa.service';
 })
 export class ListEmpresasComponent implements OnInit {
   
+  empresas: any;
+  empresa: any;
 
   constructor(public empService: EmpresaService) { 
-    
+   
   }
   
-   empresasTeste:any[]=["teste","copola","mastruz"];
 
-   empresasService: any[] = this.empService.getEmpresas();
+  ngOnInit(): void {
+    this.getEmpresas()
 
+  }
 
-  ngOnInit(): void {}
+  getEmpresas(){
+
+    this.empService.getEmpresas().subscribe(empresa=>{
+      this.empresas = empresa
+    });
+  }
+
  
-  
+
 
 }
