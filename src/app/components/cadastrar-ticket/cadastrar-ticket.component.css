@@ -1,0 +1,18 @@
+
+#myform{
+    background-color: rgba(54,54,54);
+      width: 80%;
+      left: 10%;
+      right: 50%;
+    
+    position:relative;
+  }
+  
+    input{
+      color: white;
+    }
+  
+    label{
+      color: white;
+      font-size: 15px;
+    }
