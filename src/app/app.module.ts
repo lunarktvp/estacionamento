@@ -13,6 +13,7 @@ import { DetalhesEmpresaComponent } from './components/detalhes-empresa/detalhes
 import { ListEmpresasComponent } from './components/list-empresas/list-empresas.component';
 import { TicketsHomeComponent } from './components/tickets-home/tickets-home.component';
 import { EmpresaService } from './services/empresa.service';
+import { ListTicketsComponent } from './components/list-ticket/list-tickets.component';
 
 
 @NgModule({
@@ -23,7 +24,9 @@ import { EmpresaService } from './services/empresa.service';
     CadastrosComponent,
     DetalhesEmpresaComponent,
     TicketsHomeComponent,
-    CadastrarTicketComponent
+    CadastrarTicketComponent,
+    ListTicketsComponent
+
   ],
   imports: [
     BrowserModule,
