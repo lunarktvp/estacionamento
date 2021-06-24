@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:'detalhesempresa/:id',component: DetalhesEmpresaComponent},
   {path:'tickets',component:TicketsHomeComponent},
   {path:'cadticket', component:CadastrarTicketComponent},
-  {path:'detalharticket', component:ListTicketsComponent}
+  {path:'detalhesticket', component:ListTicketsComponent}
 
 ];
 
