@@ -2,7 +2,7 @@
 
 
 #myform{
-  background-color: rgba(54,54,54);
+  
     width: 80%;
     left: 10%;
     right: 50%;
@@ -11,10 +11,23 @@
 }
 
   input{
-    color: white;
+    color: black;
+    border: 3px solid white;
+    font-weight: 600;
   }
 
   label{
     color: white;
-    font-size: 15px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .form-group .row .col input{
+    border: 3px solid white;
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  button{
+    margin-left: 11px;
   }

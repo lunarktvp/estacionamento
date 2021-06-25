@@ -36,3 +36,7 @@
   .input-field .prefix.active {
     color: white;
   }
+
+  .col input{
+    color:white;
+  } 

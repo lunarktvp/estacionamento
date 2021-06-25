@@ -1,3 +1,4 @@
-.card{
+.row{
     min-width: 80px;
+    display: block;
 }
