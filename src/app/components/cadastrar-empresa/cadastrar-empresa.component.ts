@@ -1,3 +1,4 @@
+import { Router} from '@angular/router';
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -20,7 +21,8 @@ export class CadastrarEmpresaComponent implements OnInit {
 
   constructor(
     private empService: EmpresaService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router:Router,
     ) { }
 
 
@@ -41,6 +43,7 @@ export class CadastrarEmpresaComponent implements OnInit {
 
       this.empService.cadastrarEmpresa(this.formulario.value).subscribe(resposta=>{
         this.formulario.reset();
+        this.router.navigate(['listarempresas'])
       });
       
   }  

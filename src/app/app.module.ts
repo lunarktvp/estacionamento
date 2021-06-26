@@ -14,6 +14,8 @@ import { ListEmpresasComponent } from './components/list-empresas/list-empresas.
 import { TicketsHomeComponent } from './components/tickets-home/tickets-home.component';
 import { EmpresaService } from './services/empresa.service';
 import { ListTicketsComponent } from './components/list-ticket/list-tickets.component';
+import { CadastrarEstacionamentoComponent } from './components/estacionamento/cadastrar-estacionamento/cadastrar-estacionamento.component';
+import { ListarEstabelecimentoComponent } from './components/estacionamento/listar-estabelecimento/listar-estabelecimento.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { ListTicketsComponent } from './components/list-ticket/list-tickets.comp
     DetalhesEmpresaComponent,
     TicketsHomeComponent,
     CadastrarTicketComponent,
-    ListTicketsComponent
+    ListTicketsComponent,
+    CadastrarEstacionamentoComponent,
+    ListarEstabelecimentoComponent
 
   ],
   imports: [
