@@ -1,3 +1,5 @@
+import { ListFuncionariosComponent } from './components/funcionarios/list-funcionarios/list-funcionarios.component';
+import { CadFuncionarioComponent } from './components/funcionarios/cad-funcionario/cad-funcionario.component';
 import { ListarEstabelecimentoComponent } from './components/estacionamento/listar-estabelecimento/listar-estabelecimento.component';
 import { CadastrarEstacionamentoComponent } from './components/estacionamento/cadastrar-estacionamento/cadastrar-estacionamento.component';
 import { DetalhesEmpresaComponent } from './components/detalhes-empresa/detalhes-empresa/detalhes-empresa.component';
@@ -9,6 +11,8 @@ import { CadastrarEmpresaComponent } from './components/cadastrar-empresa/cadast
 import { TicketsHomeComponent } from './components/tickets-home/tickets-home.component';
 import { CadastrarTicketComponent } from './components/cadastrar-ticket/cadastrar-ticket.component';
 import { ListTicketsComponent } from './components/list-ticket/list-tickets.component';
+import { CadClienteComponent } from './components/clientes/cad-cliente/cad-cliente.component';
+import { ListClientesComponent } from './components/clientes/list-clientes/list-clientes.component';
 const routes: Routes = [
   {path:'cadastros',component: CadastrosComponent},
   //paths relativos a empresas
@@ -18,6 +22,12 @@ const routes: Routes = [
   //paths relativos a estabelecimentos
   {path:'CadEstabelecimento', component:CadastrarEstacionamentoComponent},
   {path:'ListEstabelecimentos', component:ListarEstabelecimentoComponent},
+  //paths relativos a funcionarios
+  {path:'CadFuncionario',component:CadFuncionarioComponent},
+  {path:'ListFuncionarios', component:ListFuncionariosComponent},
+  //paths relativos a clientes
+  {path:'CadCliente',component:CadClienteComponent},
+  {path:'ListClientes',component:ListClientesComponent},
   //paths relativos a tickets
   {path:'tickets',component:TicketsHomeComponent},
   {path:'cadticket', component:CadastrarTicketComponent},

@@ -16,6 +16,10 @@ import { EmpresaService } from './services/empresa.service';
 import { ListTicketsComponent } from './components/list-ticket/list-tickets.component';
 import { CadastrarEstacionamentoComponent } from './components/estacionamento/cadastrar-estacionamento/cadastrar-estacionamento.component';
 import { ListarEstabelecimentoComponent } from './components/estacionamento/listar-estabelecimento/listar-estabelecimento.component';
+import { CadFuncionarioComponent } from './components/funcionarios/cad-funcionario/cad-funcionario.component';
+import { ListFuncionariosComponent } from './components/funcionarios/list-funcionarios/list-funcionarios.component';
+import { CadClienteComponent } from './components/clientes/cad-cliente/cad-cliente.component';
+import { ListClientesComponent } from './components/clientes/list-clientes/list-clientes.component';
 
 
 @NgModule({
@@ -29,7 +33,11 @@ import { ListarEstabelecimentoComponent } from './components/estacionamento/list
     CadastrarTicketComponent,
     ListTicketsComponent,
     CadastrarEstacionamentoComponent,
-    ListarEstabelecimentoComponent
+    ListarEstabelecimentoComponent,
+    CadFuncionarioComponent,
+    ListFuncionariosComponent,
+    CadClienteComponent,
+    ListClientesComponent
 
   ],
   imports: [
