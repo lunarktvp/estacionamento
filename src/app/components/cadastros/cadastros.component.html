@@ -2,53 +2,35 @@
     <h3 style="color: white;">Menu Cadastros</h3>
     <button [routerLink]="''"  id="voltar" class="btn waves-effect waves-light" type="submit" name="action">Voltar<i class="material-icons left">arrow_back</i></button>
     <div class="row">
-        <div class="col s8 m3"> 
-          <div class="card blue-grey">
-            <div class="card-content white-text">
-              <span class="card-title">Empresas</span>
-            </div>
-          <div class="card-action">
-            <a routerLink="/cadEmpresa">Cadastrar</a>
-            <a routerLink="/listarempresas">Listar</a>
-          </div>
-          </div>
+      <div class="card">
+        <span>Empresa</span>
+        <div class="card-action">
+          <a routerLink="/cadEmpresa">Cadastrar</a>
+          <a routerLink="/listarempresas">Listar</a>
         </div>
-
-          <div class="col s8 m3"> 
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <span class="card-title">Estacionamentos</span>
-              </div>
-            <div class="card-action">
-              <a routerLink="/CadEstabelecimento">Cadastrar</a>
-              <a routerLink="/ListEstabelecimentos">Listar</a>
-            </div>
-            </div>
-          </div>
-
-          <div class="col s8 m3"> 
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <span class="card-title">Funcionarios</span>
-              </div>
-            <div class="card-action">
-              <a routerLink="/CadFuncionario">Cadastrar</a>
-              <a routerLink="/ListFuncionarios">Listar</a>
-            </div>
-            </div>
-          </div>
-
-          <div class="col s8 m3"> 
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <span class="card-title">Clientes</span>
-              </div>
-            <div class="card-action">
-              <a routerLink="/CadCliente">Cadastrar</a>
-              <a routerLink="/ListClientes">Listar</a>
-            </div>
-            </div>
-          </div>
+      </div>
+      <div class="card">
+        <span>Estabelecimento</span>
+        <div class="card-action">
+          <a routerLink="/CadEstabelecimento">Cadastrar</a>
+          <a routerLink="/ListEstabelecimentos">Listar</a>
+        </div>
+      </div>
+      <div class="card">
+        <span>Funcionario</span>
+        <div class="card-action">
+          <a routerLink="/CadFuncionario">Cadastrar</a>
+          <a routerLink="/ListFuncionarios">Listar</a>
+        </div>
+      </div>
+      <div class="card">
+        <span>Cliente</span>
+        <div class="card-action">
+          <a routerLink="/CadCliente">Cadastrar</a>
+          <a routerLink="/ListClientes">Listar</a>
+        </div>
+      </div>
+          
         
     
     </div>
