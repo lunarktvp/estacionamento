@@ -3,6 +3,7 @@
   <div id="myform">
     <form id="form" method="post" (ngSubmit)="onSubmit()" [formGroup]="formulario">
       <div class="form-group">
+
         <div class="row">
           <div class="col">
             <label  for="matricula" >Matricula</label>
@@ -11,41 +12,46 @@
           <div class="col">
             <label for="nome">NOME</label>
             <input formControlName="nome" class="form-control" id="nome" type="text" name="nome" >
+          </div>
         </div>
-        </div>
+
         <div class="row">
             <div class="col">
                 <label for="cpf">CPF</label>
-                <input FormControlName="cpf" class="form-control" id="cpf" type="text" name="cpf">
+                <input formControlName="cpf" class="form-control" id="cpf" type="text" name="cpf">
             </div>
             <div class="col">
                 <label for="nascimento">Data Nascimento</label>
-                <input FormControlName="nascimento" class="form-control" id="nascimento" type="date" name="nascimento">
+                <input formControlName="nascimento" class="form-control" id="nascimento" type="date" name="nascimento">
             </div>
         </div>
+
         <div class="row">
             <div class="col">
                 <label for="endereco">Endereço</label>
-                <input FormControlName="endereco" class="form-control" id="endereco" type="text" name="endereco">
+                <input formControlName="endereco" class="form-control" id="endereco" type="text" name="endereco">
             </div>
         </div>
+
         <div class="row">
             <div class="col">
                 <label for="telefone">Telefone</label>
-                <input FormControlName="telefone" class="form-control" id="telefone" type="text" name="telefone" placeholder="(99)99999-9999">
+                <input formControlName="telefone" class="form-control" id="telefone" type="text" name="telefone" placeholder="(99)99999-9999">
             </div>
             <div class="col">
                 <label for="email">E-mail</label>
-                <input FormControlName="email" class="form-control" id="email" type="text" name="email" placeholder="nome@mail.com">
+                <input formControlName="email" class="form-control" id="email" type="text" name="email" placeholder="nome@mail.com">
             </div>
         </div>
+
         <div class="row">
             <div class="col">
                 <Label for="senha">Senha de Acesso</Label>
-                <input FormControlName="senha" class="form-control" id="senha" type="password" name="senha">
+                <input formControlName="senha" class="form-control" id="senha" type="password" name="senha">
             </div>
         </div>
-        </div>
+
+       </div>
 
         <button [disabled]="formulario.invalid" class="btn btn-primary" type="submit">Gravar
           <i class="material-icons right">check</i>
@@ -57,7 +63,4 @@
 
       </form>
     </div>
-
-
-
 </section>

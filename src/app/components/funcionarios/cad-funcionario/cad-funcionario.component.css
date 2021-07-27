@@ -1,12 +1,11 @@
 
 
 
-#myform{
-  
-    width: 90%;
+ #myform{
+    padding: 10px;
     margin: auto;
-  
-}
+    position: relative;
+ }
 
 
   .col{
