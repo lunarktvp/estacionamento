@@ -6,6 +6,4 @@
      public endereco: any;
      public email: any;
      public telefone: any;
-
-     //Pedro Corno
   }

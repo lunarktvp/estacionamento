@@ -12,11 +12,16 @@
     
 }
 
+h1{
+    font-size:4.6rem;
+}
+
+
 .card{
     text-align: center;
     background-color: rgb(94, 97, 97);
     color: white;
-    font-size: 16px;
+    font-size: 1.6rem;
     text-transform: uppercase;
     font-weight: 700;
     width: 270px;
@@ -37,5 +42,9 @@ a{
 }
 
 
-
+@media (min-width:2560px){
+.card{
+    width: 600px;
+}
  
+}

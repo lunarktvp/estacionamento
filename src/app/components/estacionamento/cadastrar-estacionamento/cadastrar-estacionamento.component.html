@@ -1,3 +1,38 @@
 <section id="meio" >
-    
+    <H3 style="color: white ; text-align: left;">Cadastrar Estabelecimento</H3>
+  <div id="myform">
+    <form id="form" method="post" (ngSubmit)="onSubmit()" [formGroup]="formulario">
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <label  for="nome" >Estabelecimento</label>
+            <input  formControlName="nome" class="form-control" type="text" id="Estabelecimento" name="nome"  >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col ">
+            <label for="endereco">Endereco</label>
+            <input formControlName="endereco" class="form-control"  id="endereco" type="text"  name="endereco" >
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="empresa">Empresa</label>
+                <select >
+                  <option>MEU CU</option>
+                </select>
+            </div>
+        </div>
+      </div>
+
+        <button [disabled]="formulario.invalid" class="btn btn-primary" type="submit">Gravar
+          <i class="material-icons right">check</i>
+        </button>
+
+        <button [routerLink]="'/cadastros'" style="background-color: rgb(224, 59, 59); margin-left: 5px;" class="btn waves-effect waves-light">Cancelar
+          <i class="material-icons right">cancel</i>
+        </button>
+
+      </form>
+    </div>
 </section>

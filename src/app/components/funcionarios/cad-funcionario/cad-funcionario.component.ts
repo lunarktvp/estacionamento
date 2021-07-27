@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadFuncionarioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formbuilder: FormBuilder ) { }
+
+  formulario: FormGroup;
 
   ngOnInit(): void {
+      this.formulario = this.formbuilder.group({
+        matricula: [null, Validators.required],
+        nome: [null, Validators.required],
+        cpf: [null, Validators.required],
+        nascimento: [null, Validators.required],
+        endereco: [null, Validators.required],
+        telefone: [null, Validators.required],
+        email: [null, Validators.email],
+        senha: [null, Validators.required]
+      })
+  }
+
+  onSubmit(){
+
   }
 
 }
