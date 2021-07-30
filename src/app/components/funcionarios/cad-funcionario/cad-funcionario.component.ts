@@ -1,5 +1,6 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-cad-funcionario',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadFuncionarioComponent implements OnInit {
 
-  constructor(private formbuilder: FormBuilder) { }
+  constructor(private formbuilder: FormBuilder, private router:Router) { }
 
   formulario: FormGroup;
 
@@ -28,7 +29,7 @@ export class CadFuncionarioComponent implements OnInit {
   onSubmit(){
 
     console.log(this.formulario.value);
-    this.formulario.reset;
+    this.router.navigate(['/ListFuncionarios']);
    
   }
 

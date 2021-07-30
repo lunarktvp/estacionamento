@@ -20,6 +20,8 @@ import { CadFuncionarioComponent } from './components/funcionarios/cad-funcionar
 import { ListFuncionariosComponent } from './components/funcionarios/list-funcionarios/list-funcionarios.component';
 import { CadClienteComponent } from './components/clientes/cad-cliente/cad-cliente.component';
 import { ListClientesComponent } from './components/clientes/list-clientes/list-clientes.component';
+import { DetalhesClienteComponent } from './components/clientes/detalhes-cliente/detalhes-cliente.component';
+import { DetalhesFuncionarioComponent } from './components/funcionarios/detalhes-funcionario/detalhes-funcionario.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { ListClientesComponent } from './components/clientes/list-clientes/list-
     CadFuncionarioComponent,
     ListFuncionariosComponent,
     CadClienteComponent,
-    ListClientesComponent
+    ListClientesComponent,
+    DetalhesClienteComponent,
+    DetalhesFuncionarioComponent
 
   ],
   imports: [
