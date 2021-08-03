@@ -1,0 +1,71 @@
+
+
+
+ #myform{
+    padding: 10px;
+    margin: auto;
+    position: relative;
+ }
+
+
+  .col{
+    display: flex;
+    flex-direction: column;
+  }
+
+  #matricula{
+    width: 100px;
+  }
+
+  #nome{
+    width: 450px;
+    text-transform: uppercase;
+  }
+  #endereco{
+    width: 570px;
+    text-transform: uppercase;
+  }
+
+  #email{
+    width: 360px;
+  }
+
+
+
+  label{
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  .form-group .row .col input{
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    border: 3px solid white;
+    font-weight: 400;
+    font-size: 1.6rem;
+  }
+
+  button{
+    margin-left: 11px;
+  }
+
+  @media (min-width:768px){
+
+    #myform{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start ;
+    }  
+  
+  }
+
+  @media (max-width: 650px){
+
+    .form-group .row .col input{
+      width: 280px;
+    }
+
+  }
