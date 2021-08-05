@@ -1,0 +1,42 @@
+<section id="meio" >
+  <H3 style="color: white ; text-align: left;">Encerrar Ticket</H3>
+  <div id="myform">
+    <form id="form" method="post" (ngSubmit)="onSubmit()" [formGroup]="formulario">
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+             <label  for="Ticket" >Numero do Ticket</label>
+              <input  formControlName="Ticket" class="form-control" id="Ticket" type="text"  name="ticket"  >
+            </div>
+        </div>
+          <div class="row">
+            <div class="col">
+              <label for="placa">Placa</label>
+              <input formControlName="placa" class="form-control"  id="placa" type="text"  name="placa" >
+          </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="Permanencia">Tempo de Permanencia </label> 
+              <input formControlName="Permanencia" class="form-control"  id="veiculo" type="text"   name="permanencia">  
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="valor">Valor Total</label> 
+              <input formControlName="valor" class="form-control"  id="valor" type="text"   name="valor">  
+            </div>
+          </div>
+      </div>
+
+      <button [disabled]="formulario.invalid" class="btn btn-primary" type="submit">Recebido
+        <i class="material-icons right">check</i>
+      </button>
+
+      <button [routerLink]="'/cadastros'" style="background-color: rgb(224, 59, 59); margin-left: 5px;" class="btn waves-effect waves-light">Cancelar
+        <i class="material-icons right">cancel</i>
+      </button>
+
+    </form>
+  </div>
+</section>
