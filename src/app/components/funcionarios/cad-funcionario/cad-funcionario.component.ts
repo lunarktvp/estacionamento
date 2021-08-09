@@ -19,7 +19,11 @@ export class CadFuncionarioComponent implements OnInit {
         nome: [null, Validators.required],
         cpf: [null, Validators.required],
         nascimento: [null, Validators.required],
-        endereco: [null, Validators.required],
+        cep: [null, Validators.required],
+        logradouro: [null, Validators.required],
+        complemento: [null, Validators.required],
+        cidade: [null, Validators.required],
+        estado: [null, Validators.required],
         telefone: [null, Validators.required],
         email: [null, Validators.compose([Validators.email, Validators.required])],
         senha: [null , Validators.compose([Validators.required,Validators.minLength(6)])]
@@ -29,8 +33,13 @@ export class CadFuncionarioComponent implements OnInit {
   onSubmit(){
 
     console.log(this.formulario.value);
+   
     this.router.navigate(['/ListFuncionarios']);
    
+  }
+
+  validaCPF(): void{
+    console.log("validado");
   }
 
 }

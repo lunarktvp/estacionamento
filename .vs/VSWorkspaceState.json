@@ -5,10 +5,10 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\cadastrar-empresa",
+    "\\src\\app\\components\\detalhes-empresa\\detalhes-empresa",
     "\\src\\app\\components\\funcionarios",
-    "\\src\\app\\components\\funcionarios\\list-funcionarios",
-    "\\src\\app\\components\\list-empresas",
-    "\\src\\app\\services"
+    "\\src\\app\\components\\funcionarios\\detalhes-funcionario",
+    "\\src\\app\\components\\funcionarios\\list-funcionarios"
   ],
   "SelectedNode": "\\src\\app\\components\\funcionarios\\list-funcionarios\\list-funcionarios.component.css",
   "PreviewInSolutionExplorer": false
