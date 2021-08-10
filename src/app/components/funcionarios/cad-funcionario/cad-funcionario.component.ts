@@ -12,6 +12,7 @@ export class CadFuncionarioComponent implements OnInit {
   constructor(private formbuilder: FormBuilder, private router:Router) { }
 
   formulario: FormGroup;
+  cep: any;
 
   ngOnInit(): void {
       this.formulario = this.formbuilder.group({
@@ -37,7 +38,7 @@ export class CadFuncionarioComponent implements OnInit {
     this.router.navigate(['/ListFuncionarios']);
    
   }
-
+   
   validaCPF(): void{
     console.log("validado");
   }

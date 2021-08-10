@@ -22,6 +22,8 @@ import { CadClienteComponent } from './components/clientes/cad-cliente/cad-clien
 import { ListClientesComponent } from './components/clientes/list-clientes/list-clientes.component';
 import { DetalhesClienteComponent } from './components/clientes/detalhes-cliente/detalhes-cliente.component';
 import { DetalhesFuncionarioComponent } from './components/funcionarios/detalhes-funcionario/detalhes-funcionario.component';
+import { UtilidadesService } from './services/utilidades.service';
+import { FuncionarioService } from './services/funcionario.service';
 
 
 @NgModule({
@@ -53,7 +55,11 @@ import { DetalhesFuncionarioComponent } from './components/funcionarios/detalhes
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [EmpresaService],
+  providers: [
+    EmpresaService,
+    FuncionarioService,
+    UtilidadesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
