@@ -24,7 +24,6 @@ export class CadFuncionarioComponent implements OnInit {
 
    this.funcservice.ProximaMatricula().subscribe(matricula=>{
       this.ProximaMatricula = matricula;
-      console.log(this.ProximaMatricula);
    });
 
     

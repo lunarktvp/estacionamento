@@ -15,7 +15,7 @@ import { EmpresaService } from 'src/app/services/empresa.service';
 })
 export class CadastrarEmpresaComponent implements OnInit {
 
-  empresa: Empresa;
+  empresa: any;
 
   formulario: FormGroup;
 
@@ -29,12 +29,18 @@ export class CadastrarEmpresaComponent implements OnInit {
 
 
   ngOnInit(): void {
+
     this.formulario = this.formBuilder.group({
       nome:[null,Validators.required],
       cnpj:[null,Validators.required],
       endereco:[null,Validators.required],
       telefone:[null,Validators.required],
       email:[null,[Validators.required, Validators.email]]
+    });
+
+    this.empService.getEmpresas().subscribe(resposta=>{
+      this.empresa = resposta;
+      console.log(this.empresa.cnpj);
     });
   
   }
