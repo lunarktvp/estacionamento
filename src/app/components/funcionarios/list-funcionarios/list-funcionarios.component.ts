@@ -1,4 +1,6 @@
+import { funcionario } from './../../../modelos/funcionarioModel';
 import { Component, OnInit } from '@angular/core';
+import { FuncionarioService } from 'src/app/services/funcionario.service';
 
 @Component({
   selector: 'app-list-funcionarios',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListFuncionariosComponent implements OnInit {
 
-  constructor() { }
+  funcionarios: any;
+
+  constructor(
+    public funcservice: FuncionarioService
+  ) { }
 
   ngOnInit(): void {
+    this.getFuncionarios()
+  }
+
+  getFuncionarios(){
+    this.funcservice.listFuncionarios().subscribe(funcionario=>{
+      this.funcionarios = funcionario
+    });
   }
 
 }

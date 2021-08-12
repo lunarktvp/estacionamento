@@ -1,6 +1,7 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
+import { FuncionarioService } from 'src/app/services/funcionario.service';
 
 @Component({
   selector: 'app-cad-funcionario',
@@ -9,14 +10,27 @@ import { Router} from '@angular/router';
 })
 export class CadFuncionarioComponent implements OnInit {
 
-  constructor(private formbuilder: FormBuilder, private router:Router) { }
+  constructor(
+    private formbuilder: FormBuilder,
+    private router:Router,
+    private funcservice: FuncionarioService
+    ) { }
 
   formulario: FormGroup;
   cep: any;
+  ProximaMatricula: any;
 
   ngOnInit(): void {
+
+   this.funcservice.ProximaMatricula().subscribe(matricula=>{
+      this.ProximaMatricula = matricula;
+      console.log(this.ProximaMatricula);
+   });
+
+    
+
       this.formulario = this.formbuilder.group({
-        matricula: [null, Validators.required],
+        matricula: [null],
         nome: [null, Validators.required],
         cpf: [null, Validators.required],
         nascimento: [null, Validators.required],
@@ -29,13 +43,17 @@ export class CadFuncionarioComponent implements OnInit {
         email: [null, Validators.compose([Validators.email, Validators.required])],
         senha: [null , Validators.compose([Validators.required,Validators.minLength(6)])]
       })
+
+
   }
 
   onSubmit(){
 
-    console.log(this.formulario.value);
-   
-    this.router.navigate(['/ListFuncionarios']);
+    this.funcservice.cadastrarFuncionario(this.formulario.value).subscribe(resposta=>{
+      this.formulario.reset();
+      this.router.navigate(['/ListFuncionarios']);
+    });
+    
    
   }
    

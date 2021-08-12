@@ -7,7 +7,7 @@
         <div class="row">
           <div class="col">
             <label  for="matricula" >Matricula</label>
-            <input  formControlName="matricula" class="form-control" type="text" id="matricula" name="matricula"  >
+            <input value="{{ProximaMatricula}}" formControlName="matricula" class="form-control" type="text" id="matricula" name="matricula" readonly >
           </div>
           <div class="col">
             <label for="nome">NOME</label>
@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col">
                 <label for="logradouro">Logradouro</label>
-                <input formControlName="logradouro" class="form-control" id="logradouro" type="text" name="logradouro">
+                <input  formControlName="logradouro" class="form-control" id="logradouro" type="text" name="logradouro">
             </div>
             <div class="col">
                 <label for="complemento">Complemento</label>

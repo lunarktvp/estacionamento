@@ -25,6 +25,9 @@
     width: 570px;
     text-transform: uppercase;
   }
+  #matricula{
+    text-align: center;
+  }
 
   #email{
     width: 360px;

@@ -12,7 +12,7 @@ import { EmpresaService } from 'src/app/services/empresa.service';
 export class ListEmpresasComponent implements OnInit {
   
   empresas: any;
-  empresa: any;
+  
 
   constructor(public empService: EmpresaService) { 
    

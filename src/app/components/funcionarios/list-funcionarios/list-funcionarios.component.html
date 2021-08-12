@@ -14,9 +14,9 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>14492</td>
-                <td>PEDRO HENRIQUE PIRES FABIANO</td>
+              <tr *ngFor="let funcionario of funcionarios">
+                <td>{{ funcionario.matricula }}</td>
+                <td>{{ funcionario.nome }}</td>
                 <td><a [routerLink]="['/DetalhesFuncionario']" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">edit</i></a>
                 </td>
               </tr> 
