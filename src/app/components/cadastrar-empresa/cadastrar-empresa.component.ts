@@ -30,6 +30,8 @@ export class CadastrarEmpresaComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.getEmpresas();
+
     this.formulario = this.formBuilder.group({
       nome:[null,Validators.required],
       cnpj:[null,Validators.required],
@@ -37,22 +39,32 @@ export class CadastrarEmpresaComponent implements OnInit {
       telefone:[null,Validators.required],
       email:[null,[Validators.required, Validators.email]]
     });
-
-    this.empService.getEmpresas().subscribe(resposta=>{
-      this.empresa = resposta;
-      console.log(this.empresa.cnpj);
-    });
   
   }
 
   onSubmit(){
 
-      this.empService.cadastrarEmpresa(this.formulario.value).subscribe(resposta=>{
-        this.formulario.reset();
-        this.router.navigate(['listarempresas'])
-      });
+      if(this.empresa.id!=0){
+        this.empService.alterarEmpresa(this.formulario.value).subscribe(
+          resposta=>{
+            console.log(resposta);
+          });
+        }else{
+          this.empService.cadastrarEmpresa(this.formulario.value).subscribe(resposta=>{
+            this.formulario.reset();
+            this.router.navigate(['listarempresas'])
+          });
+        }
       
   }  
+
+  getEmpresas(){
+
+    this.empService.detalheEmpresas(1).subscribe(empresa=>{
+      this.empresa = empresa
+      console.log(this.empresa)
+    });
+  }
 
   
 }

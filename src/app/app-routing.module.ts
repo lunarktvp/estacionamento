@@ -14,8 +14,11 @@ import { CadastrarTicketComponent } from './components/cadastrar-ticket/cadastra
 import { ListTicketsComponent } from './components/list-ticket/list-tickets.component';
 import { CadClienteComponent } from './components/clientes/cad-cliente/cad-cliente.component';
 import { ListClientesComponent } from './components/clientes/list-clientes/list-clientes.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
+  {path: '', component: LoginComponent},
+  //
   {path:'cadastros',component: CadastrosComponent},
   //paths relativos a empresas
   {path:'cadEmpresa',component: CadastrarEmpresaComponent},
