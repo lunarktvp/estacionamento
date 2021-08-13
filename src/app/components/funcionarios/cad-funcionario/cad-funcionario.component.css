@@ -42,7 +42,7 @@
     font-size: 2rem;
   }
 
-  input{
+  .row .col input{
     background-color: white;
     border-radius: 5px;
     color: black;
