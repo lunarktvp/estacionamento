@@ -15,9 +15,10 @@ import { EmpresaService } from 'src/app/services/empresa.service';
 })
 export class CadastrarEmpresaComponent implements OnInit {
 
-  empresa: any;
-
+  empresa: Empresa;
   formulario: FormGroup;
+  titleButtonSubmite: any ="Gravar";
+  gravar: boolean = false;
 
   constructor(
     private empService: EmpresaService,
@@ -33,26 +34,31 @@ export class CadastrarEmpresaComponent implements OnInit {
     this.getEmpresas();
 
     this.formulario = this.formBuilder.group({
+      id:[1],
       nome:[null,Validators.required],
       cnpj:[null,Validators.required],
       endereco:[null,Validators.required],
       telefone:[null,Validators.required],
       email:[null,[Validators.required, Validators.email]]
     });
+
+    
   
   }
 
   onSubmit(){
 
-      if(this.empresa.id!=0){
-        this.empService.alterarEmpresa(this.formulario.value).subscribe(
-          resposta=>{
-            console.log(resposta);
+      if(this.gravar){
+        console.log("Alterando")
+          this.empService.alterarEmpresa(this.formulario.value).subscribe(
+            resposta=>{
+            this.router.navigate(['cadEmpresa'])
           });
         }else{
+          console.log("Criando")
           this.empService.cadastrarEmpresa(this.formulario.value).subscribe(resposta=>{
             this.formulario.reset();
-            this.router.navigate(['listarempresas'])
+            this.router.navigate(['cadEmpresa'])
           });
         }
       
@@ -63,6 +69,11 @@ export class CadastrarEmpresaComponent implements OnInit {
     this.empService.detalheEmpresas(1).subscribe(empresa=>{
       this.empresa = empresa
       console.log(this.empresa)
+
+      if(this.empresa?.nome!=null){
+        this.titleButtonSubmite = "Alterar"
+        this.gravar = true;
+      }
     });
   }
 

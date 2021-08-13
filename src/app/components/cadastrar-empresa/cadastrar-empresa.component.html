@@ -6,32 +6,32 @@
         <div class="row">
           <div class="col">
             <label  for="nome" >Empresa</label>
-            <input [(ngModel)]="empresa.nome" formControlName="nome" class="form-control" type="text" id="empresa" name="nome" >
+            <input  [ngModel]="empresa?.nome" formControlName="nome" class="form-control" type="text" id="empresa" name="nome" >
           </div>
           <div class="col ">
             <label for="cnpj">CNPJ</label>
-              <input [(ngModel)]="empresa.cnpj" formControlName="cnpj" class="form-control" id="cnpj" type="text" name="cnpj" >
+              <input [ngModel]="empresa?.cnpj" formControlName="cnpj" class="form-control" id="cnpj" type="text" name="cnpj" >
               </div>
         </div>
         <div class="row">
           <div class="col ">
             <label for="endereco">Endereco</label>
-            <input [(ngModel)]="empresa.endereco" formControlName="endereco" class="form-control"  id="endereco" type="text"  name="endereco" >
+            <input [ngModel]="empresa?.endereco" formControlName="endereco" class="form-control"  id="endereco" type="text"  name="endereco" >
           </div>
         </div>
         <div class="row">
           <div class="col">
             <label for="email">Email</label> 
-            <input [(ngModel)]="empresa.email" style="text-transform: lowercase;" formControlName="email" class="form-control"  id="email" type="email"   name="email">  
+            <input [ngModel]="empresa?.email" style="text-transform: lowercase;" formControlName="email" class="form-control"  id="email" type="email"   name="email">  
           </div>
           <div class="col ">
             <label for="telefone">Telefone</label>
-            <input [(ngModel)]="empresa.telefone" formControlName="telefone" class="form-control"  id="telefone" type="text"  name="telefone" >
+            <input [ngModel]="empresa?.telefone" formControlName="telefone" class="form-control"  id="telefone" type="text"  name="telefone" >
           </div>
         </div>
       </div>
 
-        <button #gravar [disabled]="formulario.invalid" class="btn btn-primary" type="submit">Gravar
+        <button #gravar [disabled]="formulario.invalid" class="btn btn-primary" type="submit">{{titleButtonSubmite}}
           <i class="material-icons right">check</i>
         </button>
 
