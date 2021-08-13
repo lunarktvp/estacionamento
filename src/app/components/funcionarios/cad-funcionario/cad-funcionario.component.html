@@ -30,9 +30,8 @@
            <div class="col">
                <label for="cep">CEP</label>
                <span hidden style="color: red;" #valido>  CEP INVALIDO!</span>
-               <input formControlName="cep" class="form-control" id="cep" type="text" name="cep">
-               
-           </div>
+               <input  ([ngModel])="cep" (ngModelOnChance)="buscaCep" formControlName="cep" class="form-control" id="cep" type="text" name="cep">
+            </div>
         </div>
 
         <div class="row">

@@ -1,7 +1,8 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import { FuncionarioService } from 'src/app/services/funcionario.service';
+import { UtilidadesService } from 'src/app/services/utilidades.service';
 
 @Component({
   selector: 'app-cad-funcionario',
@@ -13,13 +14,15 @@ export class CadFuncionarioComponent implements OnInit {
   constructor(
     private formbuilder: FormBuilder,
     private router:Router,
-    private funcservice: FuncionarioService
+    private funcservice: FuncionarioService,
+    private util: UtilidadesService,
     ) { }
 
   formulario: FormGroup;
+  endereco: any;
   cep: any;
   ProximaMatricula: any;
-
+    
   ngOnInit(): void {
 
    this.funcservice.ProximaMatricula().subscribe(matricula=>{
@@ -55,9 +58,15 @@ export class CadFuncionarioComponent implements OnInit {
     
    
   }
-   
-  validaCPF(): void{
-    console.log("validado");
-  }
+
+  
+   buscaCep(){
+     console.log("meu ovo")
+     this.util.buscaCep(this.cep).subscribe(resposta=>{
+      this.endereco = resposta
+      console.log(resposta)
+     });
+   }
+
 
 }
