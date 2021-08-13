@@ -42,7 +42,7 @@
     font-size: 2rem;
   }
 
-  .form-group .row .col input{
+  input{
     background-color: white;
     border-radius: 5px;
     color: black;

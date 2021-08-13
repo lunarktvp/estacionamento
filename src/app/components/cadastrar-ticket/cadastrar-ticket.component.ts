@@ -31,8 +31,12 @@ export class CadastrarTicketComponent implements OnInit {
       horasaida:[null,Validators.required],
       placa:[null,Validators.required],
       saida:[null,Validators.required],
+
+      
+
     });
   
+
   }
 
   onSubmit(){
