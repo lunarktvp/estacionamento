@@ -1,3 +1,90 @@
 <section id="meio" >
-   <p> aqui será os detalhes do funcionario </p>
+   <H3 style="color: white ; text-align: left;">Cadastrar Funcionario</H3>
+ <div id="myform">
+   <form id="form" method="post" (ngSubmit)="onSubmit()" [formGroup]="formulario">
+     <div class="form-group">
+
+       <div class="row">
+         <div class="col">
+           <label  for="matricula" >Matricula</label>
+           <input  formControlName="matricula" class="form-control" type="text" id="matricula" name="matricula" readonly >
+         </div>
+         <div class="col">
+           <label for="nome">NOME</label>
+           <input formControlName="nome" class="form-control" id="nome" type="text" name="nome" >
+         </div>
+       </div>
+
+       <div class="row">
+           <div class="col">
+               <label for="cpf">CPF</label>
+               <input formControlName="cpf" class="form-control" id="cpf" type="text" name="cpf">
+           </div>
+           <div class="col">
+               <label for="nascimento">Data Nascimento</label>
+               <input formControlName="nascimento" class="form-control" id="nascimento" type="date" name="nascimento">
+           </div>
+       </div>
+
+       <div class="row">
+          <div class="col">
+              <label for="cep">CEP</label>
+              <span hidden style="color: red;" #valido>  CEP INVALIDO!</span>
+              <input formControlName="cep" class="form-control" id="cep" type="text" name="cep">
+           </div>
+       </div>
+
+       <div class="row">
+           <div class="col">
+               <label for="logradouro">Logradouro</label>
+               <input  formControlName="logradouro" class="form-control" id="logradouro" type="text" name="logradouro">
+           </div>
+           <div class="col">
+               <label for="complemento">Complemento</label>
+               <input formControlName="complemento" class="form-control" id="complemento" type="text" name="complemento">
+           </div>
+       </div>
+
+       <div class="row">
+           <div class="col">
+               <label for="cidade">Cidade</label>
+               <input formControlName="cidade" class="form-control" id="cidade" type="text" name="cidade">
+           </div>
+           <div class="col">
+               <label for="estado">Estado</label>
+               <input formControlName="estado" class="form-control" id="estado" type="text" name="estado">
+           </div>
+       </div>
+
+       <div class="row">
+           <div class="col">
+               <label for="telefone">Telefone</label>
+               <input formControlName="telefone" class="form-control" id="telefone" type="text" name="telefone" placeholder="(99)99999-9999">
+           </div>
+           <div class="col">
+               <label for="email">E-mail</label>
+               <input formControlName="email" class="form-control" id="email" type="text" name="email" placeholder="nome@mail.com">
+           </div>
+       </div>
+
+       <div class="row">
+           <div class="col">
+               <Label for="senha">Senha de Acesso</Label>
+               <input formControlName="senha" class="form-control" id="senha" type="password" name="senha">
+           </div>
+       </div>
+    
+
+      </div>
+
+       <button [disabled]="formulario.invalid" class="btn btn-primary" type="submit">Gravar
+         <i class="material-icons right">check</i>
+       </button>
+
+       <button [routerLink]="'/cadastros'" style="background-color: rgb(224, 59, 59); margin-left: 5px;" class="btn waves-effect waves-light">Cancelar
+         <i class="material-icons right">cancel</i>
+       </button>
+
+     </form>
+   </div>
 </section>

@@ -17,7 +17,7 @@
               <tr *ngFor="let funcionario of funcionarios">
                 <td>{{ funcionario.matricula }}</td>
                 <td>{{ funcionario.nome }}</td>
-                <td><a [routerLink]="['/DetalhesFuncionario']" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">edit</i></a>
+                <td><a [routerLink]="['/DetalhesFuncionario', funcionario.matricula]" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">edit</i></a>
                 </td>
               </tr> 
             </tbody>

@@ -18,4 +18,17 @@ export class UtilidadesService {
      return this.http.get('https://viacep.com.br/ws/'+cep+'/json/');
      
   }
+
+
+  validaCNPJ(cnpj:any){
+    
+
+  }
+
+  validarCPF(cpf:any){
+
+  }
+
+
+
 }
