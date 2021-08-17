@@ -11,4 +11,17 @@ export class UtilidadesService {
   buscaCep(cep: any){
      return this.http.get('viacep.com.br/ws/'+cep+'/json/');
   }
+
+
+  validaCNPJ(cnpj:any){
+    
+
+  }
+
+  validarCPF(cpf:any){
+
+  }
+
+
+
 }

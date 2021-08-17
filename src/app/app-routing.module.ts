@@ -30,7 +30,7 @@ const routes: Routes = [
   //paths relativos a funcionarios
   {path:'CadFuncionario', component:CadFuncionarioComponent},
   {path:'ListFuncionarios', component:ListFuncionariosComponent},
-  {path:'DetalhesFuncionario', component:DetalhesFuncionarioComponent},
+  {path:'DetalhesFuncionario/:id', component:DetalhesFuncionarioComponent},
   //paths relativos a clientes
   {path:'CadCliente', component:CadClienteComponent},
   {path:'ListClientes', component:ListClientesComponent},
