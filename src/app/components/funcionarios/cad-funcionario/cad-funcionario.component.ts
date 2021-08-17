@@ -19,14 +19,29 @@ export class CadFuncionarioComponent implements OnInit {
     ) { }
 
   formulario: FormGroup;
-  endereco: any;
   cep: any;
   ProximaMatricula: any;
+
+  endereco: any = {
+    cep: "",
+    logradouro: "",
+    complemento: "",
+    bairro:"",
+    localidade:"",
+    uf:"",
+    ibge:"",
+    gia:"",
+    ddd:"",
+    siafi:""
+
+  }
+
+  
     
   ngOnInit(): void {
 
-   this.funcservice.ProximaMatricula().subscribe(matricula=>{
-      this.ProximaMatricula = matricula;
+     this.funcservice.ProximaMatricula().subscribe(matricula=>{
+     this.ProximaMatricula = matricula;
    });
 
     
@@ -34,7 +49,7 @@ export class CadFuncionarioComponent implements OnInit {
       this.formulario = this.formbuilder.group({
         matricula: [null],
         nome: [null, Validators.required],
-        cpf: [null, Validators.required],
+        cpf: [null, Validators.compose([Validators.required,Validators.minLength(8), Validators.maxLength(8)])],
         nascimento: [null, Validators.required],
         cep: [null, Validators.required],
         logradouro: [null, Validators.required],
@@ -60,11 +75,10 @@ export class CadFuncionarioComponent implements OnInit {
   }
 
   
-   buscaCep(){
-     console.log("meu ovo")
-     this.util.buscaCep(this.cep).subscribe(resposta=>{
+   buscaCep(cep: any){
+     this.util.buscaCep(cep).subscribe(resposta=>{
       this.endereco = resposta
-      console.log(resposta)
+      console.log(this.endereco.complemento)
      });
    }
 

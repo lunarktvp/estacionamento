@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,9 +6,16 @@ import { Injectable } from '@angular/core';
 })
 export class UtilidadesService {  
 
+  httpOptions ={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+
   constructor(private http: HttpClient) { }
 
   buscaCep(cep: any){
-     return this.http.get('viacep.com.br/ws/'+cep+'/json/');
+     return this.http.get('https://viacep.com.br/ws/'+cep+'/json/');
+     
   }
 }
