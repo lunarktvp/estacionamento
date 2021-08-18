@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
@@ -21,6 +22,7 @@ export class CadFuncionarioComponent implements OnInit {
   formulario: FormGroup;
   cep: any;
   ProximaMatricula: any;
+  valido: boolean = true;
 
   endereco: any = {
     cep: "",
@@ -78,7 +80,7 @@ export class CadFuncionarioComponent implements OnInit {
    buscaCep(cep: any){
      this.util.buscaCep(cep).subscribe(resposta=>{
       this.endereco = resposta
-      console.log(this.endereco.complemento)
+      console.log(this.endereco.uf) 
      });
    }
 

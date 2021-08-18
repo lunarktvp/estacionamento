@@ -5,28 +5,15 @@
         <div class="form-group">
           <div class="row">
             <div class="col">
+               <input hidden [value]="dataAtual" formControlName="dataEntrada" >
                <label  for="entrada" >Hora Entrada</label>
-                <input  formControlName="entrada" class="form-control" type="time"  name="entrada"  >
-              </div>
-              <div class="col">
-                <label for="tipocliente">Mensalista ?</label>
-                <input formControlName="tipocliente" class="form-control" id="tipocliente" type="checkbox" name="tipocliente" >
-                <div>
-                  <button type = "submit"> sim </button>
-                  <button type = "submit"> nâo </button>
-                </div>
-              </div>
+               <input  [(ngModel)]="horaAtual" formControlName="horaEntrada" class="form-control" type="time"  name="entrada"  >
+            </div>
           </div>
             <div class="row">
               <div class="col">
                 <label for="placa">Placa</label>
                 <input formControlName="placa" class="form-control"  id="placa" type="text"  name="placa" >
-            </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <label for="veiculo">Tipo veiculo</label> 
-                <input formControlName="veiculo" class="form-control"  id="veiculo" type="text"   name="veiculo">  
               </div>
             </div>
         </div>

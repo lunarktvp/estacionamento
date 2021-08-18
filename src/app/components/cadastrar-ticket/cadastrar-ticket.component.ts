@@ -14,8 +14,9 @@ import { TicketService } from 'src/app/services/ticket.service';
 export class CadastrarTicketComponent implements OnInit {
 
   ticket: Ticket;
-
   formulario: FormGroup;
+  horaAtual: any;
+  dataAtual:any;
 
   constructor(
     private empService: TicketService,
@@ -27,15 +28,19 @@ export class CadastrarTicketComponent implements OnInit {
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
-      horaentrada:[null,Validators.required],
-      horasaida:[null,Validators.required],
+      dataEntrada:[null,Validators.required],
+      horaEntrada:[null,Validators.required],
       placa:[null,Validators.required],
-      saida:[null,Validators.required],
-
-      
-
+      dataSaida:[null],
+      HoraSaida:[null],
     });
-  
+    
+    this.dataAtual = this.pegaData();
+    this.horaAtual = this.pegaHora();
+    
+    setInterval(()=>{
+      this.horaAtual = this.pegaHora();
+    },1000)
 
   }
 
@@ -47,5 +52,19 @@ export class CadastrarTicketComponent implements OnInit {
       
   }  
 
-  
+
+  //verifica data e hora
+  pegaHora(){
+    //console.log(this.horaAtual)
+    if(new Date().getMinutes() < 10){
+      return new Date().getHours() +':'+0+new Date().getMinutes()
+    }else{
+      return new Date().getHours() +':'+ new Date().getMinutes()
+    }   
+  }
+
+  pegaData(){
+    return new Date().getDate() +'/'+ new Date().getMonth() +'/'+ new Date().getFullYear();
+  }
+
 }

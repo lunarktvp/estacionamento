@@ -13,17 +13,23 @@ export class DetalhesFuncionarioComponent implements OnInit {
 
   formulario: FormGroup
   funcionario: funcionario
+  matricula:any
 
   constructor(
     private formbuilder: FormBuilder,
     private funcservice: FuncionarioService,
-    private router: Router,
     private route: ActivatedRoute
     ) { }
 
   ngOnInit(): void {
-    this.detalhesFuncionario(this.route.snapshot.params=['matricula'])
-   
+    this.route.params.subscribe(params=>
+      this.matricula = params['matricula']
+      ); 
+      
+      this.detalhesFuncionario(this.matricula);
+      
+      console.log(this.matricula);
+    
 
   }
 
@@ -31,6 +37,7 @@ export class DetalhesFuncionarioComponent implements OnInit {
      this.funcservice.detalhesFuncionario(id)
       .subscribe(resposta=>{
         this.funcionario = resposta
+        console.log(this.funcionario)
       })
 
       this.criaFormulario()

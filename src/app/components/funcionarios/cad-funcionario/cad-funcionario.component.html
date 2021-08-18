@@ -30,7 +30,7 @@
            <div class="col">
                <label for="cep">CEP</label>
                <span hidden style="color: red;" #valido>  CEP INVALIDO!</span>
-                <input  #cep  formControlName="cep" class="form-control" id="cep" type="text" name="cep">
+                <input #cep  formControlName="cep" class="form-control" id="cep" type="text" name="cep">
             </div>
             <div class="cow">
               <button style="margin-top:30px ;" class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="buscaCep(cep.value)">CONSULTAR CEP</button>
@@ -40,7 +40,7 @@
         <div class="row">
             <div class="col">
                 <label for="logradouro">Logradouro</label>
-                <input [(ngModel)]="endereco.logradouro" formControlName="logradouro" class="form-control" id="logradouro" type="text" name="logradouro">
+                <input readonly [(ngModel)]="endereco.logradouro" formControlName="logradouro" class="form-control" id="logradouro" type="text" name="logradouro">
             </div>
             <div class="col">
                 <label for="complemento">Complemento</label>
@@ -50,12 +50,12 @@
 
         <div class="row">
             <div class="col">
-                <label for="cidade">Cidade</label>
-                <input  [(ngModel)]="endereco.localidade" formControlName="cidade" class="form-control" id="cidade" type="text" name="cidade">
+                <label  for="cidade">Cidade</label>
+                <input readonly [(ngModel)]="endereco.localidade" formControlName="cidade" class="form-control" id="cidade" type="text" name="cidade">
             </div>
             <div class="col">
                 <label for="estado">Estado</label>
-                <input [(ngModel)]="endereco.uf" formControlName="estado" class="form-control" id="estado" type="text" name="estado">
+                <input readonly [(ngModel)]="endereco.uf" formControlName="estado" class="form-control" id="estado" type="text" name="estado">
             </div>
         </div>
 
@@ -80,7 +80,7 @@
 
        </div>
 
-        <button [disabled]="formulario.invalid" class="btn btn-primary" type="submit">Gravar
+        <button  class="btn btn-primary" type="submit">Gravar
           <i class="material-icons right">check</i>
         </button>
 
