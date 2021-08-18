@@ -57,11 +57,28 @@ export class CadastrarTicketComponent implements OnInit {
   //verifica data e hora
   pegaHora(){
     //console.log(this.horaAtual)
-    if(new Date().getMinutes() < 10){
-      return new Date().getHours() +':'+0+new Date().getMinutes()
-    }else{
-      return new Date().getHours() +':'+ new Date().getMinutes()
-    }   
+    if((new Date().getMinutes() < 10) || (new Date().getHours()< 10)){
+      
+      if((new Date().getHours()< 10) && (new Date().getMinutes()< 10)){
+         
+        return '0' + new Date().getHours() + ':' + '0' +new Date().getMinutes()
+
+      }else{
+
+        if( (new Date().getHours()<10) && (new Date().getMinutes()>=10) ){
+          
+          return '0' + new Date().getHours() +':'+ new Date().getMinutes()
+        
+        }else{
+
+          if( (new Date().getHours()>=10) && (new Date().getMinutes()<10) ){
+            return new Date().getHours() +':'+ '0' + new Date().getMinutes()
+          }
+        }
+      }
+     
+    }
+    return new Date().getHours() +':'+ new Date().getMinutes()  
   }
 
   pegaData(){
