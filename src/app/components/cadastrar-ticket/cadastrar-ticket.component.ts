@@ -17,6 +17,7 @@ export class CadastrarTicketComponent implements OnInit {
   formulario: FormGroup;
   horaAtual: any;
   dataAtual:any;
+  placa:any ="";
 
   constructor(
     private empService: TicketService,
@@ -65,6 +66,12 @@ export class CadastrarTicketComponent implements OnInit {
 
   pegaData(){
     return new Date().getDate() +'/'+ new Date().getMonth() +'/'+ new Date().getFullYear();
+  }
+
+
+  //Consulta Cliente por placa
+  buscaPlaca(){
+
   }
 
 }
