@@ -5,9 +5,9 @@
         <div class="form-group">
           <div class="row">
             <div class="col">
-               <input hidden [value]="dataAtual" formControlName="dataEntrada" >
+               <input hidden [ngModel]="dataAtual" formControlName="dataEntrada" >-->
                <label  for="entrada" >Hora Entrada</label>
-               <input  [(ngModel)]="horaAtual" formControlName="horaEntrada" class="form-control" type="time"  name="entrada"  >
+               <input  [ngModel]="horaAtual" formControlName="horaEntrada" class="form-control" type="time"  >
             </div>
           </div>
             <div class="row">
