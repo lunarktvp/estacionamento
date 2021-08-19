@@ -1,34 +1,40 @@
 <section id="meio" >
     <H3 style="color: white ; text-align: left;">Cadastrar Ticket</H3>
     <div id="myform">
-      <form id="form" method="post" (ngSubmit)="onSubmit()" [formGroup]="formulario">
         <div class="form-group">
           <div class="row">
             <div class="col">
-               <input hidden [value]="dataAtual" formControlName="dataEntrada" >
+               <input hidden [ngModel]="dataAtual"  >-->
                <label  for="entrada" >Hora Entrada</label>
-               <input  [(ngModel)]="horaAtual" formControlName="horaEntrada" class="form-control" type="time"  name="entrada"  >
+               <input  [(ngModel)]="horaAtual"  class="form-control" type="time"  >
             </div>
           </div>
             <div class="row">
               <div class="col">
                 <label for="placa">Placa</label>
-                <input formControlName="placa" class="form-control"  id="placa" type="text"  name="placa" >
+                <input [(ngModel)]="ticket.placa" class="form-control"  id="placa" type="text"  name="placa" >
               </div>
               <div class="col">
-                <button style="margin-top:30px;" class="btn btn-outline-secondary" type="button" id="button-addon2">Consultar</button>
+                <button style="margin-top:30px;" class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="buscaPlaca()">Consultar</button>
               </div>
             </div>
+            <div *ngIf="exibeMensalista" id="exibeMensalista" >
+              <span style="display: block; margin-top: -15px; color: white; font-size: 16px; font-weight: 700; "> Cliente Mensalista! </span>
+              <span style="display: block; color: white; font-size: 16px; font-weight: 700; "> Escolha a forma de pagamento </span>
+              <button class="pgto" style="margin-right: 5px;" (click)="aVista()" >A Vista</button>
+              <button class="pgto" (click)="aFaturar()" >A Faturar</button>
+              <input type="radio" checked="checked">
+
+            </div>
         </div>
+        <div style="display: inline-block; margin-top: 10px; margin-left:-5px;">
+          <button class="btn btn-primary" type="submit" (click)="gravarTicket()">Gravar
+            <i class="material-icons right">check</i>
+          </button>
 
-        <button [disabled]="formulario.invalid" class="btn btn-primary" type="submit">Gravar
-          <i class="material-icons right">check</i>
-        </button>
-
-        <button [routerLink]="'/cadastros'" style="background-color: rgb(224, 59, 59); margin-left: 5px;" class="btn waves-effect waves-light">Cancelar
-          <i class="material-icons right">cancel</i>
-        </button>
-
-      </form>
+          <button  [routerLink]="'/tickets'" style="background-color: rgb(224, 59, 59); margin-left: 5px;" class="btn waves-effect waves-light">Cancelar
+            <i class="material-icons right">cancel</i>
+          </button>
+      </div>
     </div>
 </section>

@@ -36,6 +36,21 @@ button{
   margin-left: 11px;
 }
 
+
+#exibeMensalista{
+  padding: 5px;
+  display: block;
+}
+
+.pgto{
+  border: solid 1px white;
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: -2px;
+  border-radius: 10px ;
+}
+
+
 @media (min-width:768px){
 
   #myform{
