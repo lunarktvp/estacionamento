@@ -12,11 +12,9 @@
             <div class="row">
               <div class="col">
                 <label for="placa">Placa</label>
-                <input [(ngModel)]="ticket.placa" class="form-control"  id="placa" type="text"  name="placa" >
+                <input [(ngModel)]="ticket.placa" class="form-control"  id="placa" type="text"  name="placa" (blur)="verificaPlaca()">
               </div>
-              <div class="col">
-                <button style="margin-top:30px;" class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="buscaPlaca()">Consultar</button>
-              </div>
+            
             </div>
             <div *ngIf="exibeMensalista" id="exibeMensalista" >
               <span style="display: block; margin-top: -15px; color: white; font-size: 16px; font-weight: 700; "> Cliente Mensalista! </span>
