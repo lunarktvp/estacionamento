@@ -111,17 +111,14 @@ export class CadastrarTicketComponent implements OnInit {
 
 
   //Consulta Cliente por placa
-  buscaPlaca(){
 
-      if(this.ticket.placa == "pwg9751"){
-        this.exibeMensalista = true;
-      }else{
-        this.exibeMensalista = false;
-      }
-      
-      
+  verificaPlaca(){
+    if(this.ticket.placa == "placa"){
+      this.exibeMensalista = true;
+    }else{
+      this.exibeMensalista = false;
+    }
   }
-
 
 
 }
