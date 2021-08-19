@@ -1,7 +1,7 @@
 
 <section id="meio">
   
-    <H4 style="color: white; text-align: left;">Lista de Empresas</H4>
+    <H4 style="color: white; text-align: left;">Lista de Tickets</H4>
     <button [routerLink]="'/cadastros'" class="btn waves-effect waves-light" type="submit" name="action">Voltar<i class="material-icons left">arrow_back</i></button>
     <br><br>
     <section>
@@ -10,16 +10,16 @@
               <tr>
                   <th>PLACA</th>
                   <th>HORARIO ENTRADA</th>
-                  <th></th>
+                  <th>Encerrar</th>
               </tr>
             </thead>
             <tbody>
               <tr  *ngFor="let ticket of tickets">
-                <td>{{ ticket.cnpj }}</td>
-                <td>{{ ticket.nome }}</td>
-                <td><a style="margin-right: 5px;" [routerLink]="['/detalhesticket',ticket.id]" class="waves-effect waves-light btn"><i class="material-icons center">edit</i></a>
-                </td>
+                <td>{{ ticket.placa }}</td>
+                <td>{{ ticket.horaentrada }}</td>
+                <td><button [routerLink]="'/encerrar'"class="btn waves-effect waves-light" type="submit" name="action"><i  class="material-icons">clear</i></button></td>
               </tr> 
+
             </tbody>
           </table>
           

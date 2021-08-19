@@ -25,6 +25,8 @@ import { DetalhesFuncionarioComponent } from './components/funcionarios/detalhes
 import { UtilidadesService } from './services/utilidades.service';
 import { FuncionarioService } from './services/funcionario.service';
 import { LoginComponent } from './components/login/login.component';
+import { EncerrarTicketComponent } from './components/encerrar-ticket/encerrar-ticket.component'
+
 
 
 @NgModule({
@@ -43,9 +45,11 @@ import { LoginComponent } from './components/login/login.component';
     ListFuncionariosComponent,
     CadClienteComponent,
     ListClientesComponent,
+    EncerrarTicketComponent,
     DetalhesClienteComponent,
     DetalhesFuncionarioComponent,
-    LoginComponent
+    LoginComponent,
+    
 
   ],
   imports: [
