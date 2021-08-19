@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -13,15 +14,24 @@ import { TicketService } from 'src/app/services/ticket.service';
 })
 export class CadastrarTicketComponent implements OnInit {
 
-  ticket: Ticket;
+  ticket: Ticket ={
+    id:"",
+    horaentrada: "",
+    horasaida:"",
+    placa:"",
+    tipoPagamento:0,
+  };
+
+
   formulario: FormGroup;
   horaAtual: any;
   dataAtual:any;
-  placa:any ="";
+  exibeMensalista:boolean = false;
 
   constructor(
     private empService: TicketService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
     ) { }
 
 
@@ -45,13 +55,27 @@ export class CadastrarTicketComponent implements OnInit {
 
   }
 
-  onSubmit(){
+  gravarTicket(){
 
-      this.empService.cadastrarTicket(this.formulario.value).subscribe(resposta=>{
-        this.formulario.reset();
-      });
+    this.ticket.horaentrada = this.horaAtual;
+      console.log(this.ticket);
+      this.router.navigate(['/tickets'])
+     
+     // this.empService.cadastrarTicket(this.ticket).subscribe(resposta=>{
+       // this.formulario.reset();
+      //});
       
   }  
+
+
+  aVista(){
+    this.ticket.tipoPagamento = 0;
+  }
+
+  aFaturar(){
+
+    this.ticket.tipoPagamento = 1;
+  }
 
 
   //verifica data e hora
@@ -89,6 +113,15 @@ export class CadastrarTicketComponent implements OnInit {
   //Consulta Cliente por placa
   buscaPlaca(){
 
+      if(this.ticket.placa == "pwg9751"){
+        this.exibeMensalista = true;
+      }else{
+        this.exibeMensalista = false;
+      }
+      
+      
   }
+
+
 
 }
