@@ -6,7 +6,7 @@
             <div class="col">
                <input hidden [ngModel]="dataAtual"  >-->
                <label  for="entrada" >Hora Entrada</label>
-               <input  [(ngModel)]="horaAtual"  class="form-control" type="time"  >
+               <input readonly [(ngModel)]="horaAtual"  class="form-control" type="text"  >
             </div>
           </div>
             <div class="row">
@@ -17,8 +17,8 @@
             
             </div>
             <div *ngIf="exibeMensalista" id="exibeMensalista" >
-              <span style="display: block; margin-top: -15px; color: white; font-size: 16px; font-weight: 700; "> Cliente Mensalista! </span>
-              <span style="display: block; color: white; font-size: 16px; font-weight: 700; "> Escolha a forma de pagamento </span>
+              <span style="display: block; margin-top: -15px; color: white; font-size: 16px; font-weight: 700;"> Cliente Mensalista! </span>
+              <span style="display: block; color: white; font-size: 16px; font-weight: 700; "> Escolha a forma de pagamento: </span>
               <button class="pgto" style="margin-right: 5px;" (click)="aVista()" >A Vista</button>
               <button class="pgto" (click)="aFaturar()" >A Faturar</button>
               <input type="radio" checked="checked">
