@@ -1,3 +1,4 @@
+import { DetalhesClienteComponent } from './components/clientes/detalhes-cliente/detalhes-cliente.component';
 import { ListFuncionariosComponent } from './components/funcionarios/list-funcionarios/list-funcionarios.component';
 import { CadFuncionarioComponent } from './components/funcionarios/cad-funcionario/cad-funcionario.component';
 import { DetalhesFuncionarioComponent } from './components/funcionarios/detalhes-funcionario/detalhes-funcionario.component';
@@ -34,6 +35,7 @@ const routes: Routes = [
   //paths relativos a clientes
   {path:'CadCliente', component:CadClienteComponent},
   {path:'ListClientes', component:ListClientesComponent},
+  {path:'DetalhesCliente/:id', component:DetalhesClienteComponent},
   //paths relativos a tickets
   {path:'tickets',component:TicketsHomeComponent},
   {path:'cadticket', component:CadastrarTicketComponent},

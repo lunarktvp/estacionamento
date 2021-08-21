@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { ClienteService } from './../../../services/cliente.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,27 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadClienteComponent implements OnInit {
 
-  constructor(private formbuilder: FormBuilder) { }
+  constructor(
+    private formbuilder: FormBuilder,
+    private clienteservice: ClienteService,
+    private router: Router
+    ) { }
 
   formulario: FormGroup;  
 
   ngOnInit(): void {
     this.formulario = this.formbuilder.group({
-      codigo: [null, Validators.required],
       nome: [null, Validators.required],
-      cpf: [null, Validators.required],
+      cgc: [null, Validators.required],
       nascimento: [null, Validators.required],
       endereco: [null, Validators.required],
       telefone: [null, Validators.required],
       email: [null, Validators.compose([Validators.email, Validators.required])],
-      senha: [null , Validators.compose([Validators.required,Validators.minLength(6)])]
     })    
   }
   
   onSubmit(){
 
-    console.log(this.formulario.value);
-    this.formulario.reset;
+      this.clienteservice.CadastraCliente(this.formulario.value).subscribe(
+          resposta=>{
+              this.formulario.reset()
+              this.router.navigate(['/ListClientes'])
+          }
+      );
    
   }
 
