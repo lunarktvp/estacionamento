@@ -39,7 +39,7 @@ const routes: Routes = [
   //paths relativos a tickets
   {path:'tickets',component:TicketsHomeComponent},
   {path:'cadticket', component:CadastrarTicketComponent},
-  {path:'detalhesticket', component:ListTicketsComponent}
+  {path:'listar', component:ListTicketsComponent}
 
 ];
 

@@ -59,12 +59,13 @@ export class CadastrarTicketComponent implements OnInit {
 
     this.ticket.horaentrada = this.horaAtual;
       console.log(this.ticket);
-      this.router.navigate(['/tickets'])
+      
      
      this.empService.cadastrarTicket(this.ticket).subscribe(resposta=>{
        this.formulario.reset();
       });
       
+      this.router.navigate(['/listar'])
   }  
 
 
