@@ -12,7 +12,6 @@ import { TicketService } from 'src/app/services/ticket.service';
 export class ListTicketsComponent implements OnInit {
   
   tickets: any;
-  ticket: any;
 
   constructor(public tckService: TicketService) { 
    
@@ -29,6 +28,8 @@ export class ListTicketsComponent implements OnInit {
     this.tckService.getTicket().subscribe(ticket=>{
       this.tickets = ticket
     });
+
+    
   }
 
  

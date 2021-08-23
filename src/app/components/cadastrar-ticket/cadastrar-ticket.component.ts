@@ -61,9 +61,9 @@ export class CadastrarTicketComponent implements OnInit {
       console.log(this.ticket);
       this.router.navigate(['/tickets'])
      
-     // this.empService.cadastrarTicket(this.ticket).subscribe(resposta=>{
-       // this.formulario.reset();
-      //});
+     this.empService.cadastrarTicket(this.ticket).subscribe(resposta=>{
+       this.formulario.reset();
+      });
       
   }  
 
