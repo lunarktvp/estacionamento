@@ -45,10 +45,10 @@ import { EncerrarTicketComponent } from './components/encerrar-ticket/encerrar-t
     ListFuncionariosComponent,
     CadClienteComponent,
     ListClientesComponent,
-    EncerrarTicketComponent,
     DetalhesClienteComponent,
     DetalhesFuncionarioComponent,
     LoginComponent,
+    EncerrarTicketComponent,
     
 
   ],
