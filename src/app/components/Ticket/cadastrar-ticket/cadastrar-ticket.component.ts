@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Ticket } from '../../modelos/ticketModel';
+import { Ticket } from 'src/app/modelos/ticketModel'; 
 import { TicketService } from 'src/app/services/ticket.service';
 
 

@@ -3,7 +3,7 @@ import { Router} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { Empresa } from '../../modelos/empresaModel'
+import { Empresa } from '../../../modelos/empresaModel'
 import { EmpresaService } from 'src/app/services/empresa.service';
 
 

@@ -1,4 +1,4 @@
-import { Empresa } from './../../modelos/empresaModel';
+import { Empresa } from '../../../modelos/empresaModel';
 
 import { Component, OnInit } from '@angular/core';
 import { EmpresaService } from 'src/app/services/empresa.service';
