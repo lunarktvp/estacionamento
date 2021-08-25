@@ -1,4 +1,4 @@
-import { Empresa } from './../../../modelos/empresaModel';
+import { Empresa } from '../../../../modelos/empresaModel';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { EmpresaService } from 'src/app/services/empresa.service';
 import { Component, OnInit } from '@angular/core';
