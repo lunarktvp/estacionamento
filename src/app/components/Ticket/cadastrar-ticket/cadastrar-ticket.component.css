@@ -11,9 +11,7 @@
   flex-direction: column;
 }
 
-#placa, #empresa, #email{
-  width: 280px;
-}
+
 
 label{
   color: white;

@@ -11,10 +11,6 @@
     flex-direction: column;
   }
 
-  #endereco, #empresa, #email{
-    width: 280px;
-  }
-
   label{
     color: white;
     font-size: 20px;
@@ -23,15 +19,15 @@
   }
 
   .form-group .row .col input{
-    
-    background-color: white;
-    border-radius: 5px;
-    color: black;
-    border: 3px solid white;
-    font-weight: 400;
-    text-transform: uppercase;
-    font-size: 1.6rem;
-  }
+      background-color: white;
+      border-radius: 5px;
+      color: black;
+      border: 3px solid white;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+    }
+  
 
   button{
     margin-left: 11px;

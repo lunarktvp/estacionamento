@@ -1,4 +1,18 @@
 <section id="meio" >
+  <style>
+    table
+    {
+        width: 300px;
+        font: 17px Calibri;
+    }
+    table, th, td 
+    {
+        border: solid 1px #DDD;
+        border-collapse: collapse;
+        padding: 2px 3px;
+        text-align: center;
+    }
+</style>
   <H3 style="color: white ; text-align: left;">Encerrar Ticket</H3>
   <div id="myform">
     <form id="form" method="post" (ngSubmit)="onSubmit()" [formGroup]="formulario">
@@ -6,7 +20,7 @@
         <div class="row">
           <div class="col">
              <label  for="Ticket" >Numero do Ticket</label>
-              <input  formControlName="Ticket" class="form-control" id="Ticket" type="text"  name="ticket"  >
+             <input  formControlName="Ticket" class="form-control" id="Ticket" type="text "  name="ticket" readonly >
             </div>
         </div>
           <div class="row">
@@ -29,14 +43,14 @@
           </div>
       </div>
 
-      <button [disabled]="formulario.invalid" class="btn btn-primary" type="submit">Recebido
+      <button [disabled]="formulario.invalid" class="btn btn-primary" type="submit">IMPRIMIR
         <i class="material-icons right">check</i>
       </button>
 
       <button [routerLink]="'/cadastros'" style="background-color: rgb(224, 59, 59); margin-left: 5px;" class="btn waves-effect waves-light">Cancelar
         <i class="material-icons right">cancel</i>
       </button>
+      </form>
+      </div>
 
-    </form>
-  </div>
 </section>
