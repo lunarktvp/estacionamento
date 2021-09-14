@@ -2,6 +2,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
+import { VeiculoService } from 'src/app/services/veiculo.service';
 
 @Component({
   selector: 'app-cad-veiculo',
@@ -21,10 +22,6 @@ export class CadVeiculosComponent implements OnInit {
   placa: any;
 
   ngOnInit(): void {
-      this.veiculoservice.ProximaVeiculo().subscribe(idveiculo=>{
-      this.ProximoVeiculo = idveiculo;
-    });
-
       this.formulario = this.formbuilder.group({
       idveiculo: [null],
       tipo: [null, Validators.required],
