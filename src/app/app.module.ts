@@ -26,6 +26,9 @@ import { UtilidadesService } from './services/utilidades.service';
 import { FuncionarioService } from './services/funcionario.service';
 import { LoginComponent } from './components/login/login.component';
 import { EncerrarTicketComponent } from './components/Ticket/encerrar-ticket/encerrar-ticket.component'
+import { AuthService } from './components/login/auth.service';
+import { CadVeiculosComponent } from './components/veiculos/cad-veiculo/cad-veiculo.component';
+import { ListVeiculoComponent } from './components/veiculos/list-veiculo/list-veiculo.component';
 
 
 
@@ -49,6 +52,8 @@ import { EncerrarTicketComponent } from './components/Ticket/encerrar-ticket/enc
     DetalhesFuncionarioComponent,
     LoginComponent,
     EncerrarTicketComponent,
+    CadVeiculosComponent,
+    ListVeiculoComponent,
     
 
   ],
@@ -64,7 +69,8 @@ import { EncerrarTicketComponent } from './components/Ticket/encerrar-ticket/enc
   providers: [
     EmpresaService,
     FuncionarioService,
-    UtilidadesService
+    UtilidadesService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

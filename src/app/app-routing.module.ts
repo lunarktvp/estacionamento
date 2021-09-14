@@ -17,6 +17,7 @@ import { ListTicketsComponent } from './components/Ticket/list-ticket/list-ticke
 import { CadClienteComponent } from './components/clientes/cad-cliente/cad-cliente.component';
 import { ListClientesComponent } from './components/clientes/list-clientes/list-clientes.component';
 import { LoginComponent } from './components/login/login.component';
+import { ListVeiculoComponent } from './components/veiculos/list-veiculo/list-veiculo.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -27,21 +28,23 @@ const routes: Routes = [
   {path:'listarempresas',component: ListEmpresasComponent},
   {path:'detalhesempresa/:id',component: DetalhesEmpresaComponent},
   //paths relativos a estabelecimentos
-  {path:'CadEstabelecimento', component:CadastrarEstacionamentoComponent},
-  {path:'ListEstabelecimentos', component:ListarEstabelecimentoComponent},
+  {path:'CadEstabelecimento', component: CadastrarEstacionamentoComponent},
+  {path:'ListEstabelecimentos', component: ListarEstabelecimentoComponent},
   //paths relativos a funcionarios
-  {path:'CadFuncionario', component:CadFuncionarioComponent},
-  {path:'ListFuncionarios', component:ListFuncionariosComponent},
-  {path:'DetalhesFuncionario/:matricula', component:DetalhesFuncionarioComponent},
+  {path:'CadFuncionario', component: CadFuncionarioComponent},
+  {path:'ListFuncionarios', component: ListFuncionariosComponent},
+  {path:'DetalhesFuncionario/:matricula', component: DetalhesFuncionarioComponent},
   //paths relativos a clientes
-  {path:'CadCliente', component:CadClienteComponent},
-  {path:'ListClientes', component:ListClientesComponent},
-  {path:'DetalhesCliente/:id', component:DetalhesClienteComponent},
+  {path:'CadCliente', component: CadClienteComponent},
+  {path:'ListClientes', component: ListClientesComponent},
+  {path:'DetalhesCliente/:id', component: DetalhesClienteComponent},
   //paths relativos a tickets
-  {path:'tickets',component:TicketsHomeComponent},
-  {path:'cadticket', component:CadastrarTicketComponent},
-  {path:'listar', component:ListTicketsComponent},
-  {path: 'encerrar', component: EncerrarTicketComponent}
+  {path:'tickets',component: TicketsHomeComponent},
+  {path:'cadticket', component: CadastrarTicketComponent},
+  {path:'listar', component: ListTicketsComponent},
+  {path: 'encerrar', component: EncerrarTicketComponent},
+  //paths relativos a veiculos
+  {path: 'veiculos', component: ListVeiculoComponent}
 
 ];
 

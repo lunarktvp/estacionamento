@@ -1,18 +1,18 @@
 <section id="meio">
     <div class="row">
         <div class="col">
-          <label  for="login" >Matricula</label>
-          <input  class="form-control" type="text" id="login" name="login"  >
+            <label  class="active" for="login">Matrícula</label>
+            <input  [(ngModel)]="usuario.matricula" type="text" id="login" class="validate" name="matricula"  >
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <label for="senha">Senha</label>
-            <input  class="form-control" id="senha" type="password" name="senha" >
+            <label class="active" for="senha">Senha</label>
+            <input [(ngModel)]="usuario.senha" id="senha" type="password" class="validate" name="senha" >
         </div>
     </div>
     <div class="row">
-        <button routerLink="/tickets" class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <button routerLink="/tickets" class="btn waves-effect waves-light" type="submit" name="action" (click)="fazerLogin()">Login
             <i class="material-icons right">send</i>
           </button>
     </div>

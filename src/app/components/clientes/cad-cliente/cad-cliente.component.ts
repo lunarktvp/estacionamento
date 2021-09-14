@@ -31,13 +31,16 @@ export class CadClienteComponent implements OnInit {
   
   onSubmit(){
 
+    console.log(this.formulario.value)
+  
+
       this.clienteservice.CadastraCliente(this.formulario.value).subscribe(
           resposta=>{
               this.formulario.reset()
               this.router.navigate(['/ListClientes'])
           }
       );
-   
+
   }
 
 }
