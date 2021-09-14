@@ -3,11 +3,12 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import { VeiculoService } from 'src/app/services/veiculo.service';
+import { MatRadioModule } from '@angular/material/radio';
 
 @Component({
   selector: 'app-list-veiculo',
   templateUrl: './list-veiculo.component.html',
-  styleUrls: ['./list-veiculo.component.css']
+  styleUrls: ['./list-veiculo.component.css'],
 })
 export class ListVeiculoComponent implements OnInit {
 
