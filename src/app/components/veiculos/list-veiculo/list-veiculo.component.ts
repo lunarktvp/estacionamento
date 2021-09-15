@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import { VeiculoService } from 'src/app/services/veiculo.service';
-import { MatRadioModule } from '@angular/material/radio';
 
 @Component({
   selector: 'app-list-veiculo',

@@ -1,3 +1,4 @@
+import { LayoutComponent } from './components/layout/layout.component';
 import { EncerrarTicketComponent } from './components/Ticket/encerrar-ticket/encerrar-ticket.component';
 import { DetalhesClienteComponent } from './components/clientes/detalhes-cliente/detalhes-cliente.component';
 import { ListFuncionariosComponent } from './components/funcionarios/list-funcionarios/list-funcionarios.component';
@@ -20,32 +21,38 @@ import { LoginComponent } from './components/login/login.component';
 import { ListVeiculoComponent } from './components/veiculos/list-veiculo/list-veiculo.component';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
-  //
-  {path:'cadastros',component: CadastrosComponent},
-  //paths relativos a empresas
-  {path:'cadEmpresa',component: CadastrarEmpresaComponent},
-  {path:'listarempresas',component: ListEmpresasComponent},
-  {path:'detalhesempresa/:id',component: DetalhesEmpresaComponent},
-  //paths relativos a estabelecimentos
-  {path:'CadEstabelecimento', component: CadastrarEstacionamentoComponent},
-  {path:'ListEstabelecimentos', component: ListarEstabelecimentoComponent},
-  //paths relativos a funcionarios
-  {path:'CadFuncionario', component: CadFuncionarioComponent},
-  {path:'ListFuncionarios', component: ListFuncionariosComponent},
-  {path:'DetalhesFuncionario/:matricula', component: DetalhesFuncionarioComponent},
-  //paths relativos a clientes
-  {path:'CadCliente', component: CadClienteComponent},
-  {path:'ListClientes', component: ListClientesComponent},
-  {path:'DetalhesCliente/:id', component: DetalhesClienteComponent},
-  //paths relativos a tickets
-  {path:'tickets',component: TicketsHomeComponent},
-  {path:'cadticket', component: CadastrarTicketComponent},
-  {path:'listar', component: ListTicketsComponent},
-  {path: 'encerrar', component: EncerrarTicketComponent},
-  //paths relativos a veiculos
-  {path: 'veiculos', component: ListVeiculoComponent}
+  {path: 'login', component: LoginComponent},
+  {path:'', redirectTo: '/login', pathMatch: 'full' },
 
+
+  //Path relativos a toda a aplicação dentro do layout
+  {path: '', component: LayoutComponent, children: [
+    {path:'cadastros',component: CadastrosComponent},
+    //paths relativos a empresas
+    {path:'cadEmpresa',component: CadastrarEmpresaComponent},
+    {path:'listarempresas',component: ListEmpresasComponent},
+    {path:'detalhesempresa/:id',component: DetalhesEmpresaComponent},
+    //paths relativos a estabelecimentos
+    {path:'CadEstabelecimento', component: CadastrarEstacionamentoComponent},
+    {path:'ListEstabelecimentos', component: ListarEstabelecimentoComponent},
+    //paths relativos a funcionarios
+    {path:'CadFuncionario', component: CadFuncionarioComponent},
+    {path:'ListFuncionarios', component: ListFuncionariosComponent},
+    {path:'DetalhesFuncionario/:matricula', component: DetalhesFuncionarioComponent},
+    //paths relativos a clientes
+    {path:'CadCliente', component: CadClienteComponent},
+    {path:'ListClientes', component: ListClientesComponent},
+    {path:'DetalhesCliente/:id', component: DetalhesClienteComponent},
+    //paths relativos a tickets
+    {path:'tickets',component: TicketsHomeComponent},
+    {path:'cadticket', component: CadastrarTicketComponent},
+    {path:'listar', component: ListTicketsComponent},
+    {path: 'encerrar', component: EncerrarTicketComponent},
+    //paths relativos a veiculos
+    {path: 'veiculos', component: ListVeiculoComponent}  
+  ]},
+
+  
 ];
 
 @NgModule({
