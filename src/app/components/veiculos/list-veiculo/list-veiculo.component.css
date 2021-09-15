@@ -1,7 +1,16 @@
 
 
 
- #myform{
+
+custom-radio input::before{
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+
+  margin-left: 1000000000000000000000000000000px;
+}
+  
+#myform{
     padding: 10px;
     margin: auto;
     position: relative;
@@ -72,8 +81,4 @@
       width: 280px;
     }
 
-  }
-
-  .mat-radio-button ~ .mat-radio-button {
-    margin-left: 16px;
   }
