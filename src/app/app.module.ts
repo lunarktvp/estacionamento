@@ -29,6 +29,7 @@ import { EncerrarTicketComponent } from './components/Ticket/encerrar-ticket/enc
 import { AuthService } from './components/login/auth.service';
 import { CadVeiculosComponent } from './components/veiculos/cad-veiculo/cad-veiculo.component';
 import { ListVeiculoComponent } from './components/veiculos/list-veiculo/list-veiculo.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 
 
@@ -54,6 +55,7 @@ import { ListVeiculoComponent } from './components/veiculos/list-veiculo/list-ve
     EncerrarTicketComponent,
     CadVeiculosComponent,
     ListVeiculoComponent,
+    LayoutComponent,
     
 
   ],
