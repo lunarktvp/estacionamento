@@ -16,8 +16,10 @@ export class CadTicketComponent implements OnInit {
     horaEntrada: "",
     horasaida: "",
     placa: "",
+    valor: "",
+    idCliente: "",
     tipoPagamento: 0,
-
+    situacao: ""
   };
 
 

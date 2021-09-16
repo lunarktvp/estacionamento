@@ -10,8 +10,8 @@ export class TikcetService {
 
   empUrl = 'http://localhost:8080/ticket';
 
-  horapermanencia:number;
-  minutospermanecia:number;
+  permancencia:number;
+  valorminuto:number = 0.10;
 
 
   httpOptions ={
@@ -39,8 +39,8 @@ export class TikcetService {
       return this.httpClient.post<any>(this.empUrl+'/novo',ticket);
   }
     
-  public alterarTicket(ticket:any):Observable<any>{
-    return this.httpClient.put<any>(this.empUrl+'/ticket',ticket)
+  public alterarTicket(ticket:Ticket):Observable<Ticket>{
+    return this.httpClient.put<Ticket>(this.empUrl+'/alterar',ticket)
   }
 
   public deletarTicket(ticket:any):Observable<any>{
@@ -51,9 +51,18 @@ export class TikcetService {
   //Calcula tempo de permanecia
   public calculapermanencia(ticket:Ticket){
 
-    this.horapermanencia = 60 * (parseInt(ticket.horasaida.substr(0,2)) - parseInt(ticket.horaEntrada.substr(0,2))) 
-    this.horapermanencia = this.horapermanencia + (parseInt(ticket.horasaida.substr(3,4)) - parseInt(ticket.horaEntrada.substr(3,4)))
-    return this.horapermanencia;
+    let total:any;
+    let valor:number;
+
+    this.permancencia = 60 * (parseInt(ticket.horasaida.substr(0,2)) - parseInt(ticket.horaEntrada.substr(0,2))) 
+    this.permancencia = this.permancencia + (parseInt(ticket.horasaida.substr(3,4)) - parseInt(ticket.horaEntrada.substr(3,4)))
+    
+
+    valor = this.permancencia * this.valorminuto;
+
+    total=valor.toString();
+    total= total.substr(0,4)    
+    return total;
   }
 
 

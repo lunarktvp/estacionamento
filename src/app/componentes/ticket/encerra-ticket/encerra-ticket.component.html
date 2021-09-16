@@ -8,33 +8,37 @@
       <form id="form" method="post" (ngSubmit)="onSubmit()" [formGroup]="formulario">
         <div class="form-group">
           <div class="row">
-            <div class="col">
+            <div class="col-sm-2">
                <label  for="Ticket" >Número do Ticket</label>
                <input  [ngModel]="ticket?.id" formControlName="id" class="form-control" id="Ticket" type="text "  name="ticket" readonly >
               </div>
-          </div>
-            <div class="row">
-              <div class="col-sm-3">
+        
+              <div class="col-sm-2">
                 <label for="placa">Placa</label>
                 <input [ngModel]="ticket?.placa" formControlName="placa" class="form-control"  id="placa" type="text"  name="placa" readonly>
             </div>
             </div>
             <div class="row">
-              <div class="col">
-                <label for="Permanencia">Tempo de Permanência </label> 
-                <input formControlName="permanencia" class="form-control"  id="veiculo" type="text"   name="permanencia">  
+              <div class="col-sm-2">
+                <label for="entrada">Hora Entrada </label> 
+                <input [ngModel]="ticket?.horaEntrada" formControlName="entrada" class="form-control"  id="veiculo" type="text"   name="permanencia" readonly>  
+
+              </div>
+              <div class="col-sm-2">
+                <label for="Permanencia">Hora Saída </label> 
+                <input [ngModel]="ticket?.horasaida" formControlName="saida" class="form-control"  id="veiculo" type="text"   name="permanencia" readonly>  
 
               </div>
             </div>
             <div class="row">
               <div class="col-sm-3">
                 <label for="valor">Valor Total</label> 
-                <input formControlName="valor" class="form-control"  id="valor" type="text"   name="valor" readonly>  
+                <input [ngModel]="ticket?.valor" formControlName="valor" class="form-control"  id="valor" type="number" name="valor" readonly> 
               </div>
             </div>
         </div>
   
-        <button [disabled]="formulario.invalid" class="btn btn-success" type="submit">Encerrar
+        <button [disabled]="formulario.invalid" class="btn btn-success" type="submit" (click)=encerrarTicket()>Encerrar
         </button>
   
         <button [routerLink]="'/tickets'" style=" margin-left: 5px;" class="btn btn-danger">Cancelar

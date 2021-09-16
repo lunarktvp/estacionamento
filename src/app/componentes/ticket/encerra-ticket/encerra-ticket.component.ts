@@ -36,9 +36,6 @@ export class EncerraTicketComponent implements OnInit {
 
       this.detalhesTicket(this.id);
 
-      setInterval(()=>{
-        this.router.navigate(['tickets'])
-      },30000)
       
   }
 
@@ -48,9 +45,7 @@ export class EncerraTicketComponent implements OnInit {
       .subscribe(resposta =>{
         this.ticket = resposta
         this.ticket.horasaida =  this.ticketservice.pegaHora();
-
-        console.log(this.ticketservice.calculapermanencia(this.ticket)+' Tentando calcular a saida')
-
+        this.ticket.valor = this.ticketservice.calculapermanencia(this.ticket);
       })
 
       this.criaFormulario();
@@ -61,7 +56,8 @@ export class EncerraTicketComponent implements OnInit {
       this.formulario = this.formBuilder.group({
         id: [null,Validators.required],
         placa:[null,Validators.required],
-        permanencia:[null,Validators.required],
+        saida:[null,Validators.required],
+        entrada:[null,Validators.required],
         valor:[null,Validators.required],
         idCliente: [null]
       });
@@ -74,5 +70,15 @@ export class EncerraTicketComponent implements OnInit {
       });
       
   } 
+
+  encerrarTicket(){
+    this.ticket.situacao = 9
+
+    console.log(this.ticket)
+    this.ticketservice.cadastrarTicket(this.ticket)
+    .subscribe(reposta=>{
+      this.router.navigate(['/tickets']);
+    })
+  }
 
 }
