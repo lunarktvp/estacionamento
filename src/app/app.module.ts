@@ -2,6 +2,7 @@ import { EmpresaService } from './serviços/empresas-services.service';
 import { ClienteService } from './serviços/clientes-services.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,7 +49,10 @@ import { TemplateComponent } from './componentes/template/template.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule, 
+    NgxMaskModule.forRoot({
+      dropSpecialCharacters: true
+    })
   ],
   providers: [
     ClienteService,

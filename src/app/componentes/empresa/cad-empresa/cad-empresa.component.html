@@ -14,7 +14,7 @@
           </div>
           <div class="col ">
             <label for="cnpj">CNPJ</label>
-              <input [ngModel]="empresa?.cnpj" formControlName="cnpj" class="form-control" id="cnpj" type="text" name="cnpj" >
+              <input [ngModel]="empresa?.cnpj" formControlName="cnpj" class="form-control" id="cnpj" type="text" name="cnpj" mask="CPF_CNPJ">
               </div>
         </div>
         <div class="row">
@@ -30,7 +30,7 @@
           </div>
           <div class="col ">
             <label for="telefone">Telefone</label>
-            <input [ngModel]="empresa?.telefone" formControlName="telefone" class="form-control"  id="telefone" type="text"  name="telefone" >
+            <input [ngModel]="empresa?.telefone" formControlName="telefone" class="form-control"  id="telefone" type="text"  name="telefone" placeholder="(99)99999-9999" mask="(00) 00000-0000 || (00) 0000-0000">
           </div>
         </div>
       </div>
