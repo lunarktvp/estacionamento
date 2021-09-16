@@ -12,11 +12,11 @@ import { TikcetService } from 'src/app/serviços/tikcet.service';
 export class CadTicketComponent implements OnInit {
 
   ticket: Ticket ={
-    id:"",
+    id: "",
     horaentrada: "",
-    horasaida:"",
-    placa:"",
-    tipoPagamento:0,
+    horasaida: "",
+    placa: "",
+    tipoPagamento: 0,
   };
 
 

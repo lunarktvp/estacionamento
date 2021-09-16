@@ -1,0 +1,37 @@
+
+<section id="meio">
+    
+    <H2>Entradas</H2>
+    <div class="container-title"> Entradas do Dia</div>
+    <br>
+
+    
+    <br><br>
+    <section>
+        
+        <table>
+            <thead>
+              <tr>
+                  <th>Placa</th>
+                  <th>Horário Entrada</th>
+                  <th>Valor Cobrado</th>
+
+                  <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor="let ticket of tickets">
+                <td>{{ ticket.placa }}</td>
+                <td>{{ ticket.horaEntrada }}</td>
+                <td>{{ ticket.valorCobrado }}</td>
+              </tr> 
+
+            </tbody>
+            <tbody>
+                
+            </tbody>
+          </table>
+          
+    </section>
+
+</section>
