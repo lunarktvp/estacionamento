@@ -1,8 +1,8 @@
 
    export class Ticket{
     public id: any;
-    public horaentrada: any;
-    public horasaida: any;
+    public horaEntrada: string;
+    public horasaida: string;
     public placa: any;
     tipoPagamento: any;
  }

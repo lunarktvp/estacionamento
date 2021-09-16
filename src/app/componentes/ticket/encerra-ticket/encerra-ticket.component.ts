@@ -2,7 +2,7 @@ import { TikcetService } from './../../../serviços/tikcet.service';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Ticket } from 'src/app/modelos/ticket.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-encerra-ticket',
@@ -13,13 +13,16 @@ export class EncerraTicketComponent implements OnInit {
 
   ticket: Ticket;
   id: any;
+  hora:string;
+  minutos:string;
 
   formulario: FormGroup;
 
   constructor(
     private ticketservice: TikcetService,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
     ) { }
 
 
@@ -29,12 +32,13 @@ export class EncerraTicketComponent implements OnInit {
 
     this.route.params.subscribe(params=>
       this.id = params['id']
-      ); 
-
-      console.log(this.id)     
+      );  
 
       this.detalhesTicket(this.id);
-  
+
+      setInterval(()=>{
+        this.router.navigate(['tickets'])
+      },30000)
       
   }
 
@@ -42,12 +46,14 @@ export class EncerraTicketComponent implements OnInit {
       this.ticketservice.detalheTicket(id)
       .subscribe(resposta =>{
         this.ticket = resposta
+        this.ticket.horasaida =  this.ticketservice.pegaHora();
+
+        console.log(this.ticketservice.calculapermanencia(this.ticket)+' Tentando calcular a saida')
+
       })
 
       this.criaFormulario();
-
-      console.log(this.ticket)
-
+      
     }
 
     criaFormulario(){

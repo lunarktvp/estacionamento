@@ -8,27 +8,27 @@
       <form id="form" method="post" (ngSubmit)="onSubmit()" [formGroup]="formulario">
         <div class="form-group">
           <div class="row">
-            <div class="col">
+            <div class="col-sm-3">
                <label  for="Ticket" >Numero do Ticket</label>
                <input  [ngModel]="ticket?.id" formControlName="id" class="form-control" id="Ticket" type="text "  name="ticket" readonly >
               </div>
           </div>
             <div class="row">
-              <div class="col">
+              <div class="col-sm-3">
                 <label for="placa">Placa</label>
-                <input [ngModel]="ticket?.placa" formControlName="placa" class="form-control"  id="placa" type="text"  name="placa" >
+                <input [ngModel]="ticket?.placa" formControlName="placa" class="form-control"  id="placa" type="text"  name="placa" readonly>
             </div>
             </div>
             <div class="row">
-              <div class="col">
+              <div class="col-sm-3">
                 <label for="Permanencia">Tempo de Permanencia </label> 
-                <input formControlName="permanencia" class="form-control"  id="veiculo" type="text"   name="permanencia">  
+                <input [ngModel]="ticket?.horasaida" formControlName="permanencia" class="form-control"  id="veiculo" type="text"   name="permanencia" readonly>  
               </div>
             </div>
             <div class="row">
-              <div class="col">
+              <div class="col-sm-3">
                 <label for="valor">Valor Total</label> 
-                <input formControlName="valor" class="form-control"  id="valor" type="text"   name="valor">  
+                <input formControlName="valor" class="form-control"  id="valor" type="text"   name="valor" readonly>  
               </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
         <button [disabled]="formulario.invalid" class="btn btn-success" type="submit">Encerrar
         </button>
   
-        <button [routerLink]="'/cadastros'" style=" margin-left: 5px;" class="btn btn-danger">Cancelar
+        <button [routerLink]="'/tickets'" style=" margin-left: 5px;" class="btn btn-danger">Cancelar
         </button>
         </form>
         </div>

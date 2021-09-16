@@ -13,7 +13,7 @@ export class CadTicketComponent implements OnInit {
 
   ticket: Ticket ={
     id:"",
-    horaentrada: "",
+    horaEntrada: "",
     horasaida:"",
     placa:"",
     tipoPagamento:0,
@@ -43,18 +43,18 @@ export class CadTicketComponent implements OnInit {
       HoraSaida:[null],
     });
     
-    this.dataAtual = this.pegaData();
-    this.horaAtual = this.pegaHora();
+    this.dataAtual = this.empService.pegaData();
+    this.horaAtual = this.empService.pegaHora();
     
     setInterval(()=>{
-      this.horaAtual = this.pegaHora();
+      this.horaAtual = this.empService.pegaHora();
     },1000)
 
   }
 
   gravarTicket(){
 
-    this.ticket.horaentrada = this.horaAtual;
+    this.ticket.horaEntrada = this.horaAtual;
       console.log(this.ticket);
       
      
@@ -62,7 +62,7 @@ export class CadTicketComponent implements OnInit {
        this.formulario.reset();
       });
       
-      this.router.navigate(['/listar'])
+      this.router.navigate(['/tickets'])
   }  
 
 
@@ -76,36 +76,7 @@ export class CadTicketComponent implements OnInit {
   }
 
 
-  //verifica data e hora
-  pegaHora(){
-    //console.log(this.horaAtual)
-    if((new Date().getMinutes() < 10) || (new Date().getHours()< 10)){
-      
-      if((new Date().getHours()< 10) && (new Date().getMinutes()< 10)){
-         
-        return '0' + new Date().getHours() + ':' + '0' +new Date().getMinutes()
-
-      }else{
-
-        if( (new Date().getHours()<10) && (new Date().getMinutes()>=10) ){
-          
-          return '0' + new Date().getHours() +':'+ new Date().getMinutes()
-        
-        }else{
-
-          if( (new Date().getHours()>=10) && (new Date().getMinutes()<10) ){
-            return new Date().getHours() +':'+ '0' + new Date().getMinutes()
-          }
-        }
-      }
-     
-    }
-    return new Date().getHours() +':'+ new Date().getMinutes()  
-  }
-
-  pegaData(){
-    return new Date().getDate() +'/'+ new Date().getMonth() +'/'+ new Date().getFullYear();
-  }
+  
 
 
   //Consulta Cliente por placa
