@@ -13,6 +13,7 @@
       width: 100%;
   }
   
+  
   thead{
       border-bottom: solid 1px #c7c6c6;
       font-size: 20px;
@@ -39,3 +40,9 @@
     white-space: nowrap; 
    
   }
+  .total{
+      display: flex;
+      margin-left: 393%;
+      font-weight: bolder;
+  }
+ 
