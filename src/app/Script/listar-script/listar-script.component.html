@@ -1,0 +1,289 @@
+<H2>Scripts</H2>
+<div class="container-title"> Listar </div>
+
+<div class="tabela">
+    <button routerLink="/novoScript" type="button" class="btn btn-primary">Adicionar</button>
+    <table>
+        <thead>
+            <tr>
+                <th id="titulo">Titulo</th>
+                <th id="previa">Previa</th>
+                <th id="action"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Cadastros de pedros</td>
+                <td>select * from cadastros de scripts
+                    asasdafgadg a sa aadgadga
+                    gadgdahgaf asf hfa
+                    adgad gdagadgadt
+                    ahsfhfslçhmjfaçkhjf
+                    sfjhç~fskjha~çjkg saçhgjafsç ~hj~ç hkja ~çhja ]hfaha hoja ~hjad
+                    ha hkla h
+                    aop 
+                    hajkh 
+                    áojh 
+                    áojh 
+                    ]a
+                    lhj e
+                    a´hjk eta
+                    óhj
+                    jhçsfjhsfohjsfojhçfsjhs
+                </td>
+                <td><Button style="margin-left: 3px;" type="button" class="btn btn-success"><i class="small material-icons">visibility</i></Button></td>
+                <td><Button style="margin-left: 3px;" type="button" class="btn btn-primary"><i class="small material-icons">edit</i></Button></td>
+                <td><Button style="margin-left: 3px;" type="button" class="btn btn-danger"><i class="small material-icons">delete</i></Button></td>
+            </tr>
+            <tr>
+                <td>Cadastros de pedros</td>
+                <td>Select clientes.RAZAO_SOCIAL, OBRIGACOES.ID_OBRIGACAO, OBRIGACOES.DATA_PREVISAO as VENCIMENTO_ORIGINAL, OBRIGACOES.VALOR, OBRIGACOES.SITUACAO, OBRIGACOES.DATA_LIQUIDACAO,  OBRIGACOES.VALOR_LIQUIDADO, OBRIGACOES.TIPO_LIQUIDACAO, NUMERO_DOCUMENTO,
+                    OBRIGACOES.ID_NATUREZA as NATUREZA, OBRIGACOES.ID_CENTRO_CUSTO, OBRIGACOES.HISTORICO, OBRIGACOES.ID_CLIFOR, CENTRO_CUSTO.DESCRICAO AS CENTRO_CUSTO, OBRIGACOES.VENCIMENTO,
+                    case
+                    when TIPO_LCTOCPCR IS NULL then 'SEM CLASSIFICAÇÃO'
+                    when TIPO_LCTOCPCR = 1 then 'LANÇAMENTOS FUTUROS'
+                    when TIPO_LCTOCPCR = 2 then 'LANÇAMENTO FUTURO RESTRITOS'
+                    when TIPO_LCTOCPCR = 3 then 'DUPLICATA'
+                    when TIPO_LCTOCPCR = 4 then 'DUPLICATA FORA DE COTA'
+                    when TIPO_LCTOCPCR = 5 then 'DUPLICATAS VENCIDA'
+                    when TIPO_LCTOCPCR = 6 then 'COMPRAS A VISTA'
+                    when TIPO_LCTOCPCR = 7 then 'FUNDO DE GARANTIA'
+                    when TIPO_LCTOCPCR = 8 then 'COMBUSTIVEL'
+                    when TIPO_LCTOCPCR = 9 then 'JURIDICO'
+                    when TIPO_LCTOCPCR = 10 then 'DUPLICATA RESTRITA'
+                    when TIPO_LCTOCPCR = 11 then 'AVISO DE PROTESTO'
+                    when TIPO_LCTOCPCR = 12 then 'CHEQUE PRE DATADO'
+                    when TIPO_LCTOCPCR = 13 then 'TRIBUTOS - DETRAN'
+                    when TIPO_LCTOCPCR = 14 then 'PAGAMENTO DE SALARIO'
+                    when TIPO_LCTOCPCR = 15 then 'ADIANTAMENTO DE SALARIO'
+                    when TIPO_LCTOCPCR = 16 then 'TRIBUTOS'
+                    when TIPO_LCTOCPCR = 17 then 'CONTRATO DE CREDITO'
+                    when TIPO_LCTOCPCR = 18 then 'RELATORIO DIA ANTERIOR'
+                    when TIPO_LCTOCPCR = 19 then 'CARTÕES DE CREDITO'
+                    end TIPO_LANCAMENTO,
+                    
+                    case
+                    when TIPO_LIQUIDACAO = 1 then 'MOVIMENTO DE CAIXA'
+                    when TIPO_LIQUIDACAO = 2 then 'CHEQUE'
+                    when TIPO_LIQUIDACAO = 3 then 'CREDITO CONTA'
+                    when TIPO_LIQUIDACAO = 4 then 'DEBITO CONTA'
+                    when TIPO_LIQUIDACAO = 5 then 'BOLETA'
+                    when TIPO_LIQUIDACAO = 6 then 'COMPENSAÇÃO DE VALORES'
+                    when TIPO_LIQUIDACAO = 7 then 'CHEQUE ADMINISTRATIVO'
+                    when TIPO_LIQUIDACAO = 8 then 'PAGFOR'
+                    when TIPO_LIQUIDACAO = 9 then 'AUTORIZAÇÃO DE PAGAMENTO'
+                    when TIPO_LIQUIDACAO = 10 then 'CARTÃO CORPORATIVO'
+                    when TIPO_LIQUIDACAO = 11 then 'CARTÃO DE CREDITO'
+                    when TIPO_LIQUIDACAO = 12 then 'CARTÃO DE DEBITO'
+                    when TIPO_LIQUIDACAO = 13 then 'DEBITO AUTOMATICO'
+                    end TIPO_LIQUIDACAO
+                    
+                    from OBRIGACOES, CLIENTES, CENTRO_CUSTO, ESTABELECIMENTO
+                    WHERE (OBRIGACOES.SITUACAO=2)
+                    and ((OBRIGACOES.CPF_CNPJ = CLIENTES.CGC)or (OBRIGACOES.ID_CLIFOR = CLIENTES.ID_CLIENTE))
+                    and OBRIGACOES.FLAG_CLIFOR = 'C'
+                    and OBRIGACOES.DATA_LIQUIDACAO between '20190101' and '20501231'
+                    and OBRIGACOES.TIPO_LCTO = 'P'
+                    and ((CENTRO_CUSTO.CENTRO_CUSTO = OBRIGACOES.ID_CENTRO_CUSTO) or (OBRIGACOES.ID_CENTRO_CUSTO IS NULL))
+                    and OBRIGACOES.ID_ITEM_LIVRO is NULL
+                    and OBRIGACOES.ID_ESTABELECIMENTO = ESTABELECIMENTO.ID_ESTABELECIMENTO
+                    and ESTABELECIMENTO.ID_ESTABELECIMENTO <> '734'
+                    
+                    
+                    union
+                    
+                    Select fornecedores.RAZAO_SOCIAL, OBRIGACOES.ID_OBRIGACAO, OBRIGACOES.DATA_PREVISAO as VENCIMENTO_ORIGINAL,  OBRIGACOES.VALOR, OBRIGACOES.SITUACAO, OBRIGACOES.DATA_LIQUIDACAO,  OBRIGACOES.VALOR_LIQUIDADO, OBRIGACOES.TIPO_LIQUIDACAO, NUMERO_DOCUMENTO,
+                    OBRIGACOES.ID_NATUREZA as NATUREZA, OBRIGACOES.ID_CENTRO_CUSTO, OBRIGACOES.HISTORICO, OBRIGACOES.ID_CLIFOR, CENTRO_CUSTO.DESCRICAO AS CENTRO_CUSTO, OBRIGACOES.VENCIMENTO,
+                    case
+                    when TIPO_LCTOCPCR IS NULL then 'SEM CLASSIFICAÇÃO'
+                    when TIPO_LCTOCPCR = 1 then 'LANÇAMENTOS FUTUROS'
+                    when TIPO_LCTOCPCR = 2 then 'LANÇAMENTO FUTURO RESTRITOS'
+                    when TIPO_LCTOCPCR = 3 then 'DUPLICATA'
+                    when TIPO_LCTOCPCR = 4 then 'DUPLICATA FORA DE COTA'
+                    when TIPO_LCTOCPCR = 5 then 'DUPLICATAS VENCIDA'
+                    when TIPO_LCTOCPCR = 6 then 'COMPRAS A VISTA'
+                    when TIPO_LCTOCPCR = 7 then 'FUNDO DE GARANTIA'
+                    when TIPO_LCTOCPCR = 8 then 'COMBUSTIVEL'
+                    when TIPO_LCTOCPCR = 9 then 'JURIDICO'
+                    when TIPO_LCTOCPCR = 10 then 'DUPLICATA RESTRITA'
+                    when TIPO_LCTOCPCR = 11 then 'AVISO DE PROTESTO'
+                    when TIPO_LCTOCPCR = 12 then 'CHEQUE PRE DATADO'
+                    when TIPO_LCTOCPCR = 13 then 'TRIBUTOS - DETRAN'
+                    when TIPO_LCTOCPCR = 14 then 'PAGAMENTO DE SALARIO'
+                    when TIPO_LCTOCPCR = 15 then 'ADIANTAMENTO DE SALARIO'
+                    when TIPO_LCTOCPCR = 16 then 'TRIBUTOS'
+                    when TIPO_LCTOCPCR = 17 then 'CONTRATO DE CREDITO'
+                    when TIPO_LCTOCPCR = 18 then 'RELATORIO DIA ANTERIOR'
+                    when TIPO_LCTOCPCR = 19 then 'CARTÕES DE CREDITO'
+                    end TIPO_LANCAMENTO,
+                    
+                    case
+                    when TIPO_LIQUIDACAO = 1 then 'MOVIMENTO DE CAIXA'
+                    when TIPO_LIQUIDACAO = 2 then 'CHEQUE'
+                    when TIPO_LIQUIDACAO = 3 then 'CREDITO CONTA'
+                    when TIPO_LIQUIDACAO = 4 then 'DEBITO CONTA'
+                    when TIPO_LIQUIDACAO = 5 then 'BOLETA'
+                    when TIPO_LIQUIDACAO = 6 then 'COMPENSAÇÃO DE VALORES'
+                    when TIPO_LIQUIDACAO = 7 then 'CHEQUE ADMINISTRATIVO'
+                    when TIPO_LIQUIDACAO = 8 then 'PAGFOR'
+                    when TIPO_LIQUIDACAO = 9 then 'AUTORIZAÇÃO DE PAGAMENTO'
+                    when TIPO_LIQUIDACAO = 10 then 'CARTÃO CORPORATIVO'
+                    when TIPO_LIQUIDACAO = 11 then 'CARTÃO DE CREDITO'
+                    when TIPO_LIQUIDACAO = 12 then 'CARTÃO DE DEBITO'
+                    when TIPO_LIQUIDACAO = 13 then 'DEBITO AUTOMATICO'
+                    end TIPO_LIQUIDACAO
+                    
+                    from OBRIGACOES, FORNECEDORES, CENTRO_CUSTO, ESTABELECIMENTO
+                    WHERE (OBRIGACOES.SITUACAO=2)
+                    and ((OBRIGACOES.CPF_CNPJ = FORNECEDORES.CGC) or (OBRIGACOES.ID_CLIFOR = FORNECEDORES.ID_FORNECEDOR))
+                    and OBRIGACOES.FLAG_CLIFOR = 'F'
+                    and OBRIGACOES.DATA_LIQUIDACAO between '20190101' and '20501231'
+                    and OBRIGACOES.TIPO_LCTO = 'P'
+                    and ((CENTRO_CUSTO.CENTRO_CUSTO = OBRIGACOES.ID_CENTRO_CUSTO) or(CENTRO_CUSTO.ID_CENTRO_CUSTO = OBRIGACOES.ID_CENTRO_CUSTO))
+                    and OBRIGACOES.ID_ITEM_LIVRO is NULL
+                    and OBRIGACOES.ID_ESTABELECIMENTO = ESTABELECIMENTO.ID_ESTABELECIMENTO
+                    and ESTABELECIMENTO.ID_ESTABELECIMENTO <> '734'
+                    
+                    
+                    union 
+                    
+                    Select fornecedores.RAZAO_SOCIAL, OBRIGACOES.ID_OBRIGACAO, OBRIGACOES.DATA_PREVISAO as VENCIMENTO_ORIGINAL,  OBRIGACOES.VALOR, OBRIGACOES.SITUACAO, OBRIGACOES.DATA_LIQUIDACAO,  OBRIGACOES.VALOR_LIQUIDADO, OBRIGACOES.TIPO_LIQUIDACAO, NUMERO_DOCUMENTO,
+                    OBRIGACOES.ID_NATUREZA as NATUREZA, OBRIGACOES.ID_CENTRO_CUSTO, OBRIGACOES.HISTORICO, OBRIGACOES.ID_CLIFOR, OBRIGACOES.ID_CENTRO_CUSTO AS CENTRO_CUSTO, OBRIGACOES.VENCIMENTO,
+                    case
+                    when TIPO_LCTOCPCR IS NULL then 'SEM CLASSIFICAÇÃO'
+                    when TIPO_LCTOCPCR = 1 then 'LANÇAMENTOS FUTUROS'
+                    when TIPO_LCTOCPCR = 2 then 'LANÇAMENTO FUTURO RESTRITOS'
+                    when TIPO_LCTOCPCR = 3 then 'DUPLICATA'
+                    when TIPO_LCTOCPCR = 4 then 'DUPLICATA FORA DE COTA'
+                    when TIPO_LCTOCPCR = 5 then 'DUPLICATAS VENCIDA'
+                    when TIPO_LCTOCPCR = 6 then 'COMPRAS A VISTA'
+                    when TIPO_LCTOCPCR = 7 then 'FUNDO DE GARANTIA'
+                    when TIPO_LCTOCPCR = 8 then 'COMBUSTIVEL'
+                    when TIPO_LCTOCPCR = 9 then 'JURIDICO'
+                    when TIPO_LCTOCPCR = 10 then 'DUPLICATA RESTRITA'
+                    when TIPO_LCTOCPCR = 11 then 'AVISO DE PROTESTO'
+                    when TIPO_LCTOCPCR = 12 then 'CHEQUE PRE DATADO'
+                    when TIPO_LCTOCPCR = 13 then 'TRIBUTOS - DETRAN'
+                    when TIPO_LCTOCPCR = 14 then 'PAGAMENTO DE SALARIO'
+                    when TIPO_LCTOCPCR = 15 then 'ADIANTAMENTO DE SALARIO'
+                    when TIPO_LCTOCPCR = 16 then 'TRIBUTOS'
+                    when TIPO_LCTOCPCR = 17 then 'CONTRATO DE CREDITO'
+                    when TIPO_LCTOCPCR = 18 then 'RELATORIO DIA ANTERIOR'
+                    when TIPO_LCTOCPCR = 19 then 'CARTÕES DE CREDITO'
+                    end TIPO_LANCAMENTO,
+                    
+                    case
+                    when TIPO_LIQUIDACAO = 1 then 'MOVIMENTO DE CAIXA'
+                    when TIPO_LIQUIDACAO = 2 then 'CHEQUE'
+                    when TIPO_LIQUIDACAO = 3 then 'CREDITO CONTA'
+                    when TIPO_LIQUIDACAO = 4 then 'DEBITO CONTA'
+                    when TIPO_LIQUIDACAO = 5 then 'BOLETA'
+                    when TIPO_LIQUIDACAO = 6 then 'COMPENSAÇÃO DE VALORES'
+                    when TIPO_LIQUIDACAO = 7 then 'CHEQUE ADMINISTRATIVO'
+                    when TIPO_LIQUIDACAO = 8 then 'PAGFOR'
+                    when TIPO_LIQUIDACAO = 9 then 'AUTORIZAÇÃO DE PAGAMENTO'
+                    when TIPO_LIQUIDACAO = 10 then 'CARTÃO CORPORATIVO'
+                    when TIPO_LIQUIDACAO = 11 then 'CARTÃO DE CREDITO'
+                    when TIPO_LIQUIDACAO = 12 then 'CARTÃO DE DEBITO'
+                    when TIPO_LIQUIDACAO = 13 then 'DEBITO AUTOMATICO'
+                    end TIPO_LIQUIDACAO
+                    
+                    from OBRIGACOES, FORNECEDORES, ESTABELECIMENTO
+                    WHERE (OBRIGACOES.SITUACAO=2)
+                    and ((OBRIGACOES.CPF_CNPJ = FORNECEDORES.CGC) or (OBRIGACOES.ID_CLIFOR = FORNECEDORES.ID_FORNECEDOR))
+                    and OBRIGACOES.FLAG_CLIFOR = 'F'
+                    and OBRIGACOES.DATA_LIQUIDACAO between '20190101' and '20501231'
+                    and OBRIGACOES.TIPO_LCTO = 'P'
+                    and OBRIGACOES.ID_CENTRO_CUSTO is null
+                    and OBRIGACOES.ID_ITEM_LIVRO is NULL
+                    and OBRIGACOES.ID_ESTABELECIMENTO = ESTABELECIMENTO.ID_ESTABELECIMENTO
+                    and ESTABELECIMENTO.ID_ESTABELECIMENTO <> '734'
+                    
+                    
+                    union
+                    
+                    Select RAZAO_SOCIAL = NULL, OBRIGACOES.ID_OBRIGACAO, OBRIGACOES.DATA_PREVISAO as VENCIMENTO_ORIGINAL, OBRIGACOES.VALOR,  OBRIGACOES.SITUACAO, OBRIGACOES.DATA_LIQUIDACAO,  OBRIGACOES.VALOR_LIQUIDADO, OBRIGACOES.TIPO_LIQUIDACAO, NUMERO_DOCUMENTO,
+                    OBRIGACOES.ID_NATUREZA as NATUREZA, OBRIGACOES.ID_CENTRO_CUSTO, OBRIGACOES.HISTORICO,  OBRIGACOES.ID_CLIFOR, CENTRO_CUSTO.DESCRICAO AS CENTRO_CUSTO ,OBRIGACOES.VENCIMENTO,
+                    case
+                    when TIPO_LCTOCPCR IS NULL then 'SEM CLASSIFICAÇÃO'
+                    when TIPO_LCTOCPCR = 1 then 'LANÇAMENTOS FUTUROS'
+                    when TIPO_LCTOCPCR = 2 then 'LANÇAMENTO FUTURO RESTRITOS'
+                    when TIPO_LCTOCPCR = 3 then 'DUPLICATA'
+                    when TIPO_LCTOCPCR = 4 then 'DUPLICATA FORA DE COTA'
+                    when TIPO_LCTOCPCR = 5 then 'DUPLICATAS VENCIDA'
+                    when TIPO_LCTOCPCR = 6 then 'COMPRAS A VISTA'
+                    when TIPO_LCTOCPCR = 7 then 'FUNDO DE GARANTIA'
+                    when TIPO_LCTOCPCR = 8 then 'COMBUSTIVEL'
+                    when TIPO_LCTOCPCR = 9 then 'JURIDICO'
+                    when TIPO_LCTOCPCR = 10 then 'DUPLICATA RESTRITA'
+                    when TIPO_LCTOCPCR = 11 then 'AVISO DE PROTESTO'
+                    when TIPO_LCTOCPCR = 12 then 'CHEQUE PRE DATADO'
+                    when TIPO_LCTOCPCR = 13 then 'TRIBUTOS - DETRAN'
+                    when TIPO_LCTOCPCR = 14 then 'PAGAMENTO DE SALARIO'
+                    when TIPO_LCTOCPCR = 15 then 'ADIANTAMENTO DE SALARIO'
+                    when TIPO_LCTOCPCR = 16 then 'TRIBUTOS'
+                    when TIPO_LCTOCPCR = 17 then 'CONTRATO DE CREDITO'
+                    when TIPO_LCTOCPCR = 18 then 'RELATORIO DIA ANTERIOR'
+                    when TIPO_LCTOCPCR = 19 then 'CARTÕES DE CREDITO'
+                    end TIPO_LANCAMENTO,
+                    
+                    case
+                    when TIPO_LIQUIDACAO = 1 then 'MOVIMENTO DE CAIXA'
+                    when TIPO_LIQUIDACAO = 2 then 'CHEQUE'
+                    when TIPO_LIQUIDACAO = 3 then 'CREDITO CONTA'
+                    when TIPO_LIQUIDACAO = 4 then 'DEBITO CONTA'
+                    when TIPO_LIQUIDACAO = 5 then 'BOLETA'
+                    when TIPO_LIQUIDACAO = 6 then 'COMPENSAÇÃO DE VALORES'
+                    when TIPO_LIQUIDACAO = 7 then 'CHEQUE ADMINISTRATIVO'
+                    when TIPO_LIQUIDACAO = 8 then 'PAGFOR'
+                    when TIPO_LIQUIDACAO = 9 then 'AUTORIZAÇÃO DE PAGAMENTO'
+                    when TIPO_LIQUIDACAO = 10 then 'CARTÃO CORPORATIVO'
+                    when TIPO_LIQUIDACAO = 11 then 'CARTÃO DE CREDITO'
+                    when TIPO_LIQUIDACAO = 12 then 'CARTÃO DE DEBITO'
+                    when TIPO_LIQUIDACAO = 13 then 'DEBITO AUTOMATICO'
+                    end TIPO_LIQUIDACAO
+                    
+                    from OBRIGACOES
+                    left join CENTRO_CUSTO on (OBRIGACOES.id_CENTRO_CUSTO = CENTRO_CUSTO.CENTRO_CUSTO)
+                    left join	ESTABELECIMENTO on (OBRIGACOES.ID_ESTABELECIMENTO = ESTABELECIMENTO.ID_ESTABELECIMENTO)
+                    WHERE (OBRIGACOES.SITUACAO=2)
+                    and ((OBRIGACOES.CPF_CNPJ is null) or (OBRIGACOES.CPF_CNPJ = ''))
+                    and ((SUBSTRING(OBRIGACOES.CHAVE_CF,2,14) not in (select CGC from CLIENTES where CGC = SUBSTRING(OBRIGACOES.CHAVE_CF,2,14)) and FLAG_CLIFOR = 'C')
+                    or (SUBSTRING(OBRIGACOES.CHAVE_CF,2,14) not in (select CGC from FORNECEDORES where CGC = SUBSTRING(OBRIGACOES.CHAVE_CF,2,14)) and FLAG_CLIFOR = 'F') or (FLAG_CLIFOR is null or FLAG_CLIFOR = ''))
+                    and OBRIGACOES.DATA_LIQUIDACAO between '20190101' and '20501231'
+                    and OBRIGACOES.TIPO_LCTO = 'P'
+                    and OBRIGACOES.ID_ITEM_LIVRO is NULL
+                    and ESTABELECIMENTO.ID_ESTABELECIMENTO <> '734'
+                    order by 2
+                </td>
+                <td><Button style="margin-left: 3px;" type="button" class="btn btn-success"><i class="small material-icons">visibility</i></Button></td>
+                <td><Button style="margin-left: 3px;" type="button" class="btn btn-primary"><i class="small material-icons">edit</i></Button></td>
+                <td><Button style="margin-left: 3px;" type="button" class="btn btn-danger"><i class="small material-icons">delete</i></Button></td>
+                
+            </tr>
+            <tr>
+                <td>Cadastros de pedros</td>
+                <td>select * from cadastros de scripts
+                    asasdafgadg a sa aadgadga
+                    gadgdahgaf asf hfa
+                    adgad gdagadgadt
+                    ahsfhfslçhmjfaçkhjf
+                    sfjhç~fskjha~çjkg saçhgjafsç ~hj~ç hkja ~çhja ]hfaha hoja ~hjad
+                    ha hkla h
+                    aop 
+                    hajkh 
+                    áojh 
+                    áojh 
+                    ]a
+                    lhj e
+                    a´hjk eta
+                    óhj
+                    jhçsfjhsfohjsfojhçfsjhs
+                </td>
+                <td><Button style="margin-left: 3px;" type="button" class="btn btn-success"><i class="small material-icons">visibility</i></Button></td>
+                <td><Button style="margin-left: 3px;" type="button" class="btn btn-primary"><i class="small material-icons">edit</i></Button></td>
+                <td><Button style="margin-left: 3px;" type="button" class="btn btn-danger"><i class="small material-icons">delete</i></Button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

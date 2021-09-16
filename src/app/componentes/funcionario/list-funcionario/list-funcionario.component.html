@@ -1,0 +1,29 @@
+
+<section id="meio">
+  
+    <H2>Funcionarios</H2>
+    <div class="container-title"> Listagem de Funcionarios Cadastrados </div>
+    <br>
+    
+    <section class="lista">
+        <table>
+            <thead>
+              <tr>
+                  <th>MATRICULA</th>
+                  <th>NOME</th>
+                  <th><button [routerLink]="'/novofuncionario'" class="btn btn-primary" type="submit" name="action">Adicionar</button></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let funcionario of funcionarios">
+                <td>{{ funcionario.matricula }}</td>
+                <td>{{ funcionario.nome }}</td>
+                <td><a [routerLink]="['/DetalhesFuncionario', funcionario.matricula]" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">edit</i></a>
+                </td>
+              </tr> 
+            </tbody>
+          </table>
+          
+    </section>
+
+</section>

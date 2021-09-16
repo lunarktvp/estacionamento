@@ -1,0 +1,45 @@
+<section id="meio" >
+
+    <H2>Tickets</H2>
+    <div class="container-title"> Encerrar ticket</div>
+    <br>
+
+    <div id="myform">
+      <form id="form" method="post" (ngSubmit)="onSubmit()" [formGroup]="formulario">
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+               <label  for="Ticket" >Numero do Ticket</label>
+               <input  [ngModel]="ticket?.id" formControlName="id" class="form-control" id="Ticket" type="text "  name="ticket" readonly >
+              </div>
+          </div>
+            <div class="row">
+              <div class="col">
+                <label for="placa">Placa</label>
+                <input [ngModel]="ticket?.placa" formControlName="placa" class="form-control"  id="placa" type="text"  name="placa" >
+            </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="Permanencia">Tempo de Permanencia </label> 
+                <input formControlName="permanencia" class="form-control"  id="veiculo" type="text"   name="permanencia">  
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="valor">Valor Total</label> 
+                <input formControlName="valor" class="form-control"  id="valor" type="text"   name="valor">  
+              </div>
+            </div>
+        </div>
+  
+        <button [disabled]="formulario.invalid" class="btn btn-success" type="submit">Encerrar
+        </button>
+  
+        <button [routerLink]="'/cadastros'" style=" margin-left: 5px;" class="btn btn-danger">Cancelar
+        </button>
+        </form>
+        </div>
+  
+  </section>
+  

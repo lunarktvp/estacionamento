@@ -1,0 +1,41 @@
+.form-control{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 400px;
+}
+
+.titulo, script{
+    width: 30%;
+    min-width: 200px;
+    border-radius: 5px;
+    border: solid 1px black
+}
+
+label{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+
+.col{
+    display: flex;
+    flex-direction: column;
+}
+
+textarea{
+    resize: none;
+    
+}
+
+.row-buttons{
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.row-buttons Button{
+    width: 100px;
+    height: 40px;
+}

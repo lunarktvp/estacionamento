@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "fba42272-b7fa-4966-8995-bc016fc8130e"
+    "analytics": false
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "estacionamento": {
+    "MeuGerenciador-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/estacionamento",
+            "outputPath": "dist/MeuGerenciador-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "estacionamento:build:production"
+              "browserTarget": "MeuGerenciador-app:build:production"
             },
             "development": {
-              "browserTarget": "estacionamento:build:development"
+              "browserTarget": "MeuGerenciador-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "estacionamento:build"
+            "browserTarget": "MeuGerenciador-app:build"
           }
         },
         "test": {
@@ -97,18 +97,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "../node_modules/materialize-css/dist/css/materialize.css"
+              "src/styles.css"
             ],
-            "scripts": [
-              "../node_modules/jquery/dist/jquery.js",
-              "../node_modules/hammerjs/hammer.js",
-              "../node_modules/materialize-css/dist/js/materialize.js"
-            ]
+            "scripts": []
           }
         }
       }
     }
   },
-  "defaultProject": "estacionamento"
+  "defaultProject": "MeuGerenciador-app"
 }

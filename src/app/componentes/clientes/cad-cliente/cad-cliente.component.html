@@ -1,0 +1,58 @@
+<section id="meio" >
+
+    <H2>Clientes</H2>
+    <div class="container-title"> Cadastrar Novo Cliente </div>
+    <br>
+
+  <div id="myform">
+     <form id="form" method="post" (ngSubmit)="onSubmit()" [formGroup]="formulario">
+        <div class="form-group">
+
+            <div class="row">
+            <div class="col">
+                <label for="nome">Nome</label>
+                <input formControlName="nome" class="form-control" id="nome" type="text" name="nome" >
+            </div>
+            </div>
+
+            <div class="row">
+                <div class="col s">
+                    <label for="cgc">CPF</label>
+                    <input formControlName="cgc" class="form-control" id="cgc" type="text" name="cgc">
+                </div>
+
+                <div class="col">
+                    <label for="nascimento">Data Nascimento</label>
+                    <input formControlName="nascimento" class="form-control" id="nascimento" type="date" name="nascimento">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="endereco">Endereço</label>
+                    <input formControlName="endereco" class="form-control" id="endereco" type="text" name="endereco">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="telefone">Telefone</label>
+                    <input formControlName="telefone" class="form-control" id="telefone" type="text" name="telefone" placeholder="(99)99999-9999">
+                </div>
+                <div class="col">
+                    <label for="email">E-mail</label>
+                    <input formControlName="email" class="form-control" id="email" type="text" name="email" placeholder="nome@mail.com">
+                </div>
+            </div>
+
+        </div>
+
+            <button [disabled]="formulario.invalid" class="btn btn-success" type="submit">Gravar
+            </button>
+
+            <button [routerLink]="'/clientes'" style="background-color: rgb(224, 59, 59); margin-left: 5px;" class="btn btn-danger">Cancelar
+            </button>
+
+        </form>
+    </div>
+</section>

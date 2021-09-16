@@ -1,0 +1,40 @@
+<section id="meio" >
+    
+    <H2>Tickets</H2>
+    <div class="container-title"> Abrir novo ticket</div>
+    <br>
+
+    <div id="myform">
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+               <input hidden [ngModel]="dataAtual"  >
+               <label  for="entrada" >Hora Entrada</label>
+               <input readonly [(ngModel)]="horaAtual"  class="form-control" type="text"  >
+            </div>
+          </div>
+            <div class="row">
+              <div class="col">
+                <label for="placa">Placa</label>
+                <input [(ngModel)]="ticket.placa" class="form-control"  id="placa" type="text"  name="placa" (blur)="verificaPlaca()">
+              </div>
+            
+            </div>
+            <div *ngIf="exibeMensalista" id="exibeMensalista" >
+              <span style="display: block; margin-top: -15px; color: white; font-size: 16px; font-weight: 700;"> Cliente Mensalista! </span>
+              <span style="display: block; color: white; font-size: 16px; font-weight: 700; "> Escolha a forma de pagamento: </span>
+              <button class="pgto" style="margin-right: 5px;" (click)="aVista()" >A Vista</button>
+              <button class="pgto" (click)="aFaturar()" >A Faturar</button>
+              <input type="radio" checked="checked">
+
+            </div>
+        </div>
+        <div style="display: inline-block; margin-top: 10px; margin-left:-5px;">
+          <button class="btn btn-success" type="submit" (click)="gravarTicket()">Gravar
+          </button>
+
+          <button  [routerLink]="'/tickets'" style="background-color: rgb(224, 59, 59); margin-left: 5px;" class="btn btn-danger">Cancelar
+          </button>
+      </div>
+    </div>
+</section>

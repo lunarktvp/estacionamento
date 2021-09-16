@@ -1,0 +1,36 @@
+.tabela{
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    
+  }
+  table{
+      width: 100%;
+  }
+  
+  thead{
+      border-bottom: solid 1px #c7c6c6;
+      font-size: 20px;
+  }
+  
+  #titulo{
+      width: 15%;
+      
+  }
+  
+  #previa{
+      width: 74%;
+  }
+  
+  tr{
+      border-bottom: solid 1px #dbd8d8;
+      height: 60px;
+  }
+  
+  td{
+    max-width: 100px;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+   
+  }

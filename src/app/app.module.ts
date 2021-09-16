@@ -1,78 +1,58 @@
-import { HttpClientModule } from '@angular/common/http';
+import { EmpresaService } from './serviços/empresas-services.service';
+import { ClienteService } from './serviços/clientes-services.service';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterializeModule } from 'angular2-materialize';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CadastrarEmpresaComponent } from './components/empresa/cadastrar-empresa/cadastrar-empresa.component';
-import { CadastrarTicketComponent } from './components/Ticket/cadastrar-ticket/cadastrar-ticket.component';
-import { CadastrosComponent } from './components/cadastros/cadastros.component';
-import { DetalhesEmpresaComponent } from './components/empresa/detalhes-empresa/detalhes-empresa/detalhes-empresa.component';
-import { ListEmpresasComponent } from './components/empresa/list-empresas/list-empresas.component';
-import { TicketsHomeComponent } from './components/Ticket/tickets-home/tickets-home.component';
-import { EmpresaService } from './services/empresa.service';
-import { ListTicketsComponent } from './components/Ticket/list-ticket/list-tickets.component';
-import { CadastrarEstacionamentoComponent } from './components/estacionamento/cadastrar-estacionamento/cadastrar-estacionamento.component';
-import { ListarEstabelecimentoComponent } from './components/estacionamento/listar-estabelecimento/listar-estabelecimento.component';
-import { CadFuncionarioComponent } from './components/funcionarios/cad-funcionario/cad-funcionario.component';
-import { ListFuncionariosComponent } from './components/funcionarios/list-funcionarios/list-funcionarios.component';
-import { CadClienteComponent } from './components/clientes/cad-cliente/cad-cliente.component';
-import { ListClientesComponent } from './components/clientes/list-clientes/list-clientes.component';
-import { DetalhesClienteComponent } from './components/clientes/detalhes-cliente/detalhes-cliente.component';
-import { DetalhesFuncionarioComponent } from './components/funcionarios/detalhes-funcionario/detalhes-funcionario.component';
-import { UtilidadesService } from './services/utilidades.service';
-import { FuncionarioService } from './services/funcionario.service';
-import { LoginComponent } from './components/login/login.component';
-import { EncerrarTicketComponent } from './components/Ticket/encerrar-ticket/encerrar-ticket.component'
-import { AuthService } from './components/login/auth.service';
-import { CadVeiculosComponent } from './components/veiculos/cad-veiculo/cad-veiculo.component';
-import { ListVeiculoComponent } from './components/veiculos/list-veiculo/list-veiculo.component';
-import { LayoutComponent } from './components/layout/layout.component';
-
+import { ListarScriptComponent } from './Script/listar-script/listar-script.component';
+import { CadastrarScriptComponent } from './Script/cadastrar-script/cadastrar-script.component';
+import { HomeComponent } from './home/home.component';
+import { CadClienteComponent } from './componentes/clientes/cad-cliente/cad-cliente.component';
+import { ListClienteComponent } from './componentes/clientes/list-cliente/list-cliente.component';
+import { DetailClienteComponent } from './componentes/clientes/detail-cliente/detail-cliente.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CadFuncionarioComponent } from './componentes/funcionario/cad-funcionario/cad-funcionario.component';
+import { ListFuncionarioComponent } from './componentes/funcionario/list-funcionario/list-funcionario.component';
+import { DetailFuncionarioComponent } from './componentes/funcionario/detail-funcionario/detail-funcionario.component';
+import { CadTicketComponent } from './componentes/ticket/cad-ticket/cad-ticket.component';
+import { EncerraTicketComponent } from './componentes/ticket/encerra-ticket/encerra-ticket.component';
+import { ListTicketComponent } from './componentes/ticket/list-ticket/list-ticket.component';
+import { CadEmpresaComponent } from './componentes/empresa/cad-empresa/cad-empresa.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { TemplateComponent } from './componentes/template/template.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListEmpresasComponent,
-    CadastrarEmpresaComponent,
-    CadastrosComponent,
-    DetalhesEmpresaComponent,
-    TicketsHomeComponent,
-    CadastrarTicketComponent,
-    ListTicketsComponent,
-    CadastrarEstacionamentoComponent,
-    ListarEstabelecimentoComponent,
-    CadFuncionarioComponent,
-    ListFuncionariosComponent,
+    ListarScriptComponent,
+    CadastrarScriptComponent,
+    HomeComponent,
     CadClienteComponent,
-    ListClientesComponent,
-    DetalhesClienteComponent,
-    DetalhesFuncionarioComponent,
+    ListClienteComponent,
+    DetailClienteComponent,
+    CadFuncionarioComponent,
+    ListFuncionarioComponent,
+    DetailFuncionarioComponent,
+    CadTicketComponent,
+    EncerraTicketComponent,
+    ListTicketComponent,
+    CadEmpresaComponent,
     LoginComponent,
-    EncerrarTicketComponent,
-    CadVeiculosComponent,
-    ListVeiculoComponent,
-    LayoutComponent,
-    
-
+    TemplateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterializeModule,
-    BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
-    EmpresaService,
-    FuncionarioService,
-    UtilidadesService,
-    AuthService
+    ClienteService,
+    EmpresaService
   ],
   bootstrap: [AppComponent]
 })

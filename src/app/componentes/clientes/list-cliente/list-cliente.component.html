@@ -1,0 +1,33 @@
+
+<section id="meio">
+
+    <H2>Clientes</H2>
+    <div class="container-title"> Listagem de Clientes  Cadastrados </div>
+    <br>
+
+  
+    <H4 style="color: white; text-align: left;">Clientes Cadastrados</H4>    
+    <section class="lista">
+        <table>
+            <thead>
+              <tr>
+                  <th>CPF</th>
+                  <th>NOME</th>
+                  <th> </th>
+                  <th><button routerLink="/novocliente" type="button" class="btn btn-primary">Adicionar</button></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let cliente of clientes">
+                <td>{{ cliente.cgc }}</td>
+                <td>{{ cliente.nome }}</td>
+                  <td><a [routerLink]="['/DetalhesCliente', cliente.id]" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">edit</i></a>
+                  <td><a [routerLink]="['/veiculos']" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">drive_eta</i></a>
+                </td>
+              </tr> 
+            </tbody>
+          </table>
+          
+    </section>
+
+</section>

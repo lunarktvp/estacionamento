@@ -1,0 +1,38 @@
+  
+  #meio{
+      margin-left: 40%;
+  }
+
+  button{
+      margin-top: 10px;
+      margin-left: 50px;
+  }
+
+  label{
+   
+    font-size: 20px;
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+  
+  .row .col input{
+ 
+    border-radius: 5px;
+    color: black;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  div{
+      display: block;
+      align-items: center;
+      width: 45%;
+  }
+
+
+  @media (min-width:320px) and (max-width:450px){
+    .row .col input{
+            width: 150px;
+        }
+
+  }
