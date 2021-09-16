@@ -1,19 +1,21 @@
 
 <section id="meio">
     
-    <H2>Tickets</H2>
-    <div class="container-title"> Tickets em Aberto</div>
+    <H2>Entradas</H2>
+    <div class="container-title"> Entradas do Dia</div>
     <br>
 
     
     <br><br>
     <section>
-        <button [routerLink]="'/novoticket'" class="btn btn-primary" type="submit" name="action">Novo Ticket</button>
+        
         <table>
             <thead>
               <tr>
                   <th>Placa</th>
                   <th>Horário Entrada</th>
+                  <th>Valor Cobrado</th>
+
                   <th></th>
               </tr>
             </thead>
@@ -21,11 +23,16 @@
               <tr  *ngFor="let ticket of tickets">
                 <td>{{ ticket.placa }}</td>
                 <td>{{ ticket.horaEntrada }}</td>
-                <td><button id="encerrar" [routerLink]="['/encerrar', ticket.id]" class="btn btn-primary" type="button" name="action">Encerrar</button></td>
+                <td>{{ ticket.valorCobrado }}</td>
               </tr> 
 
             </tbody>
+            <div class="total">
+                <tr>TOTAL:</tr>
+            </div>
           </table>
+         
+          
           
     </section>
 

@@ -8,8 +8,8 @@
       <form id="form" method="post" (ngSubmit)="onSubmit()" [formGroup]="formulario">
         <div class="form-group">
           <div class="row">
-            <div class="col-sm-3">
-               <label  for="Ticket" >Numero do Ticket</label>
+            <div class="col">
+               <label  for="Ticket" >Número do Ticket</label>
                <input  [ngModel]="ticket?.id" formControlName="id" class="form-control" id="Ticket" type="text "  name="ticket" readonly >
               </div>
           </div>
@@ -20,9 +20,10 @@
             </div>
             </div>
             <div class="row">
-              <div class="col-sm-3">
-                <label for="Permanencia">Tempo de Permanencia </label> 
-                <input [ngModel]="ticket?.horasaida" formControlName="permanencia" class="form-control"  id="veiculo" type="text"   name="permanencia" readonly>  
+              <div class="col">
+                <label for="Permanencia">Tempo de Permanência </label> 
+                <input formControlName="permanencia" class="form-control"  id="veiculo" type="text"   name="permanencia">  
+
               </div>
             </div>
             <div class="row">

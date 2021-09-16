@@ -1,5 +1,5 @@
 
-   export class Ticket{
+   export class Ticket{  
     public id: any;
     public horaEntrada: string;
     public horasaida: string;

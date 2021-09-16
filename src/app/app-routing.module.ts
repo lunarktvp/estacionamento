@@ -6,7 +6,6 @@ import { ListFuncionarioComponent } from './componentes/funcionario/list-funcion
 import { CadastrarScriptComponent } from './Script/cadastrar-script/cadastrar-script.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { HomeComponent } from './home/home.component';
 import { ListarScriptComponent } from './Script/listar-script/listar-script.component';
 import { ListClienteComponent } from './componentes/clientes/list-cliente/list-cliente.component';
@@ -14,6 +13,7 @@ import { CadClienteComponent } from './componentes/clientes/cad-cliente/cad-clie
 import { CadFuncionarioComponent } from './componentes/funcionario/cad-funcionario/cad-funcionario.component';
 import { ListTicketComponent } from './componentes/ticket/list-ticket/list-ticket.component';
 import { CadTicketComponent } from './componentes/ticket/cad-ticket/cad-ticket.component';
+import { EntradaDiaComponent } from './componentes/relatorios/entrada-dia/entrada-dia.component';
 
 const routes: Routes = [
 
@@ -36,7 +36,10 @@ const routes: Routes = [
   { path: 'novoticket', component: CadTicketComponent },
   { path: 'encerrar/:id', component: EncerraTicketComponent },
 
-  { path: 'empresa', component: CadEmpresaComponent }
+  { path: 'empresa', component: CadEmpresaComponent },
+
+  { path: 'entradas', component: EntradaDiaComponent }
+
   ] }
 
 ];
