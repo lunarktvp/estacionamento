@@ -42,6 +42,7 @@ export class EncerraTicketComponent implements OnInit {
       
   }
 
+
     detalhesTicket(id:any){
       this.ticketservice.detalheTicket(id)
       .subscribe(resposta =>{
