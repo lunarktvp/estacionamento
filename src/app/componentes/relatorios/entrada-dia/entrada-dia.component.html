@@ -20,15 +20,15 @@
               </tr>
             </thead>
             <tbody>
-              <tr  *ngFor="let ticket of tickets">
+              <tr *ngFor="let ticket of tickets">
                 <td>{{ ticket.placa }}</td>
                 <td>{{ ticket.horaEntrada }}</td>
-                <td>{{ ticket.valorCobrado }}</td>
+                <td>{{ ticket.valor }}</td>
               </tr> 
 
             </tbody>
             <div class="total">
-                <tr>TOTAL:</tr>
+                <tr>TOTAL: {{totalEntradas}}</tr>
             </div>
           </table>
          

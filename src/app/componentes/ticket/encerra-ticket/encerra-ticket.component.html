@@ -9,7 +9,7 @@
         <div class="form-group">
           <div class="row">
             <div class="col-sm-2">
-               <label  for="Ticket" >Número do Ticket</label>
+               <label  for="Ticket" >Numero Ticket</label>
                <input  [ngModel]="ticket?.id" formControlName="id" class="form-control" id="Ticket" type="text "  name="ticket" readonly >
               </div>
         
@@ -31,9 +31,9 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-sm-3">
+              <div class="col-sm-2">
                 <label for="valor">Valor Total</label> 
-                <input [ngModel]="ticket?.valor" formControlName="valor" class="form-control"  id="valor" type="number" name="valor" readonly> 
+                <input value="R$ {{valortotal}}"  formControlName="valor" class="form-control"  id="valor" type="text" name="valor" readonly> 
               </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
         <button [disabled]="formulario.invalid" class="btn btn-success" type="submit" (click)=encerrarTicket()>Encerrar
         </button>
   
-        <button [routerLink]="'/tickets'" style=" margin-left: 5px;" class="btn btn-danger">Cancelar
+        <button routerLink="/tickets" style=" margin-left: 5px;" class="btn btn-danger">Cancelar
         </button>
         </form>
         </div>

@@ -45,13 +45,11 @@ export class CadEmpresaComponent implements OnInit {
   onSubmit(){
 
       if(this.gravar){
-        console.log("Alterando")
           this.empService.alterarEmpresa(this.formulario.value).subscribe(
             resposta=>{
             this.router.navigate(['cadEmpresa'])
           });
         }else{
-          console.log("Criando")
           this.empService.cadastrarEmpresa(this.formulario.value).subscribe(resposta=>{
             this.formulario.reset();
             this.router.navigate(['cadEmpresa'])
@@ -64,7 +62,6 @@ export class CadEmpresaComponent implements OnInit {
 
     this.empService.detalheEmpresas(1).subscribe(empresa=>{
       this.empresa = empresa
-      console.log(this.empresa)
 
       if(this.empresa?.nome!=null){
         this.titleButtonSubmite = "Alterar"

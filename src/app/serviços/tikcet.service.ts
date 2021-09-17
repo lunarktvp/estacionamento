@@ -11,7 +11,7 @@ export class TikcetService {
   empUrl = 'http://localhost:8080/ticket';
 
   permancencia:number;
-  valorminuto:number = 0.10;
+  valorminuto:number = 0.08;
 
 
   httpOptions ={
@@ -26,11 +26,11 @@ export class TikcetService {
   ){}
 
   public getTicket(): Observable<Ticket>{
-    return this.httpClient.get<Ticket>(this.empUrl+'/listar');
+    return this.httpClient.get<Ticket>(this.empUrl+'/listar')
   }
 
   public detalheTicket(id: any): Observable<Ticket>{
-    return this.httpClient.get<Ticket>(this.empUrl+'/detalhes/'+ id);
+    return this.httpClient.get<Ticket>(this.empUrl+'/detalhes/'+ id)
   
   }
 
@@ -47,6 +47,10 @@ export class TikcetService {
     return this.httpClient.delete<any>(this.empUrl+'/ticket',ticket)
   }
 
+  public buscaencerradosnodia():Observable<Ticket>{
+    return this.httpClient.get<Ticket>(this.empUrl+'/encerradosdia')
+  }
+
 
   //Calcula tempo de permanecia
   public calculapermanencia(ticket:Ticket){
@@ -59,9 +63,27 @@ export class TikcetService {
     
 
     valor = this.permancencia * this.valorminuto;
-
     total=valor.toString();
-    total= total.substr(0,4)    
+    total= total
+
+    if(this.permancencia < 15){
+        total = '0.00'
+    }
+
+    if(this.permancencia >= 15 && this.permancencia <=60){
+      total = '5.00'
+    }
+
+    if(this.permancencia % 60 < 15){
+      valor = Math.trunc(this.permancencia / 60) * 5
+      total = valor.toString();
+    }else{
+      valor = Math.trunc((this.permancencia / 60) + 1) * 5
+      total = valor.toString();
+    }
+
+
+
     return total;
   }
 
@@ -74,24 +96,24 @@ export class TikcetService {
       
       if((new Date().getHours()< 10) && (new Date().getMinutes()< 10)){
          
-        return '0' + new Date().getHours() + ':' + '0' +new Date().getMinutes()
+        return '0' + new Date().getHours() + ':' + '0' +new Date().getMinutes() + ':00'
 
       }else{
 
         if( (new Date().getHours()<10) && (new Date().getMinutes()>=10) ){
           
-          return '0' + new Date().getHours() +':'+ new Date().getMinutes()
+          return '0' + new Date().getHours() +':'+ new Date().getMinutes()+ ':00'
         
         }else{
 
           if( (new Date().getHours()>=10) && (new Date().getMinutes()<10) ){
-            return new Date().getHours() +':'+ '0' + new Date().getMinutes()
+            return new Date().getHours() +':'+ '0' + new Date().getMinutes()+ ':00'
           }
         }
       }
      
     }
-    return new Date().getHours() +':'+ new Date().getMinutes()  
+    return new Date().getHours() +':'+ new Date().getMinutes() + ':00' 
   }
 
   public pegaData(){

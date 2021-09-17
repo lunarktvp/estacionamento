@@ -4,7 +4,7 @@
       public horaEntrada: string;
       public horasaida: string;
       public placa: any;
-      public valor:any;
+      public valor:number;
       public idCliente:any;
       public tipoPagamento: any;
       public situacao: any;

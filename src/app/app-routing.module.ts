@@ -24,9 +24,10 @@ const routes: Routes = [
 
   //Path relativos a toda a aplicação dentro do layout
   { path:'', component: TemplateComponent, children:[
-    { path: 'scripts', component: ListarScriptComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'scripts', component: ListarScriptComponent },
   { path:'novoScript', component: CadastrarScriptComponent },
+  
+  { path: 'home', component: HomeComponent },
 
   { path: 'clientes', component: ListClienteComponent },
   { path: 'novocliente', component: CadClienteComponent },
@@ -52,4 +53,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

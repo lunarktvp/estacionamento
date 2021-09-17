@@ -1,9 +1,9 @@
+import { EntradaDiaComponent } from './componentes/relatorios/entrada-dia/entrada-dia.component';
+import { NgxMaskModule } from 'ngx-mask';
 import { EmpresaService } from './serviços/empresas-services.service';
 import { ClienteService } from './serviços/clientes-services.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgxMaskModule } from 'ngx-mask'
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarScriptComponent } from './Script/listar-script/listar-script.component';
@@ -42,7 +42,8 @@ import { TemplateComponent } from './componentes/template/template.component';
     ListTicketComponent,
     CadEmpresaComponent,
     LoginComponent,
-    TemplateComponent
+    TemplateComponent,
+    EntradaDiaComponent
   ],
   imports: [
     BrowserModule,

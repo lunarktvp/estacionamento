@@ -19,13 +19,15 @@ export class ListTicketComponent implements OnInit {
   ngOnInit(): void {
     this.getTickets()
 
+    setTimeout(()=>{
+      this.getTickets()
+    },1000)
   }
 
   getTickets(){
 
     this.tckService.getTicket().subscribe(ticket=>{
       this.tickets = ticket
-      console.log(ticket)
     });
 
     

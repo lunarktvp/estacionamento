@@ -11,10 +11,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EncerraTicketComponent implements OnInit {
 
-  ticket: Ticket;
-  id: any;
-  hora:string;
-  minutos:string;
+  ticket: Ticket
+  id: any
+  hora:string
+  minutos:string
+  valortotal: any
 
   formulario: FormGroup;
 
@@ -34,8 +35,7 @@ export class EncerraTicketComponent implements OnInit {
       this.id = params['id']
       );  
 
-      this.detalhesTicket(this.id);
-
+      this.detalhesTicket(this.id)
       
   }
 
@@ -45,6 +45,7 @@ export class EncerraTicketComponent implements OnInit {
       .subscribe(resposta =>{
         this.ticket = resposta
         this.ticket.horasaida =  this.ticketservice.pegaHora();
+        this.valortotal = this.ticket.valor = this.ticketservice.calculapermanencia(this.ticket)
         this.ticket.valor = this.ticketservice.calculapermanencia(this.ticket);
       })
 
@@ -58,7 +59,7 @@ export class EncerraTicketComponent implements OnInit {
         placa:[null,Validators.required],
         saida:[null,Validators.required],
         entrada:[null,Validators.required],
-        valor:[null,Validators.required],
+        valor:[null],
         idCliente: [null]
       });
     }
@@ -73,11 +74,9 @@ export class EncerraTicketComponent implements OnInit {
 
   encerrarTicket(){
     this.ticket.situacao = 9
-
-    console.log(this.ticket)
     this.ticketservice.cadastrarTicket(this.ticket)
     .subscribe(reposta=>{
-      this.router.navigate(['/tickets']);
+      this.router.navigate(['tickets']);
     })
   }
 

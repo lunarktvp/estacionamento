@@ -16,7 +16,7 @@ export class CadTicketComponent implements OnInit {
     horaEntrada: "",
     horasaida: "",
     placa: "",
-    valor: "",
+    valor: 0,
     idCliente: "",
     tipoPagamento: 0,
     situacao: ""
@@ -57,15 +57,14 @@ export class CadTicketComponent implements OnInit {
 
   gravarTicket(){
 
-    this.ticket.horaEntrada = this.horaAtual;
-      console.log(this.ticket);
+    //this.ticket.horaEntrada = this.horaAtual;
       
      
      this.empService.cadastrarTicket(this.ticket).subscribe(resposta=>{
        this.formulario.reset();
       });
       
-      this.router.navigate(['/tickets'])
+      this.router.navigate(['tickets'])
   }  
 
 
