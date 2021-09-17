@@ -1,3 +1,5 @@
+import { DetailFuncionarioComponent } from './componentes/funcionario/detail-funcionario/detail-funcionario.component';
+import { DetailClienteComponent } from './componentes/clientes/detail-cliente/detail-cliente.component';
 import { EncerraTicketComponent } from './componentes/ticket/encerra-ticket/encerra-ticket.component';
 import { TemplateComponent } from './componentes/template/template.component';
 import { LoginComponent } from './componentes/login/login.component';
@@ -28,9 +30,11 @@ const routes: Routes = [
 
   { path: 'clientes', component: ListClienteComponent },
   { path: 'novocliente', component: CadClienteComponent },
+  { path:'detallhescliente/:id', component: DetailClienteComponent },
   
   { path: 'funcionarios', component: ListFuncionarioComponent },
   { path: 'novofuncionario', component: CadFuncionarioComponent },
+  { path: 'detalhesfuncionario', component: DetailFuncionarioComponent },
 
   { path: 'tickets', component: ListTicketComponent },
   { path: 'novoticket', component: CadTicketComponent },

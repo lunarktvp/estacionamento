@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListTicketComponent implements OnInit {
 
-  tickets: any;
+  tickets: any
+  encerrado:boolean
 
   constructor(public tckService: TikcetService) { 
    
