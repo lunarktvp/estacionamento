@@ -23,6 +23,8 @@ import { ListTicketComponent } from './componentes/ticket/list-ticket/list-ticke
 import { CadEmpresaComponent } from './componentes/empresa/cad-empresa/cad-empresa.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { TemplateComponent } from './componentes/template/template.component';
+import { CadVeiculoComponent } from './componentes/veiculos/cad-veiculos/cad-veiculos.component'
+
 
 
 @NgModule({
@@ -43,7 +45,8 @@ import { TemplateComponent } from './componentes/template/template.component';
     CadEmpresaComponent,
     LoginComponent,
     TemplateComponent,
-    EntradaDiaComponent
+    EntradaDiaComponent,
+    CadVeiculoComponent
   ],
   imports: [
     BrowserModule,

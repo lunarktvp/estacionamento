@@ -1,0 +1,52 @@
+<section id="meio" >
+
+    <H2>Veículos</H2>
+    <div class="container-title"> Cadastrar Novo Veículo </div>
+    <br>
+
+  <div id="myform">
+     <form id="form" method="post" (ngSubmit)="onSubmit()" [formGroup]="formulario">
+        <div class="form-group">
+
+            <div class="row">
+            <div class="col">
+                <div><label for="tipoveiculo">Tipo do Veiculo</label></div>
+                <select id=tipoveiculo>
+                    <option value="" ></option>
+                    <option value="carro" >carro</option>
+                    <option value="mot" >moto</option>
+                </select>
+            </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col s">
+                    <label for="modelo">modelo</label>
+                    <input formControlName="modelo" class="form-control" id="modelo" type="text" name="modelo" >
+                </div>
+
+                <div class="col">
+                    <label for="placa">Placa</label>
+                    <input formControlName="Placa" class="form-control" id="placa" type="text" name="Placa" >
+                </div>
+                
+                <div class="col">
+                    <label for="cor">Cor</label>
+                    <input formControlName="cor" class="form-control" id="cor" type="text" name="cor" >
+                </div>
+            </div>
+
+            
+
+        </div>
+
+            <button [disabled]="formulario.invalid" class="btn btn-success" type="submit">Gravar
+            </button>
+
+            <button [routerLink]="'/home'" style="background-color: rgb(224, 59, 59); margin-left: 5px;" class="btn btn-danger">Cancelar
+            </button>
+
+        </form>
+    </div>
+</section>

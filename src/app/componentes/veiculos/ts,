@@ -1,0 +1,9 @@
+           <div class="row">
+            <div class="col">
+                <select id=tipoveiculo>
+                    <option value="" >escolha o tipo</option>
+                    <option value="carro" >carro</option>
+                    <option value="mot" >moto</option>
+                </select>
+            </div>
+            </div>

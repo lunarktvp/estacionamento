@@ -16,7 +16,7 @@ import { CadFuncionarioComponent } from './componentes/funcionario/cad-funcionar
 import { ListTicketComponent } from './componentes/ticket/list-ticket/list-ticket.component';
 import { CadTicketComponent } from './componentes/ticket/cad-ticket/cad-ticket.component';
 import { EntradaDiaComponent } from './componentes/relatorios/entrada-dia/entrada-dia.component';
-
+import { CadVeiculoComponent } from './componentes/veiculos/cad-veiculos/cad-veiculos.component';
 const routes: Routes = [
 
   {path: 'login', component: LoginComponent},
@@ -43,7 +43,9 @@ const routes: Routes = [
 
   { path: 'empresa', component: CadEmpresaComponent },
 
-  { path: 'entradas', component: EntradaDiaComponent }
+  { path: 'entradas', component: EntradaDiaComponent },
+
+  { path: 'cadveiculos', component: CadVeiculoComponent}
 
   ] }
 
