@@ -1,3 +1,4 @@
+import { FuncionarioService } from './../../../serviços/funcionario.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -12,7 +13,7 @@ export class CadFuncionarioComponent implements OnInit {
   constructor(
     private formbuilder: FormBuilder,
     private router:Router,
-    //private funcservice: FuncionarioService,
+    private funcservice: FuncionarioService,
     //private util: UtilidadesService,
     ) { }
 
@@ -65,12 +66,12 @@ export class CadFuncionarioComponent implements OnInit {
 
   onSubmit(){
 
-    /*this.funcservice.cadastrarFuncionario(this.formulario.value).subscribe(resposta=>{
+  this.funcservice.cadastrarFuncionario(this.formulario.value).subscribe(resposta=>{
       this.formulario.reset();
-      this.router.navigate(['/ListFuncionarios']);
+      this.router.navigate(['/funcionarios']);
     });
     
-   */
+ 
   }
 
   

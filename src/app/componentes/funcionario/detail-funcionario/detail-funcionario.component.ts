@@ -16,7 +16,6 @@ export class DetailFuncionarioComponent implements OnInit {
     private router:Router,
     private route: ActivatedRoute,
     private funcservice: FuncionarioService
-    //private util: UtilidadesService,
     ) { }
 
   formulario: FormGroup;
@@ -26,21 +25,6 @@ export class DetailFuncionarioComponent implements OnInit {
   id:any
   funcionario: funcionario
 
-  endereco: any = {
-    cep: "",
-    logradouro: "",
-    complemento: "",
-    bairro:"",
-    localidade:"",
-    uf:"",
-    ibge:"",
-    gia:"",
-    ddd:"",
-    siafi:""
-
-  }
-
-  
     
   ngOnInit(): void {
 
@@ -53,13 +37,13 @@ export class DetailFuncionarioComponent implements OnInit {
   }
 
   onSubmit(){
+   this.funcionario = this.formulario.value
+   console.log(this.funcionario)
 
-    /*this.funcservice.cadastrarFuncionario(this.formulario.value).subscribe(resposta=>{
-      this.formulario.reset();
-      this.router.navigate(['/ListFuncionarios']);
+   this.funcservice.cadastrarFuncionario(this.funcionario).subscribe(resposta=>{
+      this.router.navigate(['/funcionarios']);
     });
-    
-   */
+ 
   }
 
   detalhescliente(id:any){
@@ -74,7 +58,7 @@ export class DetailFuncionarioComponent implements OnInit {
 
   criaFormulario(){
     this.formulario = this.formbuilder.group({
-      matricula: [null],
+      matricula: [null,Validators.required],
       nome: [null, Validators.required],
       cpf: [null, Validators.compose([Validators.required,Validators.minLength(8), Validators.maxLength(8)])],
       nascimento: [null, Validators.required],
@@ -84,17 +68,9 @@ export class DetailFuncionarioComponent implements OnInit {
       cidade: [null, Validators.required],
       estado: [null, Validators.required],
       telefone: [null, Validators.required],
-      email: [null, Validators.compose([Validators.email, Validators.required])],
-      senha: [null , Validators.compose([Validators.required,Validators.minLength(6)])]
+      email: [null, Validators.compose([Validators.email, Validators.required])]
     })
   }
   
-   buscaCep(cep: any){
-     /*this.util.buscaCep(cep).subscribe(resposta=>{
-      this.endereco = resposta
-      console.log(this.endereco.uf) 
-     });
-  */
-    }
 
 }

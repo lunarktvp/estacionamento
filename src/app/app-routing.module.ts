@@ -35,7 +35,7 @@ const routes: Routes = [
   
   { path: 'funcionarios', component: ListFuncionarioComponent },
   { path: 'novofuncionario', component: CadFuncionarioComponent },
-  { path: 'detalhesfuncionario', component: DetailFuncionarioComponent },
+  { path: 'detalhesfuncionario/:id', component: DetailFuncionarioComponent },
 
   { path: 'tickets', component: ListTicketComponent },
   { path: 'novoticket', component: CadTicketComponent },

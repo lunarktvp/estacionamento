@@ -9,10 +9,6 @@
       <div class="form-group">
 
         <div class="row">
-          <div class="col-sm-2">
-            <label  for="matricula" >Matrícula</label>
-            <input value="{{ProximaMatricula}}" formControlName="matricula" class="form-control" type="text" id="matricula" name="matricula" readonly >
-          </div>
           <div class="col-sm-8">
             <label for="nome">Nome</label>
             <input formControlName="nome" class="form-control" id="nome" type="text" name="nome" >
@@ -44,7 +40,7 @@
         <div class="row">
             <div class="col">
                 <label for="logradouro">Logradouro</label>
-                <input readonly [(ngModel)]="endereco.logradouro" formControlName="logradouro" class="form-control" id="logradouro" type="text" name="logradouro">
+                <input [(ngModel)]="endereco.logradouro" formControlName="logradouro" class="form-control" id="logradouro" type="text" name="logradouro">
             </div>
             <div class="col">
                 <label for="complemento">Complemento</label>
@@ -55,11 +51,11 @@
         <div class="row">
             <div class="col-sm-3">
                 <label  for="cidade">Cidade</label>
-                <input readonly [(ngModel)]="endereco.localidade" formControlName="cidade" class="form-control" id="cidade" type="text" name="cidade">
+                <input  [(ngModel)]="endereco.localidade" formControlName="cidade" class="form-control" id="cidade" type="text" name="cidade">
             </div>
             <div class="col-sm-3">
                 <label for="estado">Estado</label>
-                <input readonly [(ngModel)]="endereco.uf" formControlName="estado" class="form-control" id="estado" type="text" name="estado">
+                <input  [(ngModel)]="endereco.uf" formControlName="estado" class="form-control" id="estado" type="text" name="estado">
             </div>
         </div>
 

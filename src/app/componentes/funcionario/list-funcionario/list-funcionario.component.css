@@ -1,11 +1,7 @@
-.tabela{
-    width: 100%;
-    margin: auto;
-    padding: 10px;
-    
-  }
+
+
   table{
-      width: 100%;
+      width: 90%;
   }
   
   thead{
@@ -13,18 +9,23 @@
       font-size: 20px;
   }
   
-  #titulo{
-      width: 15%;
+  #matricula{
+      width: 10px;
       
   }
+
+  #nome{
+      width: 30px;
+  }
   
-  #previa{
-      width: 74%;
+  #action{
+      width: 30px;
   }
   
   tr{
       border-bottom: solid 1px #dbd8d8;
       height: 60px;
+      width: 15px;
   }
   
   td{
