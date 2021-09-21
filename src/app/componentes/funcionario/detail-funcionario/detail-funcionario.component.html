@@ -9,81 +9,66 @@
       <div class="form-group">
 
         <div class="row">
-          <div class="col-sm-2">
+          <div class="col-sm-1">
             <label  for="matricula" >Matrícula</label>
-            <input value="{{funcionario.matricula}}" formControlName="matricula" class="form-control" type="text" id="matricula" name="matricula" readonly >
+            <input [(ngModel)]="funcionario.matricula" formControlName="matricula" class="form-control" type="text" id="matricula" name="matricula" readonly >
           </div>
           <div class="col-sm-8">
             <label for="nome">Nome</label>
-            <input formControlName="nome" class="form-control" id="nome" type="text" name="nome" >
+            <input [(ngModel)]="funcionario.nome" formControlName="nome" class="form-control" id="nome" type="text" name="nome" >
           </div>
         </div>
 
         <div class="row">
             <div class="col-sm-2">
                 <label for="cpf">CPF</label>
-                <input formControlName="cpf" class="form-control" id="cpf" type="text" name="cpf" mask="CPF_CNPJ">
+                <input [(ngModel)]="funcionario.cpf" formControlName="cpf" class="form-control" id="cpf" type="text" name="cpf" mask="CPF_CNPJ">
             </div>
             <div class="col-sm-3">
                 <label for="nascimento">Data Nascimento</label>
-                <input formControlName="nascimento" class="form-control" id="nascimento" type="date" name="nascimento">
+                <input [(ngModel)]="funcionario.nascimento" formControlName="nascimento" class="form-control" id="nascimento" type="date" name="nascimento">
             </div>
         </div>
 
         <div class="row">
            <div class="col-sm-2">
                <label for="cep">CEP</label>
-               <span hidden style="color: red;" #valido>  CEP INVÁLIDO!</span>
-                <input #cep  formControlName="cep" class="form-control" id="cep" type="text" name="cep">
+               <input [(ngModel)]="funcionario.cep" #cep  formControlName="cep" class="form-control" id="cep" type="text" name="cep">
             </div>
-            <div class="cow">
-              <button style="margin-top:30px ;" class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="buscaCep(cep.value)">CONSULTAR CEP</button>
+            <div class="col-sm-3">
+                <label for="logradouro">Logradouro</label>
+                <input  [(ngModel)]="funcionario.logradouro" formControlName="logradouro" class="form-control" id="logradouro" type="text" name="logradouro">
             </div>
         </div>
 
         <div class="row">
-            <div class="col">
-                <label for="logradouro">Logradouro</label>
-                <input readonly [(ngModel)]="endereco.logradouro" formControlName="logradouro" class="form-control" id="logradouro" type="text" name="logradouro">
-            </div>
-            <div class="col">
+            <div class="col-sm-5">
                 <label for="complemento">Complemento</label>
-                <input [(ngModel)]="endereco.complemento" formControlName="complemento" class="form-control" id="complemento" type="text" name="complemento">
+                <input [(ngModel)]="funcionario.complemento" formControlName="complemento" class="form-control" id="complemento" type="text" name="complemento">
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-3">
                 <label  for="cidade">Cidade</label>
-                <input readonly [(ngModel)]="endereco.localidade" formControlName="cidade" class="form-control" id="cidade" type="text" name="cidade">
+                <input  [(ngModel)]="funcionario.cidade" formControlName="cidade" class="form-control" id="cidade" type="text" name="cidade">
             </div>
             <div class="col-sm-3">
                 <label for="estado">Estado</label>
-                <input readonly [(ngModel)]="endereco.uf" formControlName="estado" class="form-control" id="estado" type="text" name="estado">
+                <input  [(ngModel)]="funcionario.estado" formControlName="estado" class="form-control" id="estado" type="text" name="estado">
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-2">
                 <label for="telefone">Telefone</label>
-                <input formControlName="telefone" class="form-control" id="telefone" type="text" name="telefone" placeholder="(99)99999-9999" mask="(00) 00000-0000 || (00) 0000-0000">
+                <input [(ngModel)]="funcionario.telefone" formControlName="telefone" class="form-control" id="telefone" type="text" name="telefone" placeholder="(99)99999-9999" mask="(00) 00000-0000 || (00) 0000-0000">
             </div>
             <div class="col-sm-3">
                 <label for="email">E-mail</label>
-                <input formControlName="email" class="form-control" id="email" type="text" name="email" placeholder="nome@mail.com">
+                <input [(ngModel)]="funcionario.email" formControlName="email" class="form-control" id="email" type="text" name="email" placeholder="nome@mail.com">
             </div>
-            <div class="col-sm-2">
-               <Label for="senha">Senha de Acesso</Label>
-                <input formControlName="senha" class="form-control" id="senha" type="password" name="senha">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-2">
-                
-            </div>
-        </div>
-     
+        </div>     
 
        </div>
 
