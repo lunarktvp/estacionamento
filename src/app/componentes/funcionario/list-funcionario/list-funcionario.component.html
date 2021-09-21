@@ -8,11 +8,11 @@
     <section class="lista">
         <table>
             <thead>
-              <tr>
+           
                   <th #matricula>Matrícula</th>
                   <th #nome>Nome</th>
                   <th #action><button [routerLink]="'/novofuncionario'" class="btn btn-primary" type="submit" name="action">Adicionar</button></th>
-              </tr>
+             
             </thead>
             <tbody>
               <tr *ngFor="let funcionario of funcionarios">

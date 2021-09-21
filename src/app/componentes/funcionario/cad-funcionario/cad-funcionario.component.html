@@ -25,24 +25,21 @@
                 <input formControlName="nascimento" class="form-control" id="nascimento" type="date" name="nascimento">
             </div>
         </div>
-
+    <hr>
         <div class="row">
            <div class="col-sm-2">
                <label for="cep">CEP</label>
                <span hidden style="color: red;" #valido>  CEP INVÁLIDO!</span>
                 <input #cep  formControlName="cep" class="form-control" id="cep" type="text" name="cep">
             </div>
-            <div class="cow">
-              <button style="margin-top:30px ;" class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="buscaCep(cep.value)">CONSULTAR CEP</button>
+            <div class="col-sm-3">
+                <label for="logradouro">Logradouro</label>
+                <input [(ngModel)]="endereco.logradouro" formControlName="logradouro" class="form-control" id="logradouro" type="text" name="logradouro">
             </div>
         </div>
 
         <div class="row">
-            <div class="col">
-                <label for="logradouro">Logradouro</label>
-                <input [(ngModel)]="endereco.logradouro" formControlName="logradouro" class="form-control" id="logradouro" type="text" name="logradouro">
-            </div>
-            <div class="col">
+            <div class="col-sm-5">
                 <label for="complemento">Complemento</label>
                 <input [(ngModel)]="endereco.complemento" formControlName="complemento" class="form-control" id="complemento" type="text" name="complemento">
             </div>
@@ -53,12 +50,12 @@
                 <label  for="cidade">Cidade</label>
                 <input  [(ngModel)]="endereco.localidade" formControlName="cidade" class="form-control" id="cidade" type="text" name="cidade">
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <label for="estado">Estado</label>
                 <input  [(ngModel)]="endereco.uf" formControlName="estado" class="form-control" id="estado" type="text" name="estado">
             </div>
         </div>
-
+        <hr>
         <div class="row">
             <div class="col-sm-2">
                 <label for="telefone">Telefone</label>
@@ -71,12 +68,6 @@
             <div class="col-sm-2">
                <Label for="senha">Senha de Acesso</Label>
                 <input formControlName="senha" class="form-control" id="senha" type="password" name="senha">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-2">
-                
             </div>
         </div>
      
