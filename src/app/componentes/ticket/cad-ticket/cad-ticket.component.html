@@ -1,10 +1,10 @@
 <section id="meio" >
     
-    <H2>Tickets</H2>
-    <div id = titulo class="container-title"> Abrir Novo Ticket</div>
+    <H2 class="teste">Tickets</H2>
+    <div  id = titulo class="container-title"> Abrir Novo Ticket</div>
     <br>
 
-    <div id="myform">
+    <div  id="myform" >
         <div class="form-group">
           <div class="row">
             <div class="col">
@@ -30,11 +30,25 @@
             </div>
         </div>
         <div style="display: inline-block; margin-top: 10px; margin-left:10px;">
-          <button class="btn btn-success" type="submit" (click)="gravarTicket()">Gravar
+          <button class="btn btn-success" type="submit" (click)="gravarTicket()" onclick="print()">Gravar
           </button>
 
           <button  [routerLink]="'/tickets'" style="margin-left: 5px;" class="btn btn-danger">Cancelar
           </button>
       </div>
     </div>
+    <div id= imprimir class="print">
+      <p class="centrado">Nome da empresa
+                <br>ENDERECO
+                <br>CNPJ
+                <br>
+                <br>
+                <br>HORA DE Entrada
+                <br>PLACA
+              </p>
+    
+      <p class="centrado">NO CASO DA PERCA DO TICKET
+          <br>SERA COBRADO UM VALOR DE R$10,00</p>
+  </div>
+
 </section>
