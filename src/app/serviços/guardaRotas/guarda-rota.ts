@@ -1,5 +1,7 @@
+import { AutenticaUsersService } from './autentica-users.service';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router'
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
 
 @Injectable({
@@ -7,7 +9,11 @@ import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angul
 })
 export class GuardaRotas implements CanActivate{
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private auticando: AutenticaUsersService
+  ) { }
+
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -15,7 +21,11 @@ export class GuardaRotas implements CanActivate{
 
   ): Observable<boolean> | boolean{
 
-    return true;
+    if(this.auticando.usuarioEstaAutenticado()){
+      return true;
+    }
+      this.router.navigate(['/login'])
+      return false
   }
 
   

@@ -1,3 +1,4 @@
+import { GuardaRotas } from './serviços/guardaRotas/guarda-rota';
 import { DetailFuncionarioComponent } from './componentes/funcionario/detail-funcionario/detail-funcionario.component';
 import { DetailClienteComponent } from './componentes/clientes/detail-cliente/detail-cliente.component';
 import { EncerraTicketComponent } from './componentes/ticket/encerra-ticket/encerra-ticket.component';
@@ -23,7 +24,7 @@ const routes: Routes = [
   {path:'', redirectTo: '/login', pathMatch: 'full' },
 
   //Path relativos a toda a aplicação dentro do layout
-  { path:'', component: TemplateComponent, children:[
+  { path:'', component: TemplateComponent, canActivate: [GuardaRotas], children:[
   { path: 'scripts', component: ListarScriptComponent },
   { path:'novoScript', component: CadastrarScriptComponent },
   
