@@ -75,3 +75,7 @@ main{
 body{
     overflow-y: hidden;
 }
+
+input{
+    text-transform: uppercase;
+}
