@@ -25,7 +25,7 @@ export class CadVeiculoComponent implements OnInit {
       tipoveiculo: [null, Validators.required],
       modelo: [null, Validators.required],
       placa: [null, Validators.required],
-      text: [null, Validators.required],
+      cor: [null, Validators.required],
     })    
   }
   

@@ -28,7 +28,7 @@
 
                 <div class="col">
                     <label for="placa">Placa</label>
-                    <input formControlName="Placa" class="form-control" id="placa" type="text" name="Placa" >
+                    <input formControlName="placa" class="form-control" id="placa" type="text" name="Placa" >
                 </div>
                 
                 <div class="col">
@@ -44,7 +44,7 @@
             <button [disabled]="formulario.invalid" class="btn btn-success" type="submit">Incluir
             </button>
 
-            <button [routerLink]="'/clientes'" style="background-color: rgb(224, 59, 59); margin-left: 5px;" class="btn btn-danger">Cancelar
+            <button [routerLink]="'/clientes'"  style="margin-left: 5px;" type="button" class="btn btn-danger">Cancelar
             </button>
 
         </form>
