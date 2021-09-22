@@ -1,3 +1,4 @@
+import { GuardaRotas } from './serviços/guardaRotas/guarda-rota';
 import { EntradaDiaComponent } from './componentes/relatorios/entrada-dia/entrada-dia.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { EmpresaService } from './serviços/empresas-services.service';
@@ -60,7 +61,8 @@ import { CadVeiculoComponent } from './componentes/veiculos/cad-veiculos/cad-vei
   ],
   providers: [
     ClienteService,
-    EmpresaService
+    EmpresaService,
+    GuardaRotas
   ],
   bootstrap: [AppComponent]
 })

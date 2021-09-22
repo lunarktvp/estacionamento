@@ -8,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  usuario:any ={
+    matricula:"",
+    senha:""
+  }
 
+  logando: boolean = false;
 
   constructor(
       private router: Router
@@ -18,7 +23,12 @@ export class LoginComponent implements OnInit {
   }
 
   fazerLogin(){
-    this.router.navigate(['/home'])
+    this.logando = false
+    if(this.usuario.matricula == 'administrador' && this.usuario.senha == '142508'){
+      this.router.navigate(['/home'])
+    }else{
+      this.router.navigate([''])
+      this.logando = true
+    }
   }
-
 }
