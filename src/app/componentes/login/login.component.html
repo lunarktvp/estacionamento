@@ -3,9 +3,9 @@
 	<h1>Login</h1>
     <div id="logando" *ngIf="logando">Credenciais incorretas!</div>
     <form method="post">
-    	<input [(ngModel)]="usuario.matricula" type="text" name="u" placeholder="Matricula" required="required" />
-        <input [(ngModel)]="usuario.senha" type="password" name="p" placeholder="Senha" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large" (click)="fazerLogin()">Entrar</button>
+    	<input [(ngModel)]="usuario.user" type="text" name="u" placeholder="Matricula" required="required" />
+        <input [(ngModel)]="usuario.password" type="password" name="p" placeholder="Senha" required="required" />
+        <button type="button" class="btn btn-primary btn-block btn-large" (click)="fazerLogin()">Entrar</button>
     </form>
 </div>
 </section>

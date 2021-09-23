@@ -20,12 +20,12 @@
       <p>CADASTROS</p>
     </div>
     <div class="sidebar-content-option">
-      <i class="large material-icons">people_alt</i> <a routerLink="clientes">Clientes</a>
+      <i *ngIf="fullAccess" class="large material-icons">people_alt</i> <a routerLink="clientes">Clientes</a>
     </div>
-    <div class="sidebar-content-option">
-      <i class="large material-icons">engineering</i> <a routerLink="funcionarios">Funcionários</a>
+    <div *ngIf="fullAccess" class="sidebar-content-option">
+      <i  class="large material-icons">engineering</i> <a routerLink="funcionarios">Funcionários</a>
     </div>
-    <div class="sidebar-content-option">
+    <div *ngIf="fullAccess" class="sidebar-content-option">
       <i class="large material-icons">apartment</i> <a routerLink="empresa">Empresa</a>
     </div>
     

@@ -1,3 +1,4 @@
+import { AutenticaUsersService } from './../../serviços/guardaRotas/autentica-users.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateComponent implements OnInit {
 
-  constructor() { }
+  fullAccess: boolean = false
+
+  constructor(
+    private auteticausers: AutenticaUsersService
+    ) { }
 
   ngOnInit(): void {
+
+    this.fullAccess = this.auteticausers.usuarioFullAcess()
+
+    console.log(this.fullAccess)
   }
 
 }

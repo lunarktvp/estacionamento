@@ -1,3 +1,4 @@
+import { Usuario } from './../../modelos/usuario.model';
 import { AutenticaUsersService } from './../../serviços/guardaRotas/autentica-users.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -9,11 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  usuario:any ={
-    matricula:"",
-    senha:""
+  usuario: Usuario = {
+    user: "",
+    password:""
   }
-
   logando: boolean = false;
 
   constructor(
@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
   }
 
   fazerLogin(){
-    
     this.autenticausers.AutenticaUsuario(this.usuario)
     this.logando = !this.autenticausers.usuarioEstaAutenticado()
     

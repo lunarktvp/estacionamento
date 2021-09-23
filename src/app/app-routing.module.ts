@@ -24,7 +24,7 @@ const routes: Routes = [
   {path:'', redirectTo: '/login', pathMatch: 'full' },
 
   //Path relativos a toda a aplicação dentro do layout
-  { path:'', component: TemplateComponent, /*canActivate: [GuardaRotas],*/ children:[
+  { path:'', component: TemplateComponent, canActivate: [GuardaRotas], children:[
   { path: 'scripts', component: ListarScriptComponent },
   { path:'novoScript', component: CadastrarScriptComponent },
   
