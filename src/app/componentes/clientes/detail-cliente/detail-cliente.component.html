@@ -1,1 +1,57 @@
-<p>detail-cliente works!</p>
+<section id="meio" >
+
+    <H2>Clientes</H2>
+    <div class="container-title"> Cadastrar Novo Cliente </div>
+    <br>
+
+  <div id="myform">
+     <form id="form">
+        <div class="form-group">
+            <div class="row">
+            <div class="col">
+                <label for="nome">Nome</label>
+                <input [(ngModel)]="cliente.nome" class="form-control" id="nome" type="text" name="nome" required>
+            </div>
+            </div>
+
+            <div class="row">
+                <div class="col s">
+                    <label for="cgc">CPF</label>
+                    <input [(ngModel)]="cliente.cgc" class="form-control" id="cgc" type="text" name="cgc" mask="CPF_CNPJ" required>
+                </div>
+
+                <div class="col">
+                    <label for="nascimento">Data Nascimento</label>
+                    <input [(ngModel)]="cliente.nascimento" class="form-control" id="nascimento" type="date" name="nascimento" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="endereco">Endereço</label>
+                    <input [(ngModel)]="cliente.endereco" class="form-control" id="endereco" type="text" name="endereco" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="telefone">Telefone</label>
+                    <input [(ngModel)]="cliente.telefone" class="form-control" id="telefone" type="text" name="telefone" placeholder="(99)99999-9999" mask="(00) 00000-0000 || (00) 0000-0000" required>
+                </div>
+                <div class="col">
+                    <label for="email">E-mail</label>
+                    <input [(ngModel)]="cliente.email" class="form-control" id="email" type="text" name="email" placeholder="nome@mail.com" required>
+                </div>
+            </div>
+
+        </div>
+
+            <button class="btn btn-success" type="button" (click)="alterarCliente()" >Gravar
+            </button>
+
+            <button [routerLink]="'/clientes'" style="margin-left: 5px;" class="btn btn-danger">Cancelar
+            </button>
+
+        </form>
+    </div>
+</section>
