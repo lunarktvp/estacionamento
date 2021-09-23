@@ -32,7 +32,7 @@ const routes: Routes = [
 
   { path: 'clientes', component: ListClienteComponent },
   { path: 'novocliente', component: CadClienteComponent },
-  { path:'detallhescliente/:id', component: DetailClienteComponent },
+  { path:'alterarcliente', component: DetailClienteComponent },
   
   { path: 'funcionarios', component: ListFuncionarioComponent },
   { path: 'novofuncionario', component: CadFuncionarioComponent },
