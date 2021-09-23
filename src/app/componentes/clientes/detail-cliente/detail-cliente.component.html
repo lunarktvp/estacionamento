@@ -1,7 +1,7 @@
 <section id="meio" >
 
     <H2>Clientes</H2>
-    <div class="container-title"> Cadastrar Novo Cliente </div>
+    <div class="container-title"> ALTERAR CLIENTE </div>
     <br>
 
   <div id="myform">
@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col s">
                     <label for="cgc">CPF</label>
-                    <input [(ngModel)]="cliente.cgc" class="form-control" id="cgc" type="text" name="cgc" mask="CPF_CNPJ" required>
+                    <input [(ngModel)]="cliente.cgc" class="form-control" id="cgc" type="text" name="cgc" mask="CPF_CNPJ" required readonly>
                 </div>
 
                 <div class="col">
@@ -46,7 +46,7 @@
 
         </div>
 
-            <button class="btn btn-success" type="button" (click)="alterarCliente()" >Gravar
+            <button class="btn btn-success" type="button" (click)="alterarCliente()" >Alterar
             </button>
 
             <button [routerLink]="'/clientes'" style="margin-left: 5px;" class="btn btn-danger">Cancelar
