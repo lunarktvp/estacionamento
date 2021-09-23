@@ -1,7 +1,10 @@
+import { Veiculo } from './../../../modelos/veiculo.model';
+import { Cliente } from './../../../modelos/cliente.model';
+import { ClienteService } from './../../../serviços/clientes-services.service';
 import { VeiculoService } from 'src/app/serviços/veiculo-services';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cad-veiculos',
@@ -10,34 +13,53 @@ import { Router } from '@angular/router';
 })
 export class CadVeiculoComponent implements OnInit {
 
-
+  idCliente: number
+  cliente: Cliente = new Cliente()
+  veiculo: Veiculo = new Veiculo()
+  veiculos:any
   
   constructor(
-    private formbuilder: FormBuilder,
     private veiculoservice: VeiculoService,
-    private router: Router
+    private clienteservice: ClienteService,
+    private router: Router,
+    private route: ActivatedRoute
     ) { }
 
   formulario: FormGroup;  
 
   ngOnInit(): void {
-    this.formulario = this.formbuilder.group({
-    placa: [null, Validators.required],
   
-    })    
+      this.route.params.subscribe(resposta=>{
+        this.idCliente = resposta['id']
+      })
+
+
+      this.clienteservice.DetalhesCliente(this.idCliente)
+      .subscribe(resposta=>{
+          this.cliente = resposta
+      }, error=>{
+        alert("Impossivel carregar Cliente!")
+      })
+
+
+      this.listarPlacas()
   }
-  
-  onSubmit(){
 
-    console.log(this.formulario.value)
-  
+  novaPlaca(){
+    this.veiculo.idCliente = this.cliente.id
+    
+    console.log(this.veiculo)
 
-      this.veiculoservice.CadastrarVeiculo(this.formulario.value).subscribe(
-          resposta=>{
-              this.formulario.reset()
-          }
-      );
+    this.veiculoservice.CadastrarVeiculo(this.veiculo)
+    .subscribe(resposta=>{
+    })
+  }
 
+  listarPlacas(){
+    this.veiculoservice.ListarVeiculo().subscribe(resposta=>{
+      this.veiculos = resposta
+      console.log(this.veiculos)
+    })
   }
 
 }

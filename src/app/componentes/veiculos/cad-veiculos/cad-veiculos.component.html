@@ -1,45 +1,33 @@
 <section id="meio" >
 
-    <H2>NOME DO CLIENTE</H2>
+    <H2>{{cliente?.nome}}</H2>
     <div class="container-title"> Veiculos Cadastrados </div>
     <br>
 
   <div id="myform">
-     <form id="form" method="post" (ngSubmit)="onSubmit()" [formGroup]="formulario">
+     <form >
         <div class="form-group">
-
             <div class="row">
-                <div class="col">
+                <div class="col-sm-2">
                     <label for="placa">Placa</label>
-                    <input formControlName="placa" class="form-control" id="placa" type="text" name="placa" >
+                    <input  [(ngModel)]="veiculo.placa" class="form-control" id="placa" type="text" name="placa" >
                 </div>
             </div> 
         </div>
-            <button [disabled]="formulario.invalid" class="btn btn-success" type="submit">Incluir
-            </button>
-
-            <button [routerLink]="'/clientes'"  style="margin-left: 5px;" type="button" class="btn btn-danger">Cancelar
-            </button>
-
+            <button class="btn btn-success" type="submit" (click)="novaPlaca()">Incluir</button>
+            <button [routerLink]="'/clientes'"  style="margin-left: 5px;" type="button" class="btn btn-danger">Cancelar</button>
         </form>
     </div>
     <br>
-<br>
+<hr>
 <br>
     <section class="retornar">
-        <table border="1">
-            <tr>
+        <table >
             <th>PLACAS ADICIONADAS</th>
-            </tr>
-            <tr  >
-                <td>placa</td>
-                <td >
-              </tr> 
-           
-
-           
+            <tr *ngFor="let veiculo of veiculos">
+                <td>{{veiculo.placa}}</td>
+            </tr> 
          </table>
-          
     </section>
 
 

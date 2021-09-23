@@ -16,11 +16,11 @@
       <i class="large material-icons">receipt_long</i> <a routerLink="tickets">Tickets</a>  
     </div>
 
-    <div class="sidebar-content">
+    <div *ngIf="fullAccess" class="sidebar-content">
       <p>CADASTROS</p>
     </div>
-    <div class="sidebar-content-option">
-      <i *ngIf="fullAccess" class="large material-icons">people_alt</i> <a routerLink="clientes">Clientes</a>
+    <div *ngIf="fullAccess" class="sidebar-content-option">
+      <i class="large material-icons">people_alt</i> <a routerLink="clientes">Clientes</a>
     </div>
     <div *ngIf="fullAccess" class="sidebar-content-option">
       <i  class="large material-icons">engineering</i> <a routerLink="funcionarios">Funcionários</a>
