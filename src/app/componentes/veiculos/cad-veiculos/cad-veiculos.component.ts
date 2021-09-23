@@ -62,8 +62,6 @@ export class CadVeiculoComponent implements OnInit {
   listarPlacas(){
     this.veiculoservice.ListarVeiculoPorCliente(this.idCliente).subscribe(resposta=>{
       this.veiculos = resposta
-      console.log("carrrrrraaaaai")
-      console.log(this.veiculos)
     })
   }
 
