@@ -22,10 +22,8 @@ export class CadVeiculoComponent implements OnInit {
 
   ngOnInit(): void {
     this.formulario = this.formbuilder.group({
-      tipoveiculo: [null, Validators.required],
-      modelo: [null, Validators.required],
-      placa: [null, Validators.required],
-      cor: [null, Validators.required],
+    placa: [null, Validators.required],
+  
     })    
   }
   
