@@ -55,7 +55,6 @@ export class CadVeiculoComponent implements OnInit {
     })
 
 
-
     this.listarPlacas()
   }
 
