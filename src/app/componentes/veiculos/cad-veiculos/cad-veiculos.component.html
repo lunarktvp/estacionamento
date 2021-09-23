@@ -7,37 +7,48 @@
   <div id="myform">
      <form id="form" method="post" (ngSubmit)="onSubmit()" [formGroup]="formulario">
         <div class="form-group">
-         <div class="row">
+
+            <div class="row">
+            <div class="col">
+                <div><label for="tipoveiculo">Tipo do Veiculo</label></div>
+                <select id=tipoveiculo>
+                    <option value="" ></option>
+                    <option value="carro" >carro</option>
+                    <option value="mot" >moto</option>
+                </select>
+            </div>
+            </div>
+            <br>
+
+            <div class="row">
                 <div class="col s">
-                    <label for="placa">Digite a PLACA do seu veículo</label>
-                    <input formControlName="placa" class="form-control" id="placa" type="text" name="placa" >
+                    <label for="modelo">modelo</label>
+                    <input formControlName="modelo" class="form-control" id="modelo" type="text" name="modelo" >
+                </div>
+
+                <div class="col">
+                    <label for="placa">Placa</label>
+                    <input formControlName="placa" class="form-control" id="placa" type="text" name="Placa" >
+                </div>
+                
+                <div class="col">
+                    <label for="cor">Cor</label>
+                    <input formControlName="cor" class="form-control" id="cor" type="text" name="cor" >
                 </div>
             </div>
+
+            
+
         </div>
-            <button [disabled]="formulario.invalid" class="btn btn-success" type="submit" onClick=window.location.reload()>Incluir
+
+            <button [disabled]="formulario.invalid" class="btn btn-success" type="submit">Incluir
             </button>
 
             <button [routerLink]="'/clientes'"  style="margin-left: 5px;" type="button" class="btn btn-danger">Cancelar
             </button>
+
         </form>
     </div>
-<br>
-<br>
-<br>
-    <section class="retornar">
-        <table border="1">
-            <tr>
-            <th>PLACAS ADICIONADAS</th>
-            </tr>
-            <tr  >
-                <td>placa</td>
-                <td >
-              </tr> 
-           
 
-           
-         </table>
-          
-    </section>
-   
+
 </section>
