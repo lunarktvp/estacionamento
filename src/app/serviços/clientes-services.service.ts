@@ -1,3 +1,4 @@
+import { Cliente } from './../modelos/cliente.model';
 import { Observable } from 'rxjs';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -35,8 +36,8 @@ export class ClienteService {
     }
 
 
-    public AlterarCliente(cliente:any):Observable<any>{
+    public AlterarCliente(cliente:Cliente):Observable<any>{
 
-      return this.httpClient.put<any>(this.url+'/alterar',cliente);
+      return this.httpClient.put<Cliente>(this.url+'/alterar',cliente);
     }
 }
