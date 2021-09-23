@@ -18,7 +18,6 @@ export class TemplateComponent implements OnInit {
 
     this.fullAccess = this.auteticausers.usuarioFullAcess()
 
-    console.log(this.fullAccess)
   }
 
 }

@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 
 export class VeiculoService {
 
-  url = 'http://localhost:8080/cliente'
+  url = 'http://localhost:8080/veiculo'
 
 
   httpOptions = {
@@ -28,6 +28,10 @@ export class VeiculoService {
 
     public ListarVeiculo():Observable<any>{
       return this.httpClient.get<any>(this.url+'/listar');
+    }
+
+    public ListarVeiculoPorCliente(id:any):Observable<any>{
+      return this.httpClient.get<any>(this.url+'/listar/'+id);
     }
 
     public DetalhesVeiculo(id:any):Observable<any>{

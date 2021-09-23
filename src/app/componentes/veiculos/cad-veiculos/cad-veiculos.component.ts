@@ -37,6 +37,7 @@ export class CadVeiculoComponent implements OnInit {
       this.clienteservice.DetalhesCliente(this.idCliente)
       .subscribe(resposta=>{
           this.cliente = resposta
+          this.veiculo.cliente = this.cliente
       }, error=>{
         alert("Impossivel carregar Cliente!")
       })
@@ -46,18 +47,22 @@ export class CadVeiculoComponent implements OnInit {
   }
 
   novaPlaca(){
-    this.veiculo.idCliente = this.cliente.id
-    
-    console.log(this.veiculo)
+    this.veiculo.cliente = this.cliente
 
     this.veiculoservice.CadastrarVeiculo(this.veiculo)
     .subscribe(resposta=>{
+      console.log(resposta)
     })
+
+
+
+    this.listarPlacas()
   }
 
   listarPlacas(){
-    this.veiculoservice.ListarVeiculo().subscribe(resposta=>{
+    this.veiculoservice.ListarVeiculoPorCliente(this.idCliente).subscribe(resposta=>{
       this.veiculos = resposta
+      console.log("carrrrrraaaaai")
       console.log(this.veiculos)
     })
   }
