@@ -21,14 +21,21 @@
     <br>
 <hr>
 <br>
-    <section class="retornar">
-        <table>
-            <th>PLACAS VINCULADAS</th>
+
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th>Placas</th>
+            </tr>
+            </thead>
+            <tbody>
             <tr *ngFor="let veiculo of veiculos">
                 <td>{{veiculo.placa}}</td>
-            </tr> 
-         </table>
-    </section>
+            </tr>        
+            <tbody>
+        </table>
+    </div>
 
 
 </section>
