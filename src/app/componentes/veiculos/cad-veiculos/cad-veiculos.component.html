@@ -27,11 +27,13 @@
             <thead>
             <tr>
                 <th>Placas</th>
+                <th>Opções</th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let veiculo of veiculos">
-                <td>{{veiculo.placa}}</td>
+                <td><strong>{{veiculo.placa}}</strong></td>                
+                <td><button type=button class="btn btn-primary" >Remover</button></td>
             </tr>        
             <tbody>
         </table>
