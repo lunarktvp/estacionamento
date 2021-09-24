@@ -9,7 +9,6 @@ body{
     background: rgb(187, 187, 187);
 }
 
-
 /* Table Styles */
 
 .table-wrapper{
@@ -36,7 +35,8 @@ body{
 
 .fl-table td {
     border-right: 1px solid #f8f8f8;
-    font-size: 12px;
+    font-size: 15px;
+    text-transform: uppercase;
 }
 
 .fl-table thead th {
