@@ -20,13 +20,15 @@
               <tr *ngFor="let funcionario of funcionarios">
                 <td>{{ funcionario.matricula }}</td>
                 <td>{{ funcionario.nome }}</td>            
-                  <td><a [routerLink]="['/detalhesfuncionario', funcionario.matricula]" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">edit</i></a></td>
-                  <td><a [routerLink]="['']" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">block</i></a></td>
+                <td >
+                  <button *ngIf="funcionario?.situacao == 9" id="funcionario"  class="btn btn-sucess"   type="button" name="action"><i class="material-icons center" onclick="alterarSituacao()">done</i></button>
+                  <button *ngIf="funcionario?.situacao == 0" id="funcionario"  class="btn btn-primary" type="button" name="action"><i class="material-icons center" onclick="alterarSituacao()">done</i></button></td>
                 
               </tr> 
             </tbody>
           </table>
           
     </section>
+
 
 </section>

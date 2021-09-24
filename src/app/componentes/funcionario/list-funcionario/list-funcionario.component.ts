@@ -1,5 +1,6 @@
 import { FuncionarioService } from './../../../serviços/funcionario.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-funcionario',
@@ -11,7 +12,9 @@ export class ListFuncionarioComponent implements OnInit {
   funcionarios: any;
 
   constructor(
-    public funcservice: FuncionarioService
+    public funcservice: FuncionarioService,
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -22,6 +25,20 @@ export class ListFuncionarioComponent implements OnInit {
     this.funcservice.listFuncionarios().subscribe(funcionario=>{
       this.funcionarios = funcionario
     });
+  }
+  alterarSituacao(){
+    this.funcionarios.situacao = 9
+    this.funcionarios.cadastrarFuncionario(this.funcionarios)
+    .subscribe((reposta: any)=>{
+      this.router.navigate(['funcionario']);
+    })
+  }
+  voltarSituacao(){
+    this.funcionarios.situacao = 0
+    this.funcionarios.cadastrarFuncionario(this.funcionarios)
+    .subscribe((reposta: any)=>{
+      this.router.navigate(['funcionario']);
+    })
   }
 
 }
