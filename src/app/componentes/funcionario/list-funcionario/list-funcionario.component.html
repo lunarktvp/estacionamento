@@ -11,7 +11,7 @@
            
                   <th #matricula>Matrícula</th>
                   <th #nome>Nome</th>
-                  <th #action><button [routerLink]="'/novofuncionario'" class="btn btn-primary" type="submit" name="action">Adicionar</button></th>
+                  <th #action><button [routerLink]="'/novofuncionario'" class="btn btn-primary" type="submit" name="action">Novo Funcionário</button></th>
              
             </thead>
             <tbody>
@@ -19,6 +19,7 @@
                 <td>{{ funcionario.matricula }}</td>
                 <td>{{ funcionario.nome }}</td>
                 <td><a [routerLink]="['/detalhesfuncionario', funcionario.matricula]" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">edit</i></a>
+                <td><a [routerLink]="['']" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">block</i></a>
                 </td>
               </tr> 
             </tbody>
