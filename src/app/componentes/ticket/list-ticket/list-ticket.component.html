@@ -24,11 +24,25 @@
                 <td >
                   <button *ngIf="ticket?.situacao == 9" id="encerrar" [routerLink]="['/encerrar', ticket.id]" class="btn btn-danger"  disabled type="button" name="action">Encerrado</button>
                   <button *ngIf="ticket?.situacao != 9" id="encerrar" [routerLink]="['/encerrar', ticket.id]" class="btn btn-primary" type="button" name="action">Encerrar</button></td>
-              </tr> 
+                  <td><a [routerLink]="['']" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center" onclick="print()">restore_page</i></a>
+                </tr> 
 
             </tbody>
           </table>
           
     </section>
+    <div id= imprimir class="print">
+      <p class="centrado">Nome da empresa
+                <br>ENDERECO
+                <br>CNPJ
+                <br>
+                <br>
+                <br>HORA DE Entrada
+                <br>PLACA
+              </p>
+    
+      <p class="centrado">NO CASO DA PERCA DO TICKET
+          <br>SERA COBRADO UM VALOR DE R$10,00</p>
+  </div>
 
 </section>
