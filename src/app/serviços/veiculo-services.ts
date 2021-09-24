@@ -40,7 +40,12 @@ export class VeiculoService {
 
 
     public AlterarVeiculo(cliente:any):Observable<any>{
-
       return this.httpClient.put<any>(this.url+'/alterar',cliente);
     }
+
+    public VeiculoPorPlaca(placa:any):Observable<any>{
+      return this.httpClient.get<any>(this.url+'/detalhe/'+placa);
+    }
+
+
 }
