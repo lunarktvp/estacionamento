@@ -83,10 +83,12 @@ export class CadTicketComponent implements OnInit {
   //Consulta Cliente por placa
 
   verificaPlaca(){
-    console.log(this.ticket)
+
+    console.log('aqui está a placa '+this.ticket.placa)
     this.veiculoservice.VeiculoPorPlaca(this.ticket.placa)
     .subscribe(resposta=>{
-      console.log(resposta)
+      this.veiculo.placa = resposta
+      console.log('aqui esta a resposta '+resposta)
     })
 
 

@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Veiculo } from '../modelos/veiculo.model';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +44,7 @@ export class VeiculoService {
       return this.httpClient.put<any>(this.url+'/alterar',cliente);
     }
 
-    public VeiculoPorPlaca(placa:any):Observable<any>{
+    public VeiculoPorPlaca(placa:string):Observable<any>{
       return this.httpClient.get<any>(this.url+'/detalhe/'+placa);
     }
 
