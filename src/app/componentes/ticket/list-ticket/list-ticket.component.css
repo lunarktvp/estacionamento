@@ -34,3 +34,62 @@
     white-space: nowrap; 
    
   }
+  .print {
+    visibility: hidden;
+}
+@media print {
+    /* esconder tudo */
+  #meio{
+      visibility: hidden;
+  }
+  .sidebar{
+      visibility: hidden;
+  }
+    
+    /* exibir somente o que tem na div para imprimir */
+    #imprimir {
+      visibility: visible;
+      position: top;
+      left: 0;
+      top: 0;
+    }
+    
+  }
+  td,
+th,
+tr,
+table {
+    border-top: 1px solid black;
+    border-collapse: collapse;
+}
+
+
+
+td.horaticket,
+th.horaticket {
+    width: 40px;
+    max-width: 40px;
+    word-break: break-all;
+}
+
+td.placaticket,
+th.placaticket {
+    width: 40px;
+    max-width: 40px;
+    word-break: break-all;
+}
+
+.centrado {
+    text-align: center;
+    align-content: center;
+}
+
+.ticket {
+    width: 155px;
+    max-width: 155px;
+}
+
+img {
+    max-width: inherit;
+    width: inherit;
+}
