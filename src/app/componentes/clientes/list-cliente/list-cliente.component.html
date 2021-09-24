@@ -5,14 +5,13 @@
     <div class="container-title"> Listagem de Clientes  Cadastrados </div>
     <br>
 
-  
-    <H4 style="color: white; text-align: left;">Clientes Cadastrados</H4>    
-    <section class="lista">
-        <table>
+    <section class="table-wrapper">
+      <table class="fl-table">
             <thead>
               <tr>
                   <th>CPF</th>
                   <th>Nome</th>
+                  <th> </th>
                   <th> </th>
                   <th><button routerLink="/novocliente" type="button" class="btn btn-primary">Novo Cliente</button></th>
               </tr>
@@ -21,10 +20,9 @@
               <tr *ngFor="let cliente of clientes">
                 <td>{{ cliente.cgc }}</td>
                 <td>{{ cliente.nome }}</td>
-                  <td><a [routerLink]="['/detallhescliente', cliente.id]" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">edit</i></a>
-                  <td><a [routerLink]="['/cadveiculos',cliente.id]" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">drive_eta</i></a>
-                    <td><a [routerLink]="['']" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">block</i></a>
-                </td>
+                  <td><a [routerLink]="['/detallhescliente', cliente.id]" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">edit</i></a></td>
+                  <td><a [routerLink]="['/cadveiculos',cliente.id]" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">drive_eta</i></a></td>
+                  <td><a [routerLink]="['']" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">block</i></a></td>
               </tr> 
             </tbody>
           </table>
