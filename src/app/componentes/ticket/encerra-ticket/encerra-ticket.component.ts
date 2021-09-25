@@ -44,7 +44,7 @@ export class EncerraTicketComponent implements OnInit {
       this.ticketservice.detalheTicket(id)
       .subscribe(resposta =>{
         this.ticket = resposta
-        this.ticket.horasaida =  this.ticketservice.pegaHora();
+        
         this.valortotal = this.ticket.valor = this.ticketservice.calculapermanencia(this.ticket)
         this.ticket.valor = this.ticketservice.calculapermanencia(this.ticket);
       })

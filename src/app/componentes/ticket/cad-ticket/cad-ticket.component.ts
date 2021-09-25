@@ -14,19 +14,8 @@ import { Veiculo } from 'src/app/modelos/veiculo.model';
 })
 export class CadTicketComponent implements OnInit {
 
-  ticket: Ticket ={
-    id: "",
-    horaEntrada: "",
-    horasaida: "",
-    placa: "",
-    valor: 0,
-    idCliente: "",
-    tipoPagamento: 0,
-    situacao: ""
-  };
+  ticket: Ticket = new Ticket()
 
-  veiculo: Veiculo
-  id: number
   cliente:Cliente
   formulario: FormGroup;
   horaAtual: any;
@@ -62,7 +51,12 @@ export class CadTicketComponent implements OnInit {
   }
 
   gravarTicket(){    
-     
+    console.log(this.ticket)
+    
+    if(this.ticket.tipoPagamento ==null){
+      this.ticket.tipoPagamento = 0
+    }
+
      this.empService.cadastrarTicket(this.ticket).subscribe(resposta=>{
        this.formulario.reset();
       });
@@ -80,23 +74,22 @@ export class CadTicketComponent implements OnInit {
     this.ticket.tipoPagamento = 1;
   }
 
-  //Consulta Cliente por placa
-
   verificaPlaca(){
 
-    console.log('aqui está a placa '+this.ticket.placa)
     this.veiculoservice.VeiculoPorPlaca(this.ticket.placa)
     .subscribe(resposta=>{
-      this.veiculo.placa = resposta
-      console.log('aqui esta a resposta '+resposta)
+      if(resposta == null){
+        this.exibeMensalista = false
+        this.ticket.cliente = new Cliente()
+      }else{
+        this.ticket.cliente = resposta.cliente
+        this.exibeMensalista = true
+      }
+  
+    },erro=>{
+        this.exibeMensalista=false
     })
 
-
-
-    if(this.ticket.placa == "placa"){
-      this.exibeMensalista = true;
-    }else{
-      this.exibeMensalista = false;
-    }
   }
+
 }

@@ -54,34 +54,9 @@ export class TikcetService {
 
   //Calcula tempo de permanecia
   public calculapermanencia(ticket:Ticket){
+      let total: number
 
-    let total:any;
-    let valor:number;
-
-    this.permancencia = 60 * (parseInt(ticket.horasaida.substr(0,2)) - parseInt(ticket.horaEntrada.substr(0,2))) 
-    this.permancencia = this.permancencia + (parseInt(ticket.horasaida.substr(3,4)) - parseInt(ticket.horaEntrada.substr(3,4)))
-    
-
-    valor = this.permancencia * this.valorminuto;
-    total=valor.toString();
-    total= total
-
-    if(this.permancencia < 15){
-        total = '0.00'
-    }
-
-    if(this.permancencia >= 15 && this.permancencia <=60){
-      total = '5.00'
-    }
-
-    if(this.permancencia % 60 < 15){
-      valor = Math.trunc(this.permancencia / 60) * 5
-      total = valor.toString();
-    }else{
-      valor = Math.trunc((this.permancencia / 60) + 1) * 5
-      total = valor.toString();
-    }
-
+      total = ticket.permanencia * 5
 
 
     return total;

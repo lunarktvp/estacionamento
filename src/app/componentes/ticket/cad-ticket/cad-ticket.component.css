@@ -5,6 +5,11 @@
 .print {
     visibility: hidden;
 }
+
+input{
+    text-transform: uppercase;
+}
+
 @media print {
     /* esconder tudo */
   #meio{

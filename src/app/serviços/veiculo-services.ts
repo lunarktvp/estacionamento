@@ -44,8 +44,8 @@ export class VeiculoService {
       return this.httpClient.put<any>(this.url+'/alterar',cliente);
     }
 
-    public VeiculoPorPlaca(placa:string):Observable<any>{
-      return this.httpClient.get<any>(this.url+'/detalhe/'+placa);
+    public VeiculoPorPlaca(placa:string):Observable<Veiculo>{
+      return this.httpClient.get<Veiculo>(this.url+'/detalhe/'+placa);
     }
 
 
