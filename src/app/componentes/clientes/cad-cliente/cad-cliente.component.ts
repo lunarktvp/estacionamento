@@ -39,7 +39,9 @@ export class CadClienteComponent implements OnInit {
       this.clienteservice.CadastraCliente(this.formulario.value).subscribe(
           resposta=>{
               this.formulario.reset()
-              this.router.navigate(['/ListClientes'])
+              this.router.navigate(['/clientes'])
+          },erro=>{
+            
           }
       );
 

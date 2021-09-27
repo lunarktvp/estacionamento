@@ -1,6 +1,7 @@
 import { ClienteService } from './../../../serviços/clientes-services.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Cliente } from 'src/app/modelos/cliente.model';
 
 @Component({
   selector: 'app-list-cliente',
@@ -33,19 +34,19 @@ export class ListClienteComponent implements OnInit {
       }
     );
  }
- alterarSituacao(){
-  this.clientes.situacao = 9
-  this.clientes.CadastraCliente(this.clientes)
-  .subscribe((reposta: any)=>{
-    this.router.navigate(['cliente']);
-  })
-}
-voltarSituacao(){
-  this.clientes.situacao = 0
-  this.clientes.CadastraCliente(this.clientes)
-  .subscribe((reposta: any)=>{
-    this.router.navigate(['cliente']);
-  })
-}
+
+  alterarSituacao(cliente: Cliente){
+    if(cliente.situacao==9){
+      this.clientes.situacao = 1  
+    }
+    this.clientes.situacao = 9
+  
+   this.clienteService.AlterarCliente(cliente).subscribe(
+     resposta=>{
+
+     }
+   )
+
+  }
 
 }

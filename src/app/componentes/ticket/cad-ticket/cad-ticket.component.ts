@@ -19,7 +19,6 @@ export class CadTicketComponent implements OnInit {
   cliente:Cliente
   formulario: FormGroup;
   horaAtual: any;
-  dataAtual:any;
   exibeMensalista:boolean = false;
 
   constructor(
@@ -41,7 +40,6 @@ export class CadTicketComponent implements OnInit {
       HoraSaida:[null],
     });
     
-    this.dataAtual = this.empService.pegaData();
     this.horaAtual = this.empService.pegaHora();
     
     setInterval(()=>{
@@ -67,11 +65,12 @@ export class CadTicketComponent implements OnInit {
 
   aVista(){
     this.ticket.tipoPagamento = 0;
+    this.gravarTicket()
   }
 
   aFaturar(){
-
     this.ticket.tipoPagamento = 1;
+    this.gravarTicket()
   }
 
   verificaPlaca(){

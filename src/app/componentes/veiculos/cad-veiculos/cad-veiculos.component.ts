@@ -51,11 +51,10 @@ export class CadVeiculoComponent implements OnInit {
 
     this.veiculoservice.CadastrarVeiculo(this.veiculo)
     .subscribe(resposta=>{
-      console.log(resposta)
     })
 
-
     this.listarPlacas()
+
   }
 
   listarPlacas(){

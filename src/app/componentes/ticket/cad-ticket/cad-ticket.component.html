@@ -8,7 +8,6 @@
         <div class="form-group">
           <div class="row">
             <div class="col">
-               <input hidden [ngModel]="dataAtual"  >
                <label  for="entrada" >Hora Entrada</label>
                <input readonly [(ngModel)]="horaAtual"  class="form-control" type="text"  >
             </div>
@@ -20,23 +19,26 @@
               </div>
             
             </div>
-            <div *ngIf="exibeMensalista" id="exibeMensalista" >
-              <span style="display: block; margin-top: -15px; color: white; font-size: 16px; font-weight: 700;"> Cliente Mensalista! </span>
-              <span style="display: block; color: white; font-size: 16px; font-weight: 700; "> Escolha a forma de pagamento: </span>
-              <button class="pgto" style="margin-right: 5px;" (click)="aVista()" >A Vista</button>
-              <button class="pgto" (click)="aFaturar()" >A Faturar</button>
-              <input type="radio" checked="checked">
-
+            <div  *ngIf="exibeMensalista" id="exibeMensalista" >
+              <hr>
+              <span style="display: block; color: black; font-size: 16px; font-weight: 700; "> Cliente mensalisata! Inserir na proxima fatura? </span>
+              <button class="pgto btn btn-primary" style="margin-left: 5px;margin-right: 5px;" (click)="aFaturar()"  >Sim, a faturar</button>
+              <button class="pgto btn btn-primary" (click)="aVista()" >Não, a vista</button>
+              <button [routerLink]="'/tickets'" style="margin-left: 100px;" class="btn btn-danger">Cancelar</button>
+              <hr>
             </div>
         </div>
         <div style="display: inline-block; margin-top: 10px; margin-left:10px;">
-          <button class="btn btn-success" type="submit" (click)="gravarTicket()" onclick="print()">Gravar
+          <button *ngIf="!exibeMensalista" class="btn btn-success" type="submit" (click)="gravarTicket()" onclick="print()">Gravar
           </button>
 
-          <button  [routerLink]="'/tickets'" style="margin-left: 5px;" class="btn btn-danger">Cancelar
+          <button  *ngIf="!exibeMensalista" [routerLink]="'/tickets'" style="margin-left: 5px;" class="btn btn-danger">Cancelar
           </button>
       </div>
     </div>
+
+
+    
     <div id= imprimir class="print">
       <p class="centrado">Nome da empresa
                 <br>ENDERECO

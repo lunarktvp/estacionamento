@@ -10,7 +10,6 @@ export class TikcetService {
 
   empUrl = 'http://localhost:8080/ticket';
 
-  permancencia:number;
   valorminuto:number = 0.08;
 
 
@@ -54,10 +53,26 @@ export class TikcetService {
 
   //Calcula tempo de permanecia
   public calculapermanencia(ticket:Ticket){
-      let total: number
+    let valor: number  
+    let total: string
 
-      total = ticket.permanencia * 5
+      if(ticket.permanencia < 15){
+        total = '0.00'
+    }
 
+    if(ticket.permanencia >= 15 && ticket.permanencia <=60){
+      total = '5.00'
+    }
+
+    if(ticket.permanencia% 60 < 15){
+      valor = Math.trunc(ticket.permanencia / 60) * 5
+      total = valor.toString();
+    }else{
+      valor = Math.trunc((ticket.permanencia / 60) + 1) * 5
+      total = valor.toString();
+    }
+
+    console.log(total)
 
     return total;
   }

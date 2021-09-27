@@ -12,7 +12,6 @@
                   <th>CPF</th>
                   <th>Nome</th>
                   <th> </th>
-                  <th> </th>
                   <th><button routerLink="/novocliente" type="button" class="btn btn-primary">Novo Cliente</button></th>
               </tr>
             </thead>
@@ -20,9 +19,9 @@
               <tr *ngFor="let cliente of clientes">
                 <td>{{ cliente.cgc }}</td>
                 <td>{{ cliente.nome }}</td>
-                  <td><a [routerLink]="['/detallhescliente', cliente.id]" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">edit</i></a></td>
-                  <td><a [routerLink]="['/cadveiculos',cliente.id]" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">drive_eta</i></a></td>
-                  <td><a [routerLink]="['']" style="margin-right: 5px;"  class="waves-effect waves-light btn"><i class="material-icons center">block</i></a></td>
+                  <td><a [routerLink]="['/detallhescliente', cliente.id]" class="waves-effect waves-light btn"><i class="material-icons center">edit</i></a>
+                  <a [routerLink]="['/cadveiculos',cliente.id]"  class="waves-effect waves-light btn"><i class="material-icons center">drive_eta</i></a>
+                  <a (click)="alterarSituacao(cliente)" style=" color : red;"  class="waves-effect waves-light btn"><i class="material-icons center">remove_circle_outline</i></a></td>
               </tr> 
             </tbody>
           </table>

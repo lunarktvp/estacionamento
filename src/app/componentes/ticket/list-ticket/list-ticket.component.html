@@ -12,7 +12,7 @@
             <thead>
               <tr>
                   <th>Placa</th>
-                  <th>Horário Entrada</th>
+                  <th>Entrada</th>
                   <th></th>
                   <th><button [routerLink]="'/novoticket'" class="btn btn-primary" type="submit" name="action">Novo Ticket</button></th>
               </tr>
@@ -20,7 +20,7 @@
             <tbody>
               <tr  *ngFor="let ticket of tickets">
                 <td>{{ ticket.placa }}</td>
-                <td>{{ ticket.horaEntrada }}</td>
+                <td>{{ ticket.entrada }}</td>
                 <td >
                   <button *ngIf="ticket?.situacao == 9" id="encerrar" [routerLink]="['/encerrar', ticket.id]" class="btn btn-danger"  disabled type="button" name="action">Encerrado</button>
                   <button *ngIf="ticket?.situacao != 9" id="encerrar" [routerLink]="['/encerrar', ticket.id]" class="btn btn-primary" type="button" name="action">Encerrar</button></td>
