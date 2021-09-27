@@ -50,13 +50,17 @@ export class TikcetService {
     return this.httpClient.get<Ticket>(this.empUrl+'/encerradosdia')
   }
 
+  public VerificaTicketAtivo(placa:string):Observable<Ticket>{
+    return this.httpClient.get<Ticket>(this.empUrl+'/ticketativo/'+ placa)
+  }
+
 
   //Calcula tempo de permanecia
   public calculapermanencia(ticket:Ticket){
     let valor: number  
     let total: string
 
-      if(ticket.permanencia < 15){
+    if(ticket.permanencia < 15){
         total = '0.00'
     }
 

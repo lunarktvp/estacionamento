@@ -25,7 +25,8 @@ export class CadTicketComponent implements OnInit {
     private empService: TikcetService,
     private formBuilder: FormBuilder,
     private veiculoservice: VeiculoService,
-    private router: Router
+    private router: Router,
+    private ticketservice: TikcetService
     ) { }
 
 
@@ -48,21 +49,24 @@ export class CadTicketComponent implements OnInit {
 
   }
 
-  gravarTicket(){    
-    console.log(this.ticket)
+  VerificaTicketAtivoPelaPlaca(){    
     
-    if(this.ticket.tipoPagamento ==null){
-      this.ticket.tipoPagamento = 0
-    }
+    this.ticketservice.VerificaTicketAtivo(this.ticket.placa).subscribe(
+      resposta=>{
+        if(resposta!=null){
+          this.ticket = resposta
+          alert("Essa Placa ja está vinculada a um ticket em aberto")
+          this.router.navigate(['encerrar/'+this.ticket.id])
 
-     this.empService.cadastrarTicket(this.ticket).subscribe(resposta=>{
-       this.formulario.reset();
-      });
-      
-      this.router.navigate(['tickets'])
-  }  
+        }else{
+          this.gravarTicket()
+        } 
+      }
+    )
 
+  }
 
+  
   aVista(){
     this.ticket.tipoPagamento = 0;
     this.gravarTicket()
@@ -90,5 +94,21 @@ export class CadTicketComponent implements OnInit {
     })
 
   }
+
+
+  gravarTicket(){
+    if(this.ticket.tipoPagamento ==null){
+      this.ticket.tipoPagamento = 0
+    }
+
+    console.log(this.ticket)
+    
+    this.empService.cadastrarTicket(this.ticket).subscribe(resposta=>{
+      this.formulario.reset();
+     });
+     
+     this.router.navigate(['tickets'])     
+  
+}
 
 }

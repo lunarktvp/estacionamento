@@ -38,12 +38,12 @@ export class CadVeiculoComponent implements OnInit {
       .subscribe(resposta=>{
           this.cliente = resposta
           this.veiculo.cliente = this.cliente
+          this.veiculos = this.cliente.veiculo
       }, error=>{
         alert("Impossivel carregar Cliente!")
-      })
+      })  
 
 
-      this.listarPlacas()
   }
 
   novaPlaca(){
@@ -53,14 +53,8 @@ export class CadVeiculoComponent implements OnInit {
     .subscribe(resposta=>{
     })
 
-    this.listarPlacas()
+    this.ngOnInit()
 
-  }
-
-  listarPlacas(){
-    this.veiculoservice.ListarVeiculoPorCliente(this.idCliente).subscribe(resposta=>{
-      this.veiculos = resposta
-    })
   }
 
 }
