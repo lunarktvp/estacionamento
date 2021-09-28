@@ -49,6 +49,33 @@ export class CadTicketComponent implements OnInit {
 
   }
 
+
+
+  verificaPlaca(){
+
+    this.veiculoservice.VeiculoPorPlaca(this.ticket.placa)
+    .subscribe(resposta=>{
+
+      if(resposta == null){
+        console.log('resposta da verificação de placa false => '+resposta)
+        this.exibeMensalista = false
+        this.ticket.cliente = new Cliente()
+        this.VerificaTicketAtivoPelaPlaca()
+      }else{
+        console.log('resposta da verificação de placa true => '+resposta.cliente.id)
+        this.ticket.cliente = resposta.cliente
+        this.exibeMensalista = true
+        this.VerificaTicketAtivoPelaPlaca()
+      }
+  
+    },erro=>{
+        this.exibeMensalista=false
+    })
+
+  }
+
+
+
   VerificaTicketAtivoPelaPlaca(){    
     
     this.ticketservice.VerificaTicketAtivo(this.ticket.placa).subscribe(
@@ -59,7 +86,7 @@ export class CadTicketComponent implements OnInit {
           this.router.navigate(['encerrar/'+this.ticket.id])
 
         }else{
-          this.gravarTicket()
+          
         } 
       }
     )
@@ -77,23 +104,7 @@ export class CadTicketComponent implements OnInit {
     this.gravarTicket()
   }
 
-  verificaPlaca(){
-
-    this.veiculoservice.VeiculoPorPlaca(this.ticket.placa)
-    .subscribe(resposta=>{
-      if(resposta == null){
-        this.exibeMensalista = false
-        this.ticket.cliente = new Cliente()
-      }else{
-        this.ticket.cliente = resposta.cliente
-        this.exibeMensalista = true
-      }
   
-    },erro=>{
-        this.exibeMensalista=false
-    })
-
-  }
 
 
   gravarTicket(){

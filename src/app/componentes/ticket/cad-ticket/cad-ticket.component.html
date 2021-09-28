@@ -29,7 +29,7 @@
             </div>
         </div>
         <div style="display: inline-block; margin-top: 10px; margin-left:10px;">
-          <button *ngIf="!exibeMensalista" class="btn btn-success" type="submit" (click)="VerificaTicketAtivoPelaPlaca()">Gravar
+          <button *ngIf="!exibeMensalista" class="btn btn-success" type="submit" (click)="verificaPlaca()">Gravar
           </button>
 
           <button  *ngIf="!exibeMensalista" [routerLink]="'/tickets'" style="margin-left: 5px;" class="btn btn-danger">Cancelar

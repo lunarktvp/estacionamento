@@ -36,6 +36,8 @@ export class CadVeiculoComponent implements OnInit {
 
       this.clienteservice.DetalhesCliente(this.idCliente)
       .subscribe(resposta=>{
+          console.log(resposta)
+
           this.cliente = resposta
           this.veiculo.cliente = this.cliente
           this.veiculos = this.cliente.veiculo
@@ -51,9 +53,8 @@ export class CadVeiculoComponent implements OnInit {
 
     this.veiculoservice.CadastrarVeiculo(this.veiculo)
     .subscribe(resposta=>{
+      this.ngOnInit()
     })
-
-    this.ngOnInit()
 
   }
 
