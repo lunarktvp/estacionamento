@@ -65,8 +65,6 @@ export class CadTicketComponent implements OnInit {
       }else{
         this.VerificaTicketAtivoPelaPlaca(this.ticket.placa)
         this.BuscaClientePorPlaca(this.ticket.placa)
-        
-        this.exibeMensalista = true
       }
   
     },erro=>{
@@ -96,6 +94,10 @@ export class CadTicketComponent implements OnInit {
  
     this.clienteservice.BuscaClientePorPlaca(placa).subscribe(resposta=>{
       this.ticket.cliente =  resposta
+      if(resposta.situacao==0){
+        this.exibeMensalista = true
+      }
+      this.gravar = true
     })
     
 
