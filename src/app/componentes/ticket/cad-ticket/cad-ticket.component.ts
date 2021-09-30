@@ -1,3 +1,4 @@
+import { ClienteService } from './../../../serviços/clientes-services.service';
 import { Cliente } from './../../../modelos/cliente.model';
 import { VeiculoService } from 'src/app/serviços/veiculo-services';
 import { Router } from '@angular/router';
@@ -5,7 +6,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Ticket } from 'src/app/modelos/ticket.model';
 import { TikcetService } from 'src/app/serviços/tikcet.service';
-import { Veiculo } from 'src/app/modelos/veiculo.model';
 
 @Component({
   selector: 'app-cad-ticket',
@@ -20,11 +20,13 @@ export class CadTicketComponent implements OnInit {
   formulario: FormGroup;
   horaAtual: any;
   exibeMensalista:boolean = false;
+  gravar: boolean = false
 
   constructor(
     private empService: TikcetService,
     private formBuilder: FormBuilder,
     private veiculoservice: VeiculoService,
+    private clienteservice :ClienteService,
     private router: Router,
     private ticketservice: TikcetService
     ) { }
@@ -52,20 +54,19 @@ export class CadTicketComponent implements OnInit {
 
 
   verificaPlaca(){
-
+  
     this.veiculoservice.VeiculoPorPlaca(this.ticket.placa)
     .subscribe(resposta=>{
 
       if(resposta == null){
-        console.log('resposta da verificação de placa false => '+resposta)
         this.exibeMensalista = false
-        this.ticket.cliente = new Cliente()
-        this.VerificaTicketAtivoPelaPlaca()
+        this.VerificaTicketAtivoPelaPlaca(this.ticket.placa)
+        this.gravar = true
       }else{
-        console.log('resposta da verificação de placa true => '+resposta.cliente.id)
-        this.ticket.cliente = resposta.cliente
+        this.VerificaTicketAtivoPelaPlaca(this.ticket.placa)
+        this.BuscaClientePorPlaca(this.ticket.placa)
+        
         this.exibeMensalista = true
-        this.VerificaTicketAtivoPelaPlaca()
       }
   
     },erro=>{
@@ -76,30 +77,43 @@ export class CadTicketComponent implements OnInit {
 
 
 
-  VerificaTicketAtivoPelaPlaca(){    
+  VerificaTicketAtivoPelaPlaca(placa: string){    
     
-    this.ticketservice.VerificaTicketAtivo(this.ticket.placa).subscribe(
+    this.ticketservice.VerificaTicketAtivo(placa).subscribe(
       resposta=>{
         if(resposta!=null){
           this.ticket = resposta
           alert("Essa Placa ja está vinculada a um ticket em aberto")
           this.router.navigate(['encerrar/'+this.ticket.id])
-
-        }else{
-          
-        } 
+        }
       }
     )
 
   }
 
+
+  BuscaClientePorPlaca(placa:String){
+ 
+    this.clienteservice.BuscaClientePorPlaca(placa).subscribe(resposta=>{
+      this.ticket.cliente =  resposta
+    })
+    
+
+  }
+
+
+
+
+
   
   aVista(){
+    this.gravar= true
     this.ticket.tipoPagamento = 0;
     this.gravarTicket()
   }
 
   aFaturar(){
+    this.gravar= true
     this.ticket.tipoPagamento = 1;
     this.gravarTicket()
   }
@@ -108,17 +122,23 @@ export class CadTicketComponent implements OnInit {
 
 
   gravarTicket(){
-    if(this.ticket.tipoPagamento ==null){
-      this.ticket.tipoPagamento = 0
-    }
+      if(this.gravar){
 
-    console.log(this.ticket)
+        if(this.ticket.tipoPagamento ==null){
+          this.ticket.tipoPagamento = 0
+        }
     
-    this.empService.cadastrarTicket(this.ticket).subscribe(resposta=>{
-      this.formulario.reset();
-     });
-     
-     this.router.navigate(['tickets'])     
+        console.log(this.ticket)
+        
+        this.empService.cadastrarTicket(this.ticket).subscribe(resposta=>{
+          this.formulario.reset();
+         });
+         
+         this.router.navigate(['tickets'])  
+
+      }else{
+        this.verificaPlaca()
+      }  
   
 }
 

@@ -36,14 +36,18 @@ export class ListClienteComponent implements OnInit {
  }
 
   alterarSituacao(cliente: Cliente){
+
     if(cliente.situacao==9){
-      this.clientes.situacao = 1  
+      cliente.situacao = 0 
+    }else{
+      cliente.situacao = 9
     }
-    this.clientes.situacao = 9
+
+    
   
    this.clienteService.AlterarCliente(cliente).subscribe(
      resposta=>{
-
+        this.ngOnInit()
      }
    )
 

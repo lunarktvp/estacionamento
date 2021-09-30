@@ -54,6 +54,11 @@ body{
     background: #F8F8F8;
 }
 
+
+.material-icons.md-24{
+    font-size: 24px;
+}
+
 /* Responsive */
 
 @media (max-width: 767px) {

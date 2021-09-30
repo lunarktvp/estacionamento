@@ -42,4 +42,8 @@ export class ClienteService {
     }
 
 
+    public BuscaClientePorPlaca(placa: String):Observable<Cliente>{
+      return this.httpClient.get<Cliente>(this.url+'/buscapor/'+placa)
+    }
+
 }
